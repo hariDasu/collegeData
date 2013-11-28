@@ -6,8 +6,11 @@ MongoClient.connect('mongodb://127.0.0.1:27017/test', function(err, db) {
 
     //simple json doc
     var document = {school:"NJIT", location: "NJ"};
-    db.collection('test').remove();
-    Console.log("cleared test!");
+    db.collection('test').remove(function(err,cleared){
+    if(err) throw err;
+        Console.log("cleared test!");
+    });
+
 
     //insert doc
     db.collection('test').insert(document, function(err, docs) {
