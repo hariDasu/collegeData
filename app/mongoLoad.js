@@ -2,19 +2,15 @@ var MongoClient = require('mongodb').MongoClient;
 
 MongoClient.connect('mongodb://127.0.0.1:27017/test', function(err, db) {
     if(err) throw err;
+    console.log("Connected to mongo!");
 
-    var collection = db.collection('test_insert');
-    collection.insert({a:2}, function(err, docs) {
+    //simple json doc
+    var document = {school:"NJIT", location: "NJ"};
 
-      /*  collection.count(function(err, count) {
-         console.log(format("count = %s", count));
-         });*/
+    //insert doc
+    db.collection('test').insert(document, function(err, docs) {
+        if (err) throw err;
+        console.log("doc added as " + docs[0]._id);
+          });
 
-        // Locate all the entries using find
-        collection.find().toArray(function(err, results) {
-            console.dir(results);
-            // Let's close the db
-            db.close();
-        });
-    });
-})
+});
