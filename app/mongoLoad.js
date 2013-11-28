@@ -6,9 +6,9 @@ MongoClient.connect('mongodb://127.0.0.1:27017/test', function(err, db) {
     var collection = db.collection('test_insert');
     collection.insert({a:2}, function(err, docs) {
 
-        collection.count(function(err, count) {
-            console.log(format("count = %s", count));
-        });
+      /*  collection.count(function(err, count) {
+         console.log(format("count = %s", count));
+         });*/
 
         // Locate all the entries using find
         collection.find().toArray(function(err, results) {
