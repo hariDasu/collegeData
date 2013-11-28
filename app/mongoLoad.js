@@ -1,4 +1,4 @@
-var require = require('http');
+var http = require('http');
 
 var MongoClient = require('mongodb');
 
