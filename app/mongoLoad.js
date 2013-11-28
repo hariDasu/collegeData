@@ -1,20 +1,20 @@
-var http = require('http');
+var MongoClient = require('mongodb').MongoClient;
 
-var MongoClient = require('mongodb');
+MongoClient.connect('mongodb://127.0.0.1:27017/test', function(err, db) {
+    if(err) throw err;
 
-var db = new MongoClient.Db('collegeData', new MongoClient.server('localhost', 27017, {}), {});
+    var collection = db.collection('test_insert');
+    collection.insert({a:2}, function(err, docs) {
 
+        collection.count(function(err, count) {
+            console.log(format("count = %s", count));
+        });
 
-//Connect to the db
-db.open(function(){});
-
-db.open(function(err, client){
-    client.createCollection("colleges", function(err, col) {
-        client.collection("colleges", function(err, col) {
-            for (var i = 0; i < 10; i++) {
-                col.insert({c:i}, function() {});
-            }
+        // Locate all the entries using find
+        collection.find().toArray(function(err, results) {
+            console.dir(results);
+            // Let's close the db
+            db.close();
         });
     });
-});
-
+})
