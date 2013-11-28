@@ -11,7 +11,7 @@ db.open(function(){});
 db.open(function(err, client){
     client.createCollection("colleges", function(err, col) {
         client.collection("colleges", function(err, col) {
-            for (var i = 0; i < 100; i++) {
+            for (var i = 0; i < 10; i++) {
                 col.insert({c:i}, function() {});
             }
         });
