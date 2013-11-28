@@ -8,7 +8,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017/test', function(err, db) {
     var document = {school:"NJIT", location: "NJ"};
     db.collection('test').remove(function(err,cleared){
     if(err) throw err;
-        Console.log("cleared test!");
+        console.log("cleared test!");
     });
 
 
