@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1.
+        Colleges
+    ul
+        each college, i in colleges
+            li
+                "#i:#{college.i}"

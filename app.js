@@ -9,6 +9,10 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
 
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('localhost:27017/collegeData');
+
 var app = express();
 
 app.configure(function(){
@@ -17,7 +21,7 @@ app.configure(function(){
   app.set('view engine', 'jade');
   app.use(express.favicon());
   app.use(express.logger('dev'));
-  app.use(express.bodyParser());
+  app.use(express.urlencoded());
   app.use(express.methodOverride());
   app.use(express.cookieParser('your secret here'));
   app.use(express.session());
@@ -25,12 +29,16 @@ app.configure(function(){
   app.use(express.static(path.join(__dirname, 'public')));
 });
 
+
 app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/helloworld', routes.helloworld);
+
+app.get('/colleges', routes.colleges(db));
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

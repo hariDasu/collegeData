@@ -1,19 +1,19 @@
 Hello Loading CSVs ..
 =======
+Begin ../data/effy2011.csv
+ Line count=16730
+=======
 Begin ../data/f0910_f1a.csv
  Line count=2013
-=======
-Begin ../data/hd2011.csv
- Line count=7644
-=======
-Begin ../data/f1011_f1a.csv
- Line count=2019
 =======
 Begin ../data/effy2010.csv
  Line count=16246
 =======
-Begin ../data/effy2011.csv
- Line count=16730
+Begin ../data/f1011_f1a.csv
+ Line count=2019
+=======
+Begin ../data/hd2011.csv
+ Line count=7644
 {   '../data/effy2010.csv': {   'colList': [   'UNITID',
                                                'EFFYLEV',
                                                'LSTUDY',
