@@ -1,0 +1,17 @@
+extends bootstrap
+
+block content
+    h1.
+        Colleges
+    div.nicetable
+        table#table.table-hover.table-bordered
+            thead
+                tr
+                    th College Name
+                    th Tuition
+            tbody
+            each college, i in colleges
+                tr
+                 td #{college.name}
+                 td #{college.cost}
+

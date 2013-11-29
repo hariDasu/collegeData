@@ -11,11 +11,11 @@ exports.helloworld = function(req, res){
     res.render('helloworld', { title: 'Hello, World!' });
 };
 
-exports.colleges = function(db) {
+exports.univs = function(db) {
     return function(req, res) {
         var collection = db.get('colleges');
         collection.find({},{},function(e,docs){
-            res.render('colleges', {
+            res.render('univs', {
                 "colleges" : docs
             });
         });
