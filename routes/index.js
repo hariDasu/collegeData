@@ -16,16 +16,39 @@ exports.index = function(req, res){
   res.render('index', { title: 'CollegeDB' });
 };
 
-exports.univs = function() {
+exports.question1 = function() {
+    function compare(a,b) {
+        if (a.EFYTOTLT > b.EFYTOTLT)
+            return -1;
+        if (a.EFYTOTLT < b.EFYTOTLT)
+            return 1;
+        return 0;
+    }
     return function(req, res) {
         var opts1 = {limit:20,sort:{EFYTOTLT:-1}};
         var flds1 = {UNITID:1,EFYTOTLT:1};
+        var flds2 = {INSTNM:1};
+        var results = [];
         coll = collegeDB.collection("univs")
         coll.find( {rowType: "ENR"}, flds1, opts1).toArray(
             function (err, docs) {
-
-                console.log(docs);
-                res.render('univs',{"univs":docs});
+                docs.forEach(function(oneDoc){
+                    //console.log(oneDoc.EFYTOTLT);
+                    coll.find({rowType:"GEN",UNITID:oneDoc.UNITID},flds2).toArray(
+                        function(err,doc){
+                            if (err) console.log(err);
+                            var univName = doc[0].INSTNM;
+                            var oneResult = {UNITID:oneDoc.UNITID, EFYTOTLT:oneDoc.EFYTOTLT, INSTNM:univName};
+                            //console.log(results);
+                            results.push(oneResult);
+                            if(results.length==20){
+                                results.sort(compare);
+                                //console.log(results);
+                                res.render('question1',{"question1":results});
+                            }
+                        }
+                    )
+                })
             }
         );
 

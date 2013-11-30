@@ -32,7 +32,7 @@ app.configure('development', function(){
 app.get('/', routes.index);
 
 
-app.get('/univs', routes.univs());
+app.get('/question1', routes.question1());
 app.get('/univTest', routes.univTest());
 
 
