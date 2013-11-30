@@ -10,9 +10,14 @@ var express = require('express')
   , path = require('path');
 
 var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('localhost:27017/collegeDB');
+// var monk = require('monk');
+// var db = monk('localhost:27017/collegeDB');
 
+var db1=null ;
+mongo.MongoClient.connect( 'mongodb://localhost:27017/collegeDB', function (err, db) {
+   if (err)  return console.dir(err)
+   db1=db
+});
 var app = express();
 
 app.configure(function(){
@@ -38,7 +43,7 @@ app.get('/', routes.index);
 app.get('/college', college.list);
 app.get('/helloworld', routes.helloworld);
 
-app.get('/univs', routes.univs(db));
+app.get('/univs', routes.univs(db1));
 
 
 http.createServer(app).listen(app.get('port'), function(){

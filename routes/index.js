@@ -13,10 +13,11 @@ exports.helloworld = function(req, res){
 
 exports.univs = function(db) {
     return function(req, res) {
-        var collection = db.get('univs');
-        collection.find({rowType:"ENR"},{EFYTOTLT:1,UNITID:1},{stream:true})
-        .each(function(doc){
-            console.log(doc);
-        });
+       coll = db.collection("univs")
+       coll.find( {rowType: "ENR"}, {UNITID: 1, EFYTOTL:1}, function (err, results) {
+           console.log (results)
+       } )
     };
 };
+
+
