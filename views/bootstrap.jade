@@ -5,7 +5,32 @@ html
     link(rel='stylesheet', href='/css/style.css')
     link(rel='stylesheet', href='css/bootstrap.css')
 
-    script(src='/js/bootstrap.min.js')
     script(src='/js/jquery.js')
+    script(src='/js/bootstrap.min.js')
+
   body
-    block content
+    div.container
+        nav.navbar.navbar-fixed-top.navbar-default(role="navigation")
+          .container
+              .navbar-header
+                button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+                    span.sr-only Toggle Navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href="#") IS218 Project
+              .navbar-collapse.collapse
+                ul.nav.navbar-nav
+                    li.active
+                        a(href="#") Home
+                    li
+                        a(href="#about") About
+                    li
+                        a(href="#contact") Contact
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href="#") Srihari Rao
+        div(class="col-md-4 col-lg-4 col-sm-4")
+            h1 Welcome to the colleges page.
+        div(class-"col-md-8 col-lg-8 col-sm-8")
+            block content
