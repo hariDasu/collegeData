@@ -11,12 +11,12 @@ var express = require('express')
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/collegeData');
+var db = monk('localhost:27017/collegeDB');
 
 var app = express();
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 11027);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
