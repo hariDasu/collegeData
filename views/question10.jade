@@ -1,12 +1,13 @@
 extends bootstrap
 
 block content
-    h2.
-       Enter State Abbreviation.
-    .col-lg-4.col-md-4.col-sm-4.pull-left
+    h1 Colleges.
+    h3 In your State.
+    h4 or your moms, or maybe some other random state in the USA.
+    .col-lg-4.col-md-4.col-sm-4
         form(action="/question10",method="get")
             .input-group
-                input.form-control(type='text',value="Enter 2 letter for State...",id="stateAbbr",name="stateAbbr")
+                input.form-control(type='text',value="Enter 2 letter State abbreviation.",id="stateAbbr",name="stateAbbr")
                 span.input-group-btn
                     button.btn.btn-default(type='button,submit') Go!
         //
