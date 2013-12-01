@@ -1,0 +1,30 @@
+extends bootstrap
+
+block content
+    h2.
+       Enter State Abbreviation.
+    .col-lg-4.col-md-4.col-sm-4.pull-left
+        form(action="/question10",method="get")
+            .input-group
+                input.form-control(type='text',value="Enter 2 letter for State...",id="stateAbbr",name="stateAbbr")
+                span.input-group-btn
+                    button.btn.btn-default(type='button,submit') Go!
+        //
+           /input-group
+        //
+           /.col-lg-6
+    div.nicetable.col-lg-6.col-md-6.col-sm-6
+    table#table.table-hover.table-bordered
+        thead
+            tr
+                th University ID
+                th College Name
+                th State Abbreviation
+        tbody
+        each college, i in question10
+            tr
+                td #{college.UNITID}
+                td #{college.INSTNM}
+                td #{college.STABBR}
+
+

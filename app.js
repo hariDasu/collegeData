@@ -36,15 +36,17 @@ app.get('/question1',routes.question1());
 app.get('/question2',routes.question2());
 app.get('/question3',routes.question3());
 app.get('/question4',routes.question4());
+app.get('/question10',routes.question10());
 /*app.get('/question2',routes.question2());
 app.get('/question2',routes.question2());
 app.get('/question2',routes.question2());
 app.get('/question2',routes.question2());
 app.get('/question2',routes.question2());
-app.get('/question2',routes.question2());
+
 app.get('/question2',routes.question2());
 app.get('/question2',routes.question2());*/
 app.get('/univTest', routes.univTest());
+
 
 
 http.createServer(app).listen(app.get('port'), function(){

@@ -186,7 +186,68 @@ exports.question4 = function() {
     };
 };
 
-exports.univTest = function() {
+/*exports.question5 = function() {
+    function compare(a,b) {
+        if (a.F1D01 > b.F1D01)
+            return -1;
+        if (a.F1D01 < b.F1D01)
+            return 1;
+        return 0;
+    }
+    return function(req, res) {
+        var opts1 = {sort:{F1D01:-1}};
+        var flds1 = {UNITID:1,F1D01:1};
+        var flds2 = {INSTNM:1};
+        var results = [];
+        coll = collegeDB.collection("univs")
+        coll.find( {rowType:"FIN"}, flds1, opts1).toArray(
+            function (err, docs) {
+                docs.forEach(function(oneDoc){
+                    console.log(oneDoc._id,oneDoc.F1D01);
+                    if(oneDoc.F1D01!=""){
+                        coll.find({rowType:"GEN",UNITID:oneDoc.UNITID},flds2).toArray(
+                            function(err,doc){
+                                if (err) console.log(err);
+                                var univName = doc[0].INSTNM;
+                                var oneResult = {UNITID:oneDoc.UNITID, F1D01:oneDoc.F1D01, INSTNM:univName};
+                                //console.log(results);
+                                results.push(oneResult);
+
+                                if(results.length==20){
+                                    results.sort(compare);
+                                    //console.log(results);
+                                    res.render('question4',{"question4":results});
+                                }
+                            }
+                        )
+                    }
+
+                })
+            }
+        );
+
+
+    };
+};*/
+
+exports.question10 = function() {
+
+    return function(req, res) {
+        var opts1 = {limit:1000,sort:{INSTNM:-1}};
+        var flds1 = {UNITID:1,STABBR:1,INSTNM:1};
+        var lookup = req.param('stateAbbr') || "MO";
+        coll = collegeDB.collection("univs")
+        coll.find({rowType:"GEN",STABBR:lookup},flds1,opts1).toArray(
+            function(err,doc){
+                if (err) console.log(err);
+                res.render('question10',{"question10":doc})
+
+            });
+        };
+};
+
+
+    exports.univTest = function() {
     return function(req, res) {
        coll = collegeDB.collection("univs")
        /*coll.find( {rowType: "ENR"}, {UNITID: 1, EFYTOTL:1}, function (err, results) {
