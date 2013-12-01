@@ -1,0 +1,20 @@
+extends bootstrap
+
+block content
+    h1.
+        Colleges
+    div.nicetable
+        table#table.table-hover.table-bordered
+            thead
+                tr
+                    th University ID
+                    th College Name
+                    th Total Net Assets
+            tbody
+            each college, i in question3
+                tr
+                    td #{college.UNITID}
+                    td #{college.INSTNM}
+                    td #{college.F1A18}
+
+

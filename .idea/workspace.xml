@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4ada07-f49a-4fcd-9a0c-d3478c482f05" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/question2.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/question3.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -31,7 +31,7 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="21" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="870">
+            <state line="27" column="31" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="870">
               <folding />
             </state>
           </provider>
@@ -40,7 +40,7 @@
       <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="0" selection-start="3449" selection-end="3449" vertical-scroll-proportion="0.5106007" vertical-offset="0" max-vertical-offset="680">
+            <state line="125" column="88" selection-start="4439" selection-end="4439" vertical-scroll-proportion="0.5533454" vertical-offset="374" max-vertical-offset="1377">
               <folding>
                 <element signature="e#244#302#0" expanded="false" />
                 <element signature="e#339#389#0" expanded="false" />
@@ -72,7 +72,16 @@
       <file leaf-file-name="question2.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/question2.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="40" selection-start="332" selection-end="332" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+            <state line="10" column="23" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="question3.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/question3.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="40" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
               <folding />
             </state>
           </provider>
@@ -99,8 +108,9 @@
         <option value="$PROJECT_DIR$/views/univs.jade" />
         <option value="$PROJECT_DIR$/views/question1.jade" />
         <option value="$PROJECT_DIR$/views/question2.jade" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/question3.jade" />
       </list>
     </option>
   </component>
@@ -278,7 +288,11 @@
       <created>1385854363644</created>
       <updated>1385854363644</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="question2">
+      <created>1385857951859</created>
+      <updated>1385857951859</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -316,7 +330,8 @@
     </option>
     <MESSAGE value="lets pray." />
     <MESSAGE value="question1" />
-    <option name="LAST_COMMIT_MESSAGE" value="question1" />
+    <MESSAGE value="question2" />
+    <option name="LAST_COMMIT_MESSAGE" value="question2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -347,21 +362,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/question2.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="40" selection-start="332" selection-end="332" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+        <state line="10" column="23" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="21" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="870">
+        <state line="27" column="31" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/question3.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="40" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="0" selection-start="3449" selection-end="3449" vertical-scroll-proportion="0.5106007" vertical-offset="0" max-vertical-offset="680">
+        <state line="125" column="88" selection-start="4439" selection-end="4439" vertical-scroll-proportion="0.5533454" vertical-offset="374" max-vertical-offset="1377">
           <folding>
             <element signature="e#244#302#0" expanded="false" />
             <element signature="e#339#389#0" expanded="false" />
