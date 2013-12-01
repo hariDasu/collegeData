@@ -189,55 +189,116 @@ exports.question4 = function() {
 };
 
 exports.question6 = function() {
-    var results = {};
-    function compare(a,b) {
-        if (results[a]["revsPerStudents"] > results[b]["revsPerStudents"])
+    var q6Results = {};
+
+    function compare6(a,b) {
+        if (q6Results[a]["revPerStudent"] > q6Results[b]["revPerStudent"])
             return -1;
-        if (results[a]["revsPerStudents"] < results[b]["revsPerStudents"])
+        if (q6Results[a]["revPerStudent"] < q6Results[b]["revPerStudent"])
             return 1;
         return 0;
     }
 
-    var processResults = function (){
-        UnitIds = Object.keys(results);
-        sortedUnitIds = unitIds.sort(compare)
-        for(i=0;i<20;i++){
-            console.log(results[sortedUnitIds[i]])
+    /*
+      {
+          UNITID : {
+               revPerStudent:
+               totRevenue:
+               totStudents :
+               instName:        // to add in processResults
+          } ,
+          UNITID : {
+               revPerStudent:
+               totRevenue:
+               totStudents :
+               instName:        // to add in processResults
+          } ,
+
+      }
+    */
+    function showFinalResults(sortedIds){
+        for (i=0; i<20; i++ ) {
+            var curUnitId=sortedIds[i]
+            console.log( curUnitId  +  " : " )
+            console.log(q6Results[curUnitId] )
         }
     }
-    return function(req, res) {
 
-        coll = collegeDB.collection("ENR10")
-        coll2= collegeDB.collection("FIN10")
-        console.log(coll);
+    function processResults(){
+        unitIds = Object.keys(q6Results);
+        sortedUnitIds = unitIds.sort(compare6)
+        retCnt=0
+        genColl=collegeDB.collection("GEN")
+        //console.log("SortedIds=" + sortedUnitIds)
+        for(i=0;i<20;i++) {
+            curUnitId=sortedUnitIds[i]
+            console.log ( "Looking up " + curUnitId )
+            genColl.find({UNITID : curUnitId},{ UNITID:1, INSTNM:1} ).toArray(
+                function (err, rdoc) {
+                     console.log(rdoc)
+                     if ( rdoc.length ) {
+                         runitId=rdoc.UNITID
+                         q6Results[runitId]["instName"] = rdoc.INSTNM
+                         retCnt++
+                         if (retCnt == 20) {
+                            showFinalResults(sortedUnitIds) 
+                         }
+                    } else {
+                         retCnt++
+                         if (retCnt == 20) {
+                            showFinalResults(sortedUnitIds)
+                         }
+                    }
+                }
+            )
+       }
+    }
+
+    return function(req, res) {
+        coll = collegeDB.collection("ENR10")   // enrollments
+        coll2= collegeDB.collection("FIN10")   // financials
+        //console.log(coll);
+        // first we check enrollment aggregates per each school (UNITID)
+        console.log ("Fetching aggregate ENRollments ..")
         coll.aggregate({
                 $group: { _id: "$UNITID",
-                    totStuds: { $sum: "$EFYTOTLT"}  } }, function (err, docs) {
-                //console.log(docs);
-                var skipped = 0;
+                    totStuds: { $sum: "$EFYTOTLT"}  } }, function (err, docs) {   
+                console.log("Fetched " + docs.length + " records");
+                var skipped=0;
+                var rcnt=0 ;      // count of processed records
                 docs.forEach(function(doc){
-                    //console.log(doc._id);
+                   //console.log(doc._id);
+                  // now we find the Revenue for the school (key=UNITID)
                   coll2.find({UNITID:doc._id},{UNITID:1, F1A13:1}).toArray(
                       function(err,docs2){
-                          if(docs2.length){
+                          // console.log(docs2)
+                          if (docs2.length) {
                               //console.log(docs2[0].F1A13);
-                              var unitid = docs._id;
+                              var unitid = docs2[0].UNITID
                               var revs = docs2[0].F1A13;
                               var students = doc.totStuds;
-                              results[unitid]={};
-                              var revPerStuds = revs/students;
-                              results[unitid]["totStudents"]=students;
-                              results[unitid]["totRevenues"]=revs;
-                              results[unitid]["revPerStudents"]=revPerStuds;
-                              var rcnt = _.size(results+skipped)
-                              if(_.size(results)+skipped==docs.length){
+                              q6Results[unitid]={};
+                              var revPerStud = revs/students;
+                              q6Results[unitid]["totStudents"]=students;
+                              q6Results[unitid]["totRevenue"]=revs;
+                              q6Results[unitid]["revPerStudent"]=revPerStud;
+                              rcnt = _.size(q6Results) +skipped
+                              if(rcnt==docs.length){
                                  processResults();
-                              }
-                          }else{
-                            skipped++;
-                              if(_.size(results)+skipped==docs.length){
+                              } 
+                          } else {
+                              skipped++;
+                              rcnt = _.size(q6Results) +skipped
+                              if(rcnt==docs.length){
                                 processResults();
                               }
+                          }
+                          if ( docs.length - rcnt > 20 ) {
+                              if ( (rcnt % 1000) == 0 ) {
+                                 console.log ("processed " + rcnt)
+                              }
+                          } else {
+                             console.log ("processed " + rcnt)
                           }
                       }
                   )
