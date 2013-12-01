@@ -190,7 +190,6 @@ exports.question4 = function() {
 
 exports.question6 = function() {
     var q6Results = {};
-
     function compare6(a,b) {
         if (q6Results[a]["revPerStudent"] > q6Results[b]["revPerStudent"])
             return -1;
@@ -199,62 +198,71 @@ exports.question6 = function() {
         return 0;
     }
 
-    /*
-      {
-          UNITID : {
-               revPerStudent:
-               totRevenue:
-               totStudents :
-               instName:        // to add in processResults
-          } ,
-          UNITID : {
-               revPerStudent:
-               totRevenue:
-               totStudents :
-               instName:        // to add in processResults
-          } ,
-
-      }
-    */
-    function showFinalResults(sortedIds){
-        for (i=0; i<20; i++ ) {
-            var curUnitId=sortedIds[i]
-            console.log( curUnitId  +  " : " )
-            console.log(q6Results[curUnitId] )
-        }
-    }
-
-    function processResults(){
-        unitIds = Object.keys(q6Results);
-        sortedUnitIds = unitIds.sort(compare6)
-        retCnt=0
-        genColl=collegeDB.collection("GEN")
-        //console.log("SortedIds=" + sortedUnitIds)
-        for(i=0;i<20;i++) {
-            curUnitId=sortedUnitIds[i]
-            console.log ( "Looking up " + curUnitId )
-            genColl.find({UNITID : curUnitId},{ UNITID:1, INSTNM:1} ).toArray(
-                function (err, rdoc) {
-                     console.log(rdoc)
-                     if ( rdoc.length ) {
-                         runitId=rdoc.UNITID
-                         q6Results[runitId]["instName"] = rdoc.INSTNM
-                         retCnt++
-                         if (retCnt == 20) {
-                            showFinalResults(sortedUnitIds) 
-                         }
-                    } else {
-                         retCnt++
-                         if (retCnt == 20) {
-                            showFinalResults(sortedUnitIds)
-                         }
-                    }
-                }
-            )
-       }
-    }
-
     return function(req, res) {
+
+        /*
+          {
+              UNITID : {
+                   revPerStudent:
+                   totRevenue:
+                   totStudents :
+                   instName:        // to add in processResults
+              } ,
+              UNITID : {
+                   revPerStudent:
+                   totRevenue:
+                   totStudents :
+                   instName:        // to add in processResults
+              } ,
+
+          }
+        */
+        function showFinalResults(sortedIds, req, res){
+            var finalResult=[]
+            for (i=0; i<20; i++ ) {
+                var curUnitId=sortedIds[i]
+                console.log( curUnitId  +  " : " )
+                oneItem={ 
+                     "unitId" : curUnitId, 
+                     "revPerStudent" : q6Results[curUnitId]["revPerStudent"],
+                     "totStudents" : q6Results[curUnitId]["totStudents"],
+                     "totRevenue" : q6Results[curUnitId]["totRevenue"],
+                     }
+                finalResult.push(oneItem)
+            }
+            console.log(finalResult)
+        }
+
+        function processResults(req,res){
+            unitIds = Object.keys(q6Results);
+            sortedUnitIds = unitIds.sort(compare6)
+            retCnt=0
+            genColl=collegeDB.collection("GEN")
+            //console.log("SortedIds=" + sortedUnitIds)
+            for(i=0;i<20;i++) {
+                curUnitId=sortedUnitIds[i]
+                console.log ( "Looking up " + curUnitId )
+                genColl.find({"UNITID" : curUnitId},{ "UNITID" :1, "INSTNM":1} ).toArray(
+                    function (err, rdoc) {
+                         console.log(rdoc)
+                         if ( rdoc.length ) {
+                             runitId=rdoc.UNITID
+                             q6Results[runitId]["instName"] = rdoc.INSTNM
+                             retCnt++
+                             if (retCnt == 20) {
+                                showFinalResults(sortedUnitIds, req,res) 
+                             }
+                        } else {
+                             retCnt++
+                             if (retCnt == 20) {
+                                showFinalResults(sortedUnitIds,req,res)
+                             }
+                        }
+                    }
+                )
+           }
+        }
+
         coll = collegeDB.collection("ENR10")   // enrollments
         coll2= collegeDB.collection("FIN10")   // financials
         //console.log(coll);
@@ -284,13 +292,13 @@ exports.question6 = function() {
                               q6Results[unitid]["revPerStudent"]=revPerStud;
                               rcnt = _.size(q6Results) +skipped
                               if(rcnt==docs.length){
-                                 processResults();
+                                 processResults(req,res);
                               } 
                           } else {
                               skipped++;
                               rcnt = _.size(q6Results) +skipped
                               if(rcnt==docs.length){
-                                processResults();
+                                processResults(req,res);
                               }
                           }
                           if ( docs.length - rcnt > 20 ) {
