@@ -32,7 +32,18 @@ app.configure('development', function(){
 app.get('/', routes.index);
 
 
-app.get('/question1', routes.question1());
+app.get('/question1',routes.question1());
+app.get('/question2',routes.question2());
+/*app.get('/question2',routes.question2());
+app.get('/question2',routes.question2());
+app.get('/question2',routes.question2());
+app.get('/question2',routes.question2());
+app.get('/question2',routes.question2());
+app.get('/question2',routes.question2());
+app.get('/question2',routes.question2());
+app.get('/question2',routes.question2());
+app.get('/question2',routes.question2());
+app.get('/question2',routes.question2());*/
 app.get('/univTest', routes.univTest());
 
 
