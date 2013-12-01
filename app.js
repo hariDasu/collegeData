@@ -8,6 +8,7 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
 
+var _ = require('underscore');
 var app = express();
 
 app.configure(function(){
@@ -37,8 +38,8 @@ app.get('/question2',routes.question2());
 app.get('/question3',routes.question3());
 app.get('/question4',routes.question4());
 app.get('/question10',routes.question10());
+app.get('/question6',routes.question6());
 /*app.get('/question2',routes.question2());
-app.get('/question2',routes.question2());
 app.get('/question2',routes.question2());
 app.get('/question2',routes.question2());
 app.get('/question2',routes.question2());

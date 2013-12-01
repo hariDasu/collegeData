@@ -4,10 +4,12 @@
  */
 
 var mongo = require('mongodb');
+var _ = require('underscore');
 // var monk = require('monk');
 // var db = monk('localhost:27017/collegeDB');
 
 var collegeDB=null ;
+
 mongo.MongoClient.connect( 'mongodb://localhost:27017/collegeDB', function (err, db) {
     if (err)  return console.dir(err)
     collegeDB=db
@@ -186,49 +188,64 @@ exports.question4 = function() {
     };
 };
 
-/*exports.question5 = function() {
+exports.question6 = function() {
+    var results = {};
     function compare(a,b) {
-        if (a.F1D01 > b.F1D01)
+        if (results[a]["revsPerStudents"] > results[b]["revsPerStudents"])
             return -1;
-        if (a.F1D01 < b.F1D01)
+        if (results[a]["revsPerStudents"] < results[b]["revsPerStudents"])
             return 1;
         return 0;
     }
+
+    var processResults = function (){
+        UnitIds = Object.keys(results);
+        sortedUnitIds = unitIds.sort(compare)
+        for(i=0;i<20;i++){
+            console.log(results[sortedUnitIds[i]])
+        }
+    }
     return function(req, res) {
-        var opts1 = {sort:{F1D01:-1}};
-        var flds1 = {UNITID:1,F1D01:1};
-        var flds2 = {INSTNM:1};
-        var results = [];
-        coll = collegeDB.collection("univs")
-        coll.find( {rowType:"FIN"}, flds1, opts1).toArray(
-            function (err, docs) {
-                docs.forEach(function(oneDoc){
-                    console.log(oneDoc._id,oneDoc.F1D01);
-                    if(oneDoc.F1D01!=""){
-                        coll.find({rowType:"GEN",UNITID:oneDoc.UNITID},flds2).toArray(
-                            function(err,doc){
-                                if (err) console.log(err);
-                                var univName = doc[0].INSTNM;
-                                var oneResult = {UNITID:oneDoc.UNITID, F1D01:oneDoc.F1D01, INSTNM:univName};
-                                //console.log(results);
-                                results.push(oneResult);
 
-                                if(results.length==20){
-                                    results.sort(compare);
-                                    //console.log(results);
-                                    res.render('question4',{"question4":results});
-                                }
-                            }
-                        )
-                    }
-
+        coll = collegeDB.collection("ENR10")
+        coll2= collegeDB.collection("FIN10")
+        console.log(coll);
+        coll.aggregate({
+                $group: { _id: "$UNITID",
+                    totStuds: { $sum: "$EFYTOTLT"}  } }, function (err, docs) {
+                //console.log(docs);
+                var skipped = 0;
+                docs.forEach(function(doc){
+                    //console.log(doc._id);
+                  coll2.find({UNITID:doc._id},{UNITID:1, F1A13:1}).toArray(
+                      function(err,docs2){
+                          if(docs2.length){
+                              //console.log(docs2[0].F1A13);
+                              var unitid = docs._id;
+                              var revs = docs2[0].F1A13;
+                              var students = doc.totStuds;
+                              results[unitid]={};
+                              var revPerStuds = revs/students;
+                              results[unitid]["totStudents"]=students;
+                              results[unitid]["totRevenues"]=revs;
+                              results[unitid]["revPerStudents"]=revPerStuds;
+                              var rcnt = _.size(results+skipped)
+                              if(_.size(results)+skipped==docs.length){
+                                 processResults();
+                              }
+                          }else{
+                            skipped++;
+                              if(_.size(results)+skipped==docs.length){
+                                processResults();
+                              }
+                          }
+                      }
+                  )
                 })
             }
         );
-
-
     };
-};*/
+};
 
 exports.question10 = function() {
 
