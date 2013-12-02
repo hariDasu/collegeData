@@ -378,7 +378,7 @@ exports.question7 = function() {
                         console.log(rdoc)
                         if ( rdoc.length ) {
                             runitId=rdoc.UNITID
-                            q6Results[runitId]["instName"] = rdoc.INSTNM
+                            q7Results[runitId]["instName"] = rdoc.INSTNM
                             retCnt++
                             if (retCnt == 20) {
                                 showFinalResults(sortedUnitIds, req,res)
