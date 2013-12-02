@@ -116,7 +116,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="4" selection-start="198" selection-end="198" vertical-scroll-proportion="0.6213018" vertical-offset="0" max-vertical-offset="480">
+            <state line="8" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.35502958" vertical-offset="0" max-vertical-offset="495">
               <folding />
             </state>
           </provider>
@@ -600,7 +600,11 @@
       <created>1385959103297</created>
       <updated>1385959103297</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added readme.md">
+      <created>1385960983656</created>
+      <updated>1385960983656</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -667,7 +671,8 @@
     <MESSAGE value="added dataTables" />
     <MESSAGE value="oops.. transposed columns fixed" />
     <MESSAGE value="limit 5 entries" />
-    <option name="LAST_COMMIT_MESSAGE" value="limit 5 entries" />
+    <MESSAGE value="added readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="added readme.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -778,7 +783,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="4" selection-start="198" selection-end="198" vertical-scroll-proportion="0.6213018" vertical-offset="0" max-vertical-offset="480">
+        <state line="8" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.35502958" vertical-offset="0" max-vertical-offset="495">
           <folding />
         </state>
       </provider>

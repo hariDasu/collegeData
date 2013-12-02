@@ -6,6 +6,7 @@ project for IS218- Fall 2013
 A practice in learning&using nodeJS with with MongoDB
 
 -What is being used:
+
 +NodeJS
 +MongoDB
 +Express
