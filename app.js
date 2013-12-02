@@ -41,8 +41,8 @@ app.get('/question10',routes.question10());
 app.get('/question6',routes.question6());
 app.get('/question7',routes.question7());
 app.get('/question8',routes.question8());
+app.get('/question9',routes.question9());
 /*app.get('/question2',routes.question2());
-app.get('/question2',routes.question2());
 
 app.get('/question2',routes.question2());
 app.get('/question2',routes.question2());*/

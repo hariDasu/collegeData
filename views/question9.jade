@@ -1,0 +1,34 @@
+extends datatables
+
+block content
+
+    h1 Colleges.
+    h3 Ranked by Liabilities per Student (descending)
+    div#nicetable
+        table#table.display.datatable(style="width: 100%;")
+            thead
+                tr
+                    th University ID
+                    th University Name
+                    th Number of Students
+                    th Total Liabilities
+                    th Net Assets
+                    th Revenue Per Student
+                    th Net Assets per Student
+                    th Liabilities per Student
+            tbody
+            each college, i in question9
+                tr
+                    td #{college.unitId}
+                    td #{college.univName}
+                    td #{college.totStudents}
+                    td $#{college.totLiabilities}
+                    td $#{college.totAss}
+                    td $#{college.revPerStudent}
+                    td $#{college.netAssPerStudent}
+                    td $#{college.liabilitiesPerStudent}
+
+
+
+
+

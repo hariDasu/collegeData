@@ -243,7 +243,7 @@ exports.question6 = function() {
             for(i=0;i<20;i++) {
                 curUnitId=sortedUnitIds[i]
                 console.log ( "Looking up " + curUnitId )
-                genColl.find({"UNITID" : curUnitId},{ "UNITID" :1, "INSTNM":1} ).toArray(
+                genColl.find({"UNITID" : parseInt(curUnitId)},{ "UNITID" :1, "INSTNM":1} ).toArray(
                     function (err, rdoc) {
                          console.log(rdoc)
                          if ( rdoc.length ) {
@@ -372,7 +372,7 @@ exports.question7 = function() {
             for(i=0;i<20;i++) {
                 curUnitId=sortedUnitIds[i]
                 console.log ( "Looking up " + curUnitId )
-                genColl.find({"UNITID" : curUnitId},{ "UNITID" :1, "INSTNM":1} ).toArray(
+                genColl.find({"UNITID" : parseInt(curUnitId)},{ "UNITID" :1, "INSTNM":1} ).toArray(
                     function (err, rdoc) {
                         console.log(rdoc)
                         if ( rdoc.length ) {
@@ -501,7 +501,7 @@ exports.question8 = function() {
             for(i=0;i<20;i++) {
                 curUnitId=sortedUnitIds[i]
                 console.log ( "Looking up " + curUnitId )
-                genColl.find({"UNITID" : curUnitId},{ "UNITID" :1, "INSTNM":1} ).toArray(
+                genColl.find({"UNITID" : parseInt(curUnitId)},{ "UNITID" :1, "INSTNM":1} ).toArray(
                     function (err, rdoc) {
                         console.log(rdoc)
                         if ( rdoc.length ) {
@@ -575,6 +575,27 @@ exports.question8 = function() {
     };
 };
 
+exports.question9 = function(){
+    return function (req,res){
+        coll = collegeDB.collection("univs");
+
+    var dataTableTest = [
+        {unitId: 1,univName:"NJIT",totStudents:12,
+            totLiabilities:55,totAss:55,revPerStudent:55,
+        netAssPerStudent:55,liabilitiesPerStudent:55},
+        {unitId: 1,univName:"NJIT",totStudents:12,
+            totLiabilities:55,totAss:55,revPerStudent:55,
+            netAssPerStudent:55,liabilitiesPerStudent:55},
+        {unitId: 1,univName:"NJIT",totStudents:12,
+            totLiabilities:55,totAss:55,revPerStudent:55,
+            netAssPerStudent:55,liabilitiesPerStudent:55},
+        {unitId: 1,univName:"NJIT",totStudents:12,
+            totLiabilities:55,totAss:55,revPerStudent:55,
+            netAssPerStudent:55,liabilitiesPerStudent:55}
+        ]
+        res.render('question9',{"question9":dataTableTest});
+    }
+}
 exports.question10 = function() {
 
     return function(req, res) {
