@@ -377,8 +377,8 @@ exports.question7 = function() {
                     function (err, rdoc) {
                         console.log(rdoc)
                         if ( rdoc.length ) {
-                            runitId=rdoc.UNITID
-                            q7Results[runitId]["instName"] = rdoc.INSTNM
+                            curUnitId=rdoc.UNITID
+                            q7Results[curUnitId]["instName"] = rdoc.INSTNM
                             retCnt++
                             if (retCnt == 20) {
                                 showFinalResults(sortedUnitIds, req,res)
@@ -507,8 +507,8 @@ exports.question8 = function() {
                     function (err, rdoc) {
                         console.log(rdoc)
                         if ( rdoc.length ) {
-                            runitId=rdoc.UNITID
-                            q8Results[runitId]["instName"] = rdoc.INSTNM
+                            curUnitId=rdoc.UNITID
+                            q8Results[curUnitId]["instName"] = rdoc.INSTNM
                             retCnt++
                             if (retCnt == 20) {
                                 showFinalResults(sortedUnitIds, req,res)
