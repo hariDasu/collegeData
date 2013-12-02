@@ -104,7 +104,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="3" selection-start="28" selection-end="28" vertical-scroll-proportion="0.083179295" vertical-offset="0" max-vertical-offset="840">
+            <state line="47" column="3" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.80406654" vertical-offset="270" max-vertical-offset="840">
               <folding />
             </state>
           </provider>
@@ -522,7 +522,11 @@
       <created>1386025914891</created>
       <updated>1386025914891</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="git readme!">
+      <created>1386025990162</created>
+      <updated>1386025990162</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -710,7 +714,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="3" selection-start="28" selection-end="28" vertical-scroll-proportion="0.083179295" vertical-offset="0" max-vertical-offset="840">
+        <state line="47" column="3" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.80406654" vertical-offset="270" max-vertical-offset="840">
           <folding />
         </state>
       </provider>

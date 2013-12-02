@@ -1,14 +1,14 @@
 
 collegeData
 ===========
-'''
+```
 75.126.159.214:11027/question1
 
 project for IS218- Fall 2013
 
 A practice in learning & using nodeJS with with MongoDB
-'''
--What is being used:
+```
+#What is being used:
 
 + NodeJS
 + MongoDB
@@ -20,7 +20,7 @@ A practice in learning & using nodeJS with with MongoDB
 + DataTables
 + & a whole lotta hashes.
 
-The approach
+#The approach
 
 -The data is loaded into 5 collections, 
   - ENR10 (enrollment 2010 (effy2010.csv)
@@ -43,8 +43,8 @@ is being done instantly on the client's browser using jQuery. Underscore was
 used merely to retrieve the length of an array in JavaScript without having
 to create a function just to do this:
 
-'''javascript
+```javascript
 rcnt = _.size(q6Results) +skipped;
-'''
+```
   
 
