@@ -226,7 +226,7 @@ exports.question6 = function() {
                      "revPerStudent" : q6Results[curUnitId]["revPerStudent"],
                      "totStudents" : q6Results[curUnitId]["totStudents"],
                      "totRevenue" : q6Results[curUnitId]["totRevenue"],
-                     "instName" : q6Results[curUnitId]["instName"],
+                     "instName" : q6Results[curUnitId]["instName"]
                      }
                 finalResult.push(oneItem)
             }
@@ -355,7 +355,8 @@ exports.question7 = function() {
                     "unitId" : curUnitId,
                     "netAssPerStudent" : q7Results[curUnitId]["netAssPerStudent"],
                     "totStudents" : q7Results[curUnitId]["totStudents"],
-                    "totAss" : q7Results[curUnitId]["totAss"]
+                    "totAss" : q7Results[curUnitId]["totAss"],
+                    "instName" : q7Results[curUnitId]["instName"]
                 }
                 finalResult.push(oneItem)
             }
@@ -484,7 +485,8 @@ exports.question8 = function() {
                     "unitId" : curUnitId,
                     "liabilitiesPerStudent" : q8Results[curUnitId]["liabilitiesPerStudent"],
                     "totStudents" : q8Results[curUnitId]["totStudents"],
-                    "totLiabilities" : q8Results[curUnitId]["totLiabilities"]
+                    "totLiabilities" : q8Results[curUnitId]["totLiabilities"],
+                    "instName" : q8Results[curUnitId]["instName"]
                 }
                 finalResult.push(oneItem)
             }
