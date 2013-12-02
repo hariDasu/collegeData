@@ -9,6 +9,7 @@ block content
             thead
                 tr
                     th University ID
+                    th Name of School
                     th Number of Students
                     th Total Net Assets
                     th Net Assets per Student
@@ -16,6 +17,7 @@ block content
             each college, i in question7
                 tr
                     td #{college.unitId}
+                    td #{college.instName}
                     td #{college.totStudents}
                     td $#{college.totAss}
                     td $#{college.netAssPerStudent}

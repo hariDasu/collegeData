@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4ada07-f49a-4fcd-9a0c-d3478c482f05" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/question6.jade" afterPath="$PROJECT_DIR$/views/question6.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/question7.jade" afterPath="$PROJECT_DIR$/views/question7.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/question8.jade" afterPath="$PROJECT_DIR$/views/question8.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="collegeData.iws" />
@@ -34,10 +37,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="503" column="60" selection-start="18947" selection-end="18947" vertical-scroll-proportion="0.8544521" vertical-offset="980" max-vertical-offset="3519">
+            <state line="503" column="60" selection-start="18947" selection-end="18947" vertical-scroll-proportion="0.0" vertical-offset="980" max-vertical-offset="3519">
               <folding>
                 <element signature="e#455#1882#0" expanded="false" />
                 <element signature="e#1916#3478#0" expanded="false" />
@@ -63,7 +66,7 @@
       <file leaf-file-name="question6.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/question6.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="39" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+            <state line="19" column="42" selection-start="548" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
               <folding />
             </state>
           </provider>
@@ -72,16 +75,16 @@
       <file leaf-file-name="question7.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/question7.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="23" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+            <state line="19" column="42" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="question8.jade" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="question8.jade" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/question8.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="45" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+            <state line="19" column="33" selection-start="564" selection-end="564" vertical-scroll-proportion="0.47738692" vertical-offset="0" max-vertical-offset="597">
               <folding />
             </state>
           </provider>
@@ -150,14 +153,14 @@
         <option value="$PROJECT_DIR$/views/bootstrap.jade" />
         <option value="$PROJECT_DIR$/views/question4.jade" />
         <option value="$PROJECT_DIR$/views/question10.jade" />
-        <option value="$PROJECT_DIR$/views/question6.jade" />
-        <option value="$PROJECT_DIR$/views/question7.jade" />
-        <option value="$PROJECT_DIR$/views/question8.jade" />
         <option value="$PROJECT_DIR$/views/datatables.jade" />
         <option value="$PROJECT_DIR$/public/js/initBody.js" />
         <option value="$PROJECT_DIR$/views/question9.jade" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/views/question6.jade" />
+        <option value="$PROJECT_DIR$/views/question7.jade" />
+        <option value="$PROJECT_DIR$/views/question8.jade" />
       </list>
     </option>
   </component>
@@ -397,7 +400,11 @@
       <created>1385946440658</created>
       <updated>1385946440658</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="9/12fths of the way.">
+      <created>1385946451906</created>
+      <updated>1385946451906</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -523,20 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/question6.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="39" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/question8.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="45" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/datatables.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
@@ -567,16 +560,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/question7.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="23" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="503" column="60" selection-start="18947" selection-end="18947" vertical-scroll-proportion="0.8544521" vertical-offset="980" max-vertical-offset="3519">
+        <state line="503" column="60" selection-start="18947" selection-end="18947" vertical-scroll-proportion="0.0" vertical-offset="980" max-vertical-offset="3519">
           <folding>
             <element signature="e#455#1882#0" expanded="false" />
             <element signature="e#1916#3478#0" expanded="false" />
@@ -586,6 +572,27 @@
             <element signature="e#11867#17046#0" expanded="false" />
             <element signature="e#23287#23754#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/question6.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="42" selection-start="548" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/question7.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="42" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/question8.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="33" selection-start="564" selection-end="564" vertical-scroll-proportion="0.47738692" vertical-offset="0" max-vertical-offset="597">
+          <folding />
         </state>
       </provider>
     </entry>
