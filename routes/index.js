@@ -221,12 +221,12 @@ exports.question6 = function() {
             var finalResult=[]
             for (i=0; i<20; i++ ) {
                 var curUnitId=sortedIds[i]
-                console.log( curUnitId  +  " : " )
                 oneItem={ 
                      "unitId" : curUnitId, 
                      "revPerStudent" : q6Results[curUnitId]["revPerStudent"],
                      "totStudents" : q6Results[curUnitId]["totStudents"],
                      "totRevenue" : q6Results[curUnitId]["totRevenue"],
+                     "instName" : q6Results[curUnitId]["instName"],
                      }
                 finalResult.push(oneItem)
             }
@@ -242,13 +242,13 @@ exports.question6 = function() {
             //console.log("SortedIds=" + sortedUnitIds)
             for(i=0;i<20;i++) {
                 curUnitId=sortedUnitIds[i]
-                console.log ( "Looking up " + curUnitId )
-                genColl.find({"UNITID" : parseInt(curUnitId)},{ "UNITID" :1, "INSTNM":1} ).toArray(
-                    function (err, rdoc) {
-                         console.log(rdoc)
-                         if ( rdoc.length ) {
-                             runitId=rdoc.UNITID
-                             q6Results[runitId]["instName"] = rdoc.INSTNM
+                console.log ( "Looking up [" + curUnitId + "]")
+                genColl.find({UNITID:parseInt(curUnitId)},{UNITID:1,INSTNM:1}).toArray(
+                    function (err, doc1) {
+                         console.log(doc1)
+                         if ( doc1.length ) {
+                             runitId=doc1[0].UNITID
+                             q6Results[runitId]["instName"] = doc1[0].INSTNM
                              retCnt++
                              if (retCnt == 20) {
                                 showFinalResults(sortedUnitIds, req,res) 
