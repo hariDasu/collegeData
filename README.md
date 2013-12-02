@@ -7,12 +7,12 @@ A practice in learning&using nodeJS with with MongoDB
 
 -What is being used:
 
-+NodeJS
-+MongoDB
-+Express
-+Jade
-+Underscore(minimally)
-+jQuery
++ NodeJS
++ MongoDB
++ Express
++ Jade
++ Underscore(minimally)
++ jQuery
 + & a whole lotta hashes.
 
 The approach
