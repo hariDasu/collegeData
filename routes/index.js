@@ -278,13 +278,13 @@ exports.question6 = function() {
                 docs.forEach(function(doc){
                    //console.log(doc._id);
                   // now we find the Revenue for the school (key=UNITID)
-                  coll2.find({UNITID:doc._id},{UNITID:1, F1A13:1}).toArray(
+                  coll2.find({UNITID:doc._id},{UNITID:1, F1D01:1}).toArray(
                       function(err,docs2){
                           // console.log(docs2)
                           if (docs2.length) {
                               //console.log(docs2[0].F1A13);
                               var unitid = docs2[0].UNITID
-                              var revs = docs2[0].F1A13;
+                              var revs = docs2[0].F1D01;
                               var students = doc.totStuds;
                               q6Results[unitid]={};
                               var revPerStud = revs/students;
@@ -408,13 +408,13 @@ exports.question7 = function() {
                 docs.forEach(function(doc){
                     //console.log(doc._id);
                     // now we find the Revenue for the school (key=UNITID)
-                    coll2.find({UNITID:doc._id},{UNITID:1, F1D01:1}).toArray(
+                    coll2.find({UNITID:doc._id},{UNITID:1, F1A18:1}).toArray(
                         function(err,docs2){
                             // console.log(docs2)
                             if (docs2.length) {
                                 //console.log(docs2[0].F1A13);
                                 var unitid = docs2[0].UNITID
-                                var netAss = docs2[0].F1D01;
+                                var netAss = docs2[0].F1A18;
                                 var students = doc.totStuds;
                                 q7Results[unitid]={};
                                 var assPerStud = netAss/students;
@@ -538,13 +538,13 @@ exports.question8 = function() {
                 docs.forEach(function(doc){
                     //console.log(doc._id);
                     // now we find the Revenue for the school (key=UNITID)
-                    coll2.find({UNITID:doc._id},{UNITID:1, F1A18:1}).toArray(
+                    coll2.find({UNITID:doc._id},{UNITID:1, F1A13:1}).toArray(
                         function(err,docs2){
                             // console.log(docs2)
                             if (docs2.length) {
                                 //console.log(docs2[0].F1A13);
                                 var unitid = docs2[0].UNITID
-                                var totalLiabilities = docs2[0].F1A18;
+                                var totalLiabilities = docs2[0].F1A13;
                                 var students = doc.totStuds;
                                 q8Results[unitid]={};
                                 var liabilitiesPerStudent = totalLiabilities/students;
