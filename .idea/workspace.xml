@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4ada07-f49a-4fcd-9a0c-d3478c482f05" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/question11.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/question12.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="collegeData.iws" />
@@ -38,20 +35,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="750" column="76" selection-start="29535" selection-end="29535" vertical-scroll-proportion="0.8376238" vertical-offset="522" max-vertical-offset="3045">
+            <state line="16" column="0" selection-start="337" selection-end="337" vertical-scroll-proportion="-6.0" vertical-offset="45" max-vertical-offset="2910">
               <folding>
+                <element signature="e#276#334#0" expanded="false" />
                 <element signature="e#455#1882#0" expanded="false" />
                 <element signature="e#1916#3478#0" expanded="false" />
                 <element signature="e#3512#5030#0" expanded="false" />
                 <element signature="e#5064#6582#0" expanded="false" />
-                <element signature="e#6616#11849#0" expanded="false" />
                 <element signature="e#11883#17139#0" expanded="false" />
                 <element signature="e#17173#22540#0" expanded="false" />
                 <element signature="e#22634#28124#0" expanded="false" />
                 <element signature="e#28211#28678#0" expanded="false" />
+                <element signature="e#28769#34810#0" expanded="false" />
                 <element signature="e#34921#40983#0" expanded="false" />
               </folding>
             </state>
@@ -70,7 +68,7 @@
       <file leaf-file-name="question4.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/question4.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="8" selection-start="121" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+            <state line="6" column="8" selection-start="121" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="390">
               <folding />
             </state>
           </provider>
@@ -88,7 +86,7 @@
       <file leaf-file-name="question11.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/question11.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="41" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+            <state line="15" column="41" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="435">
               <folding />
             </state>
           </provider>
@@ -97,7 +95,16 @@
       <file leaf-file-name="bootstrap.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/bootstrap.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="4" selection-start="311" selection-end="343" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+            <state line="10" column="4" selection-start="311" selection-end="343" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1020">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="0" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.6685083" vertical-offset="282" max-vertical-offset="825">
               <folding />
             </state>
           </provider>
@@ -106,16 +113,7 @@
       <file leaf-file-name="initBody.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/initBody.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="3" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataTables.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/src/DataTables.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="35" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="4350">
+            <state line="10" column="3" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240">
               <folding />
             </state>
           </provider>
@@ -159,11 +157,11 @@
         <option value="$PROJECT_DIR$/views/datatables.jade" />
         <option value="$PROJECT_DIR$/views/question9.jade" />
         <option value="$PROJECT_DIR$/public/js/initBody.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/views/question12.jade" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/question11.jade" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -322,13 +320,13 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="options.lastSelected" value="settings.nodejs" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nodetest1" />
+    <property name="options.lastSelected" value="settings.nodejs" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nodetest1" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -516,7 +514,11 @@
       <created>1385961577807</created>
       <updated>1385961577807</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="added 11 and 12... undefined values for liabilities">
+      <created>1386004888503</created>
+      <updated>1386004888503</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -549,7 +551,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26220095" sideWeight="0.6718213" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26139817" sideWeight="0.6718213" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39969134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -585,11 +587,12 @@
     <MESSAGE value="limit 5 entries" />
     <MESSAGE value="added readme.md" />
     <MESSAGE value="added dataTables.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dataTables.js" />
+    <MESSAGE value="added 11 and 12... undefined values for liabilities" />
+    <option name="LAST_COMMIT_MESSAGE" value="added 11 and 12... undefined values for liabilities" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -605,30 +608,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/question8.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="33" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding />
-        </state>
+        <state line="19" column="33" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/question6.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="42" selection-start="548" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding />
-        </state>
+        <state line="19" column="42" selection-start="548" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/datatables.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="33" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="8" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
+        <state line="9" column="33" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/src/DataTables.js">
@@ -659,23 +649,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/bootstrap.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="311" selection-end="343" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/question4.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="8" selection-start="121" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/question12.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="32" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
           <folding />
         </state>
       </provider>
@@ -694,21 +670,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/bootstrap.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="4" selection-start="311" selection-end="343" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/question12.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="32" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="750" column="76" selection-start="29535" selection-end="29535" vertical-scroll-proportion="0.8376238" vertical-offset="522" max-vertical-offset="3045">
+        <state line="16" column="0" selection-start="337" selection-end="337" vertical-scroll-proportion="-6.0" vertical-offset="45" max-vertical-offset="2910">
           <folding>
+            <element signature="e#276#334#0" expanded="false" />
             <element signature="e#455#1882#0" expanded="false" />
             <element signature="e#1916#3478#0" expanded="false" />
             <element signature="e#3512#5030#0" expanded="false" />
             <element signature="e#5064#6582#0" expanded="false" />
-            <element signature="e#6616#11849#0" expanded="false" />
             <element signature="e#11883#17139#0" expanded="false" />
             <element signature="e#17173#22540#0" expanded="false" />
             <element signature="e#22634#28124#0" expanded="false" />
             <element signature="e#28211#28678#0" expanded="false" />
+            <element signature="e#28769#34810#0" expanded="false" />
             <element signature="e#34921#40983#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.6685083" vertical-offset="282" max-vertical-offset="825">
+          <folding />
         </state>
       </provider>
     </entry>
