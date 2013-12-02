@@ -3,10 +3,10 @@ html
   head
     title= title
     link(rel='stylesheet', href='/css/style.css')
-    link(rel='stylesheet', href='http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css')
-
-    script(src='//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js')
-
+    link(rel='stylesheet',href='css/jquery.dataTables.css')
     script(src='/js/jquery.js')
+    script(src='/src/DataTables.js')
+    script(src='/js/jquery.dataTables.js')
+    script(src='/js/initBody.js')
   body(onload=initBody)
     block content

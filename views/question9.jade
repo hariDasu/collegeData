@@ -1,11 +1,11 @@
-extends datatables
+extends bootstrap
 
 block content
 
     h1 Colleges.
     h3 Ranked by Liabilities per Student (descending)
     div#nicetable
-        table#table.display.datatable(style="width: 100%;")
+        table#prettyTable.display.datatable.table-bordered.table-hover.table
             thead
                 tr
                     th University ID
@@ -16,7 +16,6 @@ block content
                     th Revenue Per Student
                     th Net Assets per Student
                     th Liabilities per Student
-            tbody
             each college, i in question9
                 tr
                     td #{college.unitId}

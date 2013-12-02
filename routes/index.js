@@ -583,17 +583,28 @@ exports.question9 = function(){
 
     var dataTableTest = [
         {unitId: 1,univName:"NJIT",totStudents:12,
-            totLiabilities:55,totAss:55,revPerStudent:55,
-        netAssPerStudent:55,liabilitiesPerStudent:55},
+            totLiabilities:53245,totAss:12,revPerStudent:52,
+        netAssPerStudent:5523,liabilitiesPerStudent:55},
         {unitId: 1,univName:"NJIT",totStudents:12,
-            totLiabilities:55,totAss:55,revPerStudent:55,
-            netAssPerStudent:55,liabilitiesPerStudent:55},
+            totLiabilities:2355,totAss:13,revPerStudent:24,
+            netAssPerStudent:52345,liabilitiesPerStudent:545},
         {unitId: 1,univName:"NJIT",totStudents:12,
-            totLiabilities:55,totAss:55,revPerStudent:55,
-            netAssPerStudent:55,liabilitiesPerStudent:55},
+            totLiabilities:54235,totAss:14,revPerStudent:557,
+            netAssPerStudent:53425,liabilitiesPerStudent:5565},
         {unitId: 1,univName:"NJIT",totStudents:12,
-            totLiabilities:55,totAss:55,revPerStudent:55,
-            netAssPerStudent:55,liabilitiesPerStudent:55}
+            totLiabilities:53425,totAss:54,revPerStudent:5675},
+        {unitId: 1,univName:"NJIT",totStudents:12,
+            totLiabilities:53245,totAss:12,revPerStudent:52,
+            netAssPerStudent:5523,liabilitiesPerStudent:55},
+        {unitId: 1,univName:"NJIT",totStudents:12,
+            totLiabilities:2355,totAss:13,revPerStudent:24,
+            netAssPerStudent:52345,liabilitiesPerStudent:545},
+        {unitId: 1,univName:"NJIT",totStudents:12,
+            totLiabilities:54235,totAss:14,revPerStudent:557,
+            netAssPerStudent:53425,liabilitiesPerStudent:5565},
+        {unitId: 1,univName:"NJIT",totStudents:12,
+            totLiabilities:53425,totAss:54,revPerStudent:5675,
+            netAssPerStudent:54235,liabilitiesPerStudent:556}
         ]
         res.render('question9',{"question9":dataTableTest});
     }
