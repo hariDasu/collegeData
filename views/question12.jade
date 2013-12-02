@@ -1,0 +1,23 @@
+extends bootstrap
+
+block content
+    h1 Colleges.
+    h3 Ranked by % increase in enrollment
+    h4 From 2010-2011
+    div.nicetable
+        table#table.table-hover.table-bordered
+            thead
+                tr
+                    th College Name
+                    th Total Students 2010
+                    th Total Students 2011
+                    th % increase in Enrollment
+            tbody
+            each college, i in question12
+                tr
+                    td #{college.instName}
+                    td #{college.totStuds2010}
+                    td #{college.totStuds2011}
+                    td #{college.deltaPercent}
+
+

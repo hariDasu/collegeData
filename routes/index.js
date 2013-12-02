@@ -725,6 +725,279 @@ exports.question10 = function() {
         };
 };
 
+//---------------------------------------------------
+
+
+exports.question11 = function() {
+    var q11FinalResult=[]
+    var q11DeltasBySchool={}
+
+    function compare11(a,b) {
+        if (q11DeltasBySchool[a]["deltaLiabs"] > q11DeltasBySchool[b]["deltaLiabs"])
+            return -1;
+        if (q11DeltasBySchool[a]["deltaLiabs"] < q11DeltasBySchool[b]["deltaLiabs"])
+            return 1;
+        return 0;
+    }
+
+    function showFinalResults(sortedIds, req, res){
+        var finalResult=[]
+        for (i=0; i<20; i++ ) {
+            var curUnitId=sortedIds[i]
+            oneItem={
+                "unitId" : curUnitId,
+                "deltaLiabs" : q11DeltasBySchool[curUnitId]["deltaLiabs"],
+                "totLiabs2010" : q11DeltasBySchool[curUnitId]["totLiabs10"],
+                "totLiabs2011" : q11DeltasBySchool[curUnitId]["totLiabs11"],
+                "instName" : q11DeltasBySchool[curUnitId]["instName"]
+            }
+            q11FinalResult.push(oneItem)
+        }
+        console.log(q11FinalResult)
+        res.render('question11',{"question11":q11FinalResult});
+    }
+
+    function processFinalResults(req,res){
+        unitIds = Object.keys(q11DeltasBySchool);
+        sortedUnitIds = unitIds.sort(compare11)
+        retCnt=0
+        genColl=collegeDB.collection("GEN")
+        //console.log("SortedIds=" + sortedUnitIds)
+        for(i=0;i<20;i++) {
+            curUnitId=sortedUnitIds[i]
+            console.log ( "Looking up [" + curUnitId + "]")
+            genColl.find({UNITID:parseInt(curUnitId)},{UNITID:1,INSTNM:1}).toArray(
+                function (err, doc1) {
+                    console.log(doc1)
+                    if ( doc1.length ) {
+                        runitId=doc1[0].UNITID
+                        q11DeltasBySchool[runitId]["instName"] = doc1[0].INSTNM
+                        retCnt++
+                        if (retCnt == 20) {
+                            showFinalResults(sortedUnitIds, req,res)
+                        }
+                    } else {
+                        retCnt++
+                        if (retCnt == 20) {
+                            showFinalResults(sortedUnitIds,req,res)
+                        }
+                    }
+                }
+            )
+        }
+    }
+    //----------------------------------------
+    return function(req, res) {
+        collFin10 = collegeDB.collection("FIN10")   // financials-2010
+        collFin11 = collegeDB.collection("FIN11")   // financials-2011
+        //------------ Lvl1 Fetch -------
+        console.log ("Q12: Fetching aggregate 2011 Liabilities..")
+        collFin10.aggregate(
+            {
+                $group: { _id: "$UNITID",
+                    totStuds: { $sum: "$F1A13"}  }
+            }, function (err, docs1) {
+                console.log("Q11: Fetched " + docs1.length + " records");
+                var skipped=0;
+                var rcnt=0 ;      // count of processed records
+                var pcnt=0 ;   // rcnt + skipped
+                console.log("Q12: Now Fetch matching 2011 liabilities");
+                docs1.forEach( function(doc1){
+                        // db.ENR11.aggregate( [ { $match : { UNITID: 196307} }, { $group : {_id: "$UNITID", "totStuds": { $sum: "$EFYTOTLT"} } } ] )
+                        collFin11.aggregate(
+                            [
+                                {
+                                    $match : {
+                                        UNITID : parseInt(doc1._id)
+                                    }
+                                },
+                                {
+                                    $group: {
+                                        _id: "$UNITID",
+                                        totStuds: { $sum: "$F1A13"}
+                                    }
+                                }
+                            ] , function (err, docs2) {
+                                // console.log (docs2)
+                                if  (docs2.length ) {
+                                    rcnt++
+                                    var unitId=docs2[0]._id
+                                    var totLiabs11=docs2[0].totLiabs11
+                                    var totLiabs10=docs1[0].totLiabs10
+                                    //console.log( "UNITID: " +  unitId )
+                                    //console.log( "2011: " +  totStuds11 )
+                                    //console.log( "2010: " +  totStuds10 )
+                                    var deltaPercent= (totLiabs11/totLiabs10)*100
+                                    q11DeltasBySchool[unitId]={
+                                        "totStuds2011" : totLiabs11,
+                                        "totStuds2010" : totLiabs10,
+                                        "deltaPercent" : deltaPercent
+                                    }
+                                    pcnt=rcnt+skipped
+                                    if ( pcnt == docs1.length) {
+                                        console.log( "Done")
+                                        processFinalResults(req,res)
+                                    }
+                                } else  {
+                                    skipped++
+                                    pcnt=rcnt+skipped
+                                    if ( pcnt == docs1.length) {
+                                        console.log( "Done")
+                                        processFinalResults(req,res)
+                                    }
+                                }
+
+                                if ( (docs1.length - pcnt) < 20 )  {
+                                    console.log ("q12: " + pcnt )
+                                }  else {
+                                    if  ( (pcnt % 1000 ) == 0 ) {
+                                        console.log ("q12: " + pcnt )
+                                    }
+                                }
+                            }
+                        )
+                    }  // docs.forEach
+                )
+            }  // agg Lvl1 CB func
+        )  // agg Lvl 1
+    }  // outer func (req,res)
+} // exported func
+
+//---------------------------------------------------------
+exports.question12 = function() {
+    var q12FinalResult=[]
+    var q12DeltasBySchool={}
+
+    function compare12(a,b) {
+        if (q12DeltasBySchool[a]["deltaPercent"] > q12DeltasBySchool[b]["deltaPercent"])
+            return -1;
+        if (q12DeltasBySchool[a]["deltaPercent"] < q12DeltasBySchool[b]["deltaPercent"])
+            return 1;
+        return 0;
+    }
+
+    function showFinalResults(sortedIds, req, res){
+        var finalResult=[]
+        for (i=0; i<20; i++ ) {
+            var curUnitId=sortedIds[i]
+            oneItem={
+                "unitId" : curUnitId,
+                "deltaPercent" : q12DeltasBySchool[curUnitId]["deltaPercent"],
+                "totStuds2010" : q12DeltasBySchool[curUnitId]["totStuds2010"],
+                "totStuds2011" : q12DeltasBySchool[curUnitId]["totStuds2011"],
+                "instName" : q12DeltasBySchool[curUnitId]["instName"]
+            }
+            q12FinalResult.push(oneItem)
+        }
+        console.log(q12FinalResult)
+        res.render('question12',{"question12":q12FinalResult});
+    }
+
+    function processFinalResults(req,res){
+        unitIds = Object.keys(q12DeltasBySchool);
+        sortedUnitIds = unitIds.sort(compare12)
+        retCnt=0
+        genColl=collegeDB.collection("GEN")
+        //console.log("SortedIds=" + sortedUnitIds)
+        for(i=0;i<20;i++) {
+            curUnitId=sortedUnitIds[i]
+            console.log ( "Looking up [" + curUnitId + "]")
+            genColl.find({UNITID:parseInt(curUnitId)},{UNITID:1,INSTNM:1}).toArray(
+                function (err, doc1) {
+                    console.log(doc1)
+                    if ( doc1.length ) {
+                        runitId=doc1[0].UNITID
+                        q12DeltasBySchool[runitId]["instName"] = doc1[0].INSTNM
+                        retCnt++
+                        if (retCnt == 20) {
+                            showFinalResults(sortedUnitIds, req,res)
+                        }
+                    } else {
+                        retCnt++
+                        if (retCnt == 20) {
+                            showFinalResults(sortedUnitIds,req,res)
+                        }
+                    }
+                }
+            )
+        }
+    }
+    //----------------------------------------
+    return function(req, res) {
+        collEnr10 = collegeDB.collection("ENR10")   // enrollments-2010
+        collEnr11 = collegeDB.collection("ENR11")   // enrollments-2011
+        //------------ Lvl1 Fetch -------
+        console.log ("Q12: Fetching aggregate 2010 enrollments ..")
+        collEnr10.aggregate(
+            {
+                $group: { _id: "$UNITID",
+                    totStuds: { $sum: "$EFYTOTLT"}  }
+            }, function (err, docs1) {
+                console.log("Q12: Fetched " + docs1.length + " records");
+                var skipped=0;
+                var rcnt=0 ;      // count of processed records
+                var pcnt=0 ;   // rcnt + skipped
+                console.log("Q12: Now Fetch matching 2011 enrollments");
+                docs1.forEach( function(doc1){
+                        // db.ENR11.aggregate( [ { $match : { UNITID: 196307} }, { $group : {_id: "$UNITID", "totStuds": { $sum: "$EFYTOTLT"} } } ] )
+                        collEnr11.aggregate(
+                            [
+                                {
+                                    $match : {
+                                        UNITID : parseInt(doc1._id)
+                                    }
+                                },
+                                {
+                                    $group: {
+                                        _id: "$UNITID",
+                                        totStuds: { $sum: "$EFYTOTLT"}
+                                    }
+                                }
+                            ] , function (err, docs2) {
+                                // console.log (docs2)
+                                if  (docs2.length ) {
+                                    rcnt++
+                                    var unitId=docs2[0]._id
+                                    var totStuds11=docs2[0].totStuds
+                                    var totStuds10=docs1[0].totStuds
+                                    //console.log( "UNITID: " +  unitId )
+                                    //console.log( "2011: " +  totStuds11 )
+                                    //console.log( "2010: " +  totStuds10 )
+                                    var deltaPercent= (totStuds11/totStuds10)*100
+                                    q12DeltasBySchool[unitId]={
+                                        "totStuds2011" : totStuds11,
+                                        "totStuds2010" : totStuds10,
+                                        "deltaPercent" : deltaPercent
+                                    }
+                                    pcnt=rcnt+skipped
+                                    if ( pcnt == docs1.length) {
+                                        console.log( "Done")
+                                        processFinalResults(req,res)
+                                    }
+                                } else  {
+                                    skipped++
+                                    pcnt=rcnt+skipped
+                                    if ( pcnt == docs1.length) {
+                                        console.log( "Done")
+                                        processFinalResults(req,res)
+                                    }
+                                }
+
+                                if ( (docs1.length - pcnt) < 20 )  {
+                                    console.log ("q12: " + pcnt )
+                                }  else {
+                                    if  ( (pcnt % 1000 ) == 0 ) {
+                                        console.log ("q12: " + pcnt )
+                                    }
+                                }
+                            }
+                        )
+                    }  // docs.forEach
+                )
+            }  // agg Lvl1 CB func
+        )  // agg Lvl 1
+    }  // outer func (req,res)
+} // exported func
 
     exports.univTest = function() {
     return function(req, res) {

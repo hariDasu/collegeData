@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4ada07-f49a-4fcd-9a0c-d3478c482f05" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/src/DataTables.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/question11.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/question12.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="collegeData.iws" />
@@ -29,41 +32,28 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="33" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="915">
+            <state line="45" column="43" selection-start="1246" selection-end="1246" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="885">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="524" column="9" selection-start="19905" selection-end="19905" vertical-scroll-proportion="0.0" vertical-offset="7014" max-vertical-offset="8610">
+            <state line="750" column="76" selection-start="29535" selection-end="29535" vertical-scroll-proportion="0.8376238" vertical-offset="522" max-vertical-offset="3045">
               <folding>
                 <element signature="e#455#1882#0" expanded="false" />
                 <element signature="e#1916#3478#0" expanded="false" />
                 <element signature="e#3512#5030#0" expanded="false" />
                 <element signature="e#5064#6582#0" expanded="false" />
+                <element signature="e#6616#11849#0" expanded="false" />
+                <element signature="e#11883#17139#0" expanded="false" />
+                <element signature="e#17173#22540#0" expanded="false" />
+                <element signature="e#22634#28124#0" expanded="false" />
                 <element signature="e#28211#28678#0" expanded="false" />
+                <element signature="e#34921#40983#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="question6.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/question6.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="42" selection-start="548" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="465">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="question8.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/question8.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="33" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="465">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -71,7 +61,34 @@
       <file leaf-file-name="question9.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/question9.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="76" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="585">
+            <state line="7" column="76" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="585">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="question4.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/question4.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="8" selection-start="121" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="question12.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/question12.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="32" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="question11.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/question11.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="41" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
               <folding />
             </state>
           </provider>
@@ -80,16 +97,7 @@
       <file leaf-file-name="bootstrap.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/bootstrap.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="4" selection-start="311" selection-end="343" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1020">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="datatables.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/datatables.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="33" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="255">
+            <state line="10" column="4" selection-start="311" selection-end="343" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
               <folding />
             </state>
           </provider>
@@ -104,22 +112,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="DataTables.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/src/DataTables.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="8" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+            <state line="11" column="35" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="4350">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataTables.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/src/DataTables.js">
+      <file leaf-file-name="question10.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/question10.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="22" selection-start="2383" selection-end="2383" vertical-scroll-proportion="0.46153846" vertical-offset="255" max-vertical-offset="4350">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="29" column="0" selection-start="938" selection-end="938" vertical-scroll-proportion="0.0" vertical-offset="37" max-vertical-offset="555">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,31 +148,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/views/univs.jade" />
-        <option value="$PROJECT_DIR$/views/question2.jade" />
         <option value="$PROJECT_DIR$/views/question1.jade" />
         <option value="$PROJECT_DIR$/views/question3.jade" />
         <option value="$PROJECT_DIR$/views/question4.jade" />
         <option value="$PROJECT_DIR$/views/question10.jade" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/question6.jade" />
         <option value="$PROJECT_DIR$/views/question7.jade" />
         <option value="$PROJECT_DIR$/views/question8.jade" />
         <option value="$PROJECT_DIR$/views/bootstrap.jade" />
         <option value="$PROJECT_DIR$/views/datatables.jade" />
         <option value="$PROJECT_DIR$/views/question9.jade" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/public/js/initBody.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/views/question12.jade" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/question11.jade" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="138" />
-    <option name="y" value="44" />
-    <option name="width" value="1091" />
-    <option name="height" value="700" />
+    <option name="x" value="45" />
+    <option name="y" value="48" />
+    <option name="width" value="1033" />
+    <option name="height" value="712" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -316,13 +322,13 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="settings.nodejs" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../nodetest1" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -359,118 +365,6 @@
       <recent name="$PROJECT_DIR$/public/js" />
       <recent name="$PROJECT_DIR$" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree">
-    <UpdateInfo date="Moments ago" ActionInfo="_Update">
-      <UpdatedFiles>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated from server" />
-          <option name="myStatusName" value="Changed on server" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CHANGED_ON_SERVER" />
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Updated" />
-            <option name="myStatusName" value="Changed" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="UPDATED" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Created" />
-            <option name="myStatusName" value="Created" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="CREATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/README.md</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Deleted" />
-            <option name="myStatusName" value="Deleted" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="true" />
-            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Restored" />
-            <option name="myStatusName" value="Will be restored" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="RESTORED" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Modified" />
-          <option name="myStatusName" value="Modified" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MODIFIED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Skipped" />
-          <option name="myStatusName" value="Skipped" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SKIPPED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with conflicts" />
-          <option name="myStatusName" value="Will be merged with conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_CONFLICTS" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with tree conflicts" />
-          <option name="myStatusName" value="Merged with tree conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with property conflicts" />
-          <option name="myStatusName" value="Will be merged with property conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged" />
-          <option name="myStatusName" value="Will be merged" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Not in repository" />
-          <option name="myStatusName" value="Not in repository" />
-          <option name="mySupportsDeletion" value="true" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UNKNOWN" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally added" />
-          <option name="myStatusName" value="Locally added" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_ADDED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally removed" />
-          <option name="myStatusName" value="Locally removed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_REMOVED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Switched" />
-          <option name="myStatusName" value="Switched" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SWITCHED" />
-        </FILE-GROUP>
-      </UpdatedFiles>
-    </UpdateInfo>
   </component>
   <component name="RunManager" selected="Node.js.index.js">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -618,7 +512,11 @@
       <created>1385961142953</created>
       <updated>1385961142953</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added dataTables.js">
+      <created>1385961577807</created>
+      <updated>1385961577807</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -642,26 +540,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="138" y="44" width="1091" height="700" extended-state="0" />
+    <frame x="45" y="48" width="1033" height="712" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39969134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32931036" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25741628" sideWeight="0.67068964" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26220095" sideWeight="0.6718213" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39969134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281787" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990307" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -686,7 +584,8 @@
     <MESSAGE value="oops.. transposed columns fixed" />
     <MESSAGE value="limit 5 entries" />
     <MESSAGE value="added readme.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="added readme.md" />
+    <MESSAGE value="added dataTables.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="added dataTables.js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -694,38 +593,14 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/question4.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="44" selection-start="94" selection-end="94" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/question1.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="17" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/question2.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="47" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/helloworld.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="597">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/question10.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="938" selection-end="938" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="597" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/question7.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="42" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding />
-        </state>
+        <state line="19" column="42" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/question8.jade">
@@ -742,50 +617,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/bootstrap.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="311" selection-end="343" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/datatables.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="33" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/question9.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="76" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="33" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="915">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="524" column="9" selection-start="19905" selection-end="19905" vertical-scroll-proportion="0.0" vertical-offset="7014" max-vertical-offset="8610">
-          <folding>
-            <element signature="e#455#1882#0" expanded="false" />
-            <element signature="e#1916#3478#0" expanded="false" />
-            <element signature="e#3512#5030#0" expanded="false" />
-            <element signature="e#5064#6582#0" expanded="false" />
-            <element signature="e#28211#28678#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/initBody.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="3" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
           <folding />
         </state>
       </provider>
@@ -799,9 +633,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/src/DataTables.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="22" selection-start="2383" selection-end="2383" vertical-scroll-proportion="0.46153846" vertical-offset="255" max-vertical-offset="4350">
+        <state line="11" column="35" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="4350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/initBody.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="3" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/question10.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="938" selection-end="938" vertical-scroll-proportion="0.0" vertical-offset="37" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/question9.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="76" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/bootstrap.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="4" selection-start="311" selection-end="343" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/question4.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="8" selection-start="121" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/question12.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="32" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="43" selection-start="1246" selection-end="1246" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/question11.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="41" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="750" column="76" selection-start="29535" selection-end="29535" vertical-scroll-proportion="0.8376238" vertical-offset="522" max-vertical-offset="3045">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#455#1882#0" expanded="false" />
+            <element signature="e#1916#3478#0" expanded="false" />
+            <element signature="e#3512#5030#0" expanded="false" />
+            <element signature="e#5064#6582#0" expanded="false" />
+            <element signature="e#6616#11849#0" expanded="false" />
+            <element signature="e#11883#17139#0" expanded="false" />
+            <element signature="e#17173#22540#0" expanded="false" />
+            <element signature="e#22634#28124#0" expanded="false" />
+            <element signature="e#28211#28678#0" expanded="false" />
+            <element signature="e#34921#40983#0" expanded="false" />
           </folding>
         </state>
       </provider>
