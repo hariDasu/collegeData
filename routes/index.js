@@ -577,38 +577,138 @@ exports.question8 = function() {
     };
 };
 
+//----------------------------------------------------------
 exports.question9 = function(){
-    return function (req,res){
-        coll = collegeDB.collection("univs");
-
-    var dataTableTest = [
-        {unitId: 1,univName:"NJIT",totStudents:12,
-            totLiabilities:53245,totAss:12,revPerStudent:52,
-        netAssPerStudent:5523,liabilitiesPerStudent:55},
-        {unitId: 1,univName:"NJIT",totStudents:12,
-            totLiabilities:2355,totAss:13,revPerStudent:24,
-            netAssPerStudent:52345,liabilitiesPerStudent:545},
-        {unitId: 1,univName:"NJIT",totStudents:12,
-            totLiabilities:54235,totAss:14,revPerStudent:557,
-            netAssPerStudent:53425,liabilitiesPerStudent:5565},
-        {unitId: 1,univName:"NJIT",totStudents:12,
-            totLiabilities:53425,totAss:54,revPerStudent:5675},
-        {unitId: 1,univName:"NJIT",totStudents:12,
-            totLiabilities:53245,totAss:12,revPerStudent:52,
-            netAssPerStudent:5523,liabilitiesPerStudent:55},
-        {unitId: 1,univName:"NJIT",totStudents:12,
-            totLiabilities:2355,totAss:13,revPerStudent:24,
-            netAssPerStudent:52345,liabilitiesPerStudent:545},
-        {unitId: 1,univName:"NJIT",totStudents:12,
-            totLiabilities:54235,totAss:14,revPerStudent:557,
-            netAssPerStudent:53425,liabilitiesPerStudent:5565},
-        {unitId: 1,univName:"NJIT",totStudents:12,
-            totLiabilities:53425,totAss:54,revPerStudent:5675,
-            netAssPerStudent:54235,liabilitiesPerStudent:556}
+    /*
+    var sampleResults = [
+        {
+        unitId: 1,
+        univName:"NJIT",
+        totStudents:12,
+        totLiabilities:53245,
+        totAss:12,
+        revPerStudent:52,
+        netAssPerStudent:5523,
+        liabilitiesPerStudent:55},
         ]
-        res.render('question9',{"question9":dataTableTest});
-    }
+    */
+
+    var q9Results = {};
+
+    //----------------------------------------
+    return function(req, res) {
+
+        function showFinalResults(allUnitIds, req, res){
+            var finalResults=[]
+            for (i=0; i<allUnitIds.length; i++ ) {
+                var curUnitId=allUnitIds[i]
+                oneItem={ 
+                     "unitId" : curUnitId, 
+                     "univName" : q9Results[curUnitId]["instName"],
+                     "totStudents" : q9Results[curUnitId]["totStudents"],
+                     "totRevenue" : q9Results[curUnitId]["totRevenue"],
+                     "totAss" : q9Results[curUnitId]["totAssets"],
+                     "revPerStudent" : q9Results[curUnitId]["revPerStudent"],
+                     "netAssPerStudent" : q9Results[curUnitId]["assetsPerStudent"],
+                     "liabilitiesPerStudent" : q9Results[curUnitId]["liabPerStudent"],
+                     }
+                finalResults.push(oneItem)
+            }
+            // console.log(finalResult)
+            res.render('question9',{"question9": finalResults});
+        }
+
+        function processResults(req,res){
+            unitIds = Object.keys(q9Results);
+            retCnt=0
+            genColl=collegeDB.collection("GEN")
+            for(i=0;i<unitIds.length; i++) {
+                curUnitId=unitIds[i]
+                console.log ( "Looking up [" + curUnitId + "]")
+                genColl.find({UNITID:parseInt(curUnitId)},{UNITID:1,INSTNM:1}).toArray(
+                    function (err, doc1) {
+                         console.log(doc1)
+                         if ( doc1.length ) {
+                             runitId=doc1[0].UNITID
+                             q9Results[runitId]["instName"] = doc1[0].INSTNM
+                             retCnt++
+                             if (retCnt == unitIds.length) {
+                                showFinalResults(unitIds, req,res) 
+                             }
+                        } else {
+                             retCnt++
+                             if (retCnt == unitIds.length) {
+                                showFinalResults(unitIds,req,res)
+                             }
+                        }
+                    }
+                )
+           }
+        }
+
+        coll = collegeDB.collection("ENR10")   // enrollments
+        coll2= collegeDB.collection("FIN10")   // financials
+        //console.log(coll);
+        // first we check enrollment aggregates per each school (UNITID)
+        console.log ("Fetching aggregate ENRollments ..")
+        coll.aggregate({
+                $group: { _id: "$UNITID",
+                    totStuds: { $sum: "$EFYTOTLT"}  } }, function (err, docs) {   
+                console.log("Fetched " + docs.length + " records");
+                var skipped=0;
+                var rcnt=0 ;      // count of processed records
+                docs.forEach(function(doc){
+                   //console.log(doc._id);
+                  // now we find the Revenue for the school (key=UNITID)
+                  coll2.find({UNITID:doc._id},{UNITID:1, F1A13:1, F1A18:1, F1D01:1 }).toArray(
+                      function(err,docs2){
+                          // console.log(docs2)
+                          if (docs2.length) {
+                              //console.log(docs2[0].F1A13);
+                              var unitid = docs2[0].UNITID
+                              var liabs = docs2[0].F1A13;  // liabilities
+                              var assets = docs2[0].F1A18; // asets
+                              var revs = docs2[0].F1D01;   // revenue
+                              var students = doc.totStuds;
+
+                              q9Results[unitid]={};
+                              var revPerStud = revs/students;
+                              var liabPerStud = liabs/students;
+                              var assetsPerStud = assets/students;
+
+                              q9Results[unitid]["totStudents"]=students;
+                              q9Results[unitid]["totRevenue"]=revs;
+                              q9Results[unitid]["revPerStudent"]=revPerStud;
+                              q9Results[unitid]["liabPerStudent"]=liabPerStud;
+                              q9Results[unitid]["assetsPerStudent"]=assetsPerStud;
+
+                              rcnt = _.size(q9Results) +skipped
+                              if(rcnt==docs.length){
+                                 processResults(req,res);
+                              } 
+                          } else {
+                              skipped++;
+                              rcnt = _.size(q9Results) +skipped
+                              if(rcnt==docs.length){
+                                processResults(req,res);
+                              }
+                          }
+                          if ( docs.length - rcnt > 20 ) {
+                              if ( (rcnt % 1000) == 0 ) {
+                                 console.log ("processed " + rcnt)
+                              }
+                          } else {
+                             console.log ("processed " + rcnt)
+                          }
+                      }
+                  )
+                })
+            }
+        );
+    };
 }
+
+//--------------------------------------------------
 exports.question10 = function() {
 
     return function(req, res) {
