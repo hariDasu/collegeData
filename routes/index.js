@@ -863,6 +863,7 @@ exports.question11 = function() {
     }  // outer func (req,res)
 } // exported func
 
+
 //---------------------------------------------------------
 exports.question12 = function() {
     var q12FinalResult=[]
@@ -926,6 +927,7 @@ exports.question12 = function() {
     return function(req, res) {
         collEnr10 = collegeDB.collection("ENR10")   // enrollments-2010
         collEnr11 = collegeDB.collection("ENR11")   // enrollments-2011
+        var  totStudents2010={}
         //------------ Lvl1 Fetch -------
         console.log ("Q12: Fetching aggregate 2010 enrollments ..")
         collEnr10.aggregate(
@@ -940,6 +942,7 @@ exports.question12 = function() {
                 console.log("Q12: Now Fetch matching 2011 enrollments");
                 docs1.forEach( function(doc1){
                         // db.ENR11.aggregate( [ { $match : { UNITID: 196307} }, { $group : {_id: "$UNITID", "totStuds": { $sum: "$EFYTOTLT"} } } ] )
+                        totStudents2010[doc1._id] = doc1.totStuds
                         collEnr11.aggregate(
                             [
                                 {
@@ -959,15 +962,15 @@ exports.question12 = function() {
                                     rcnt++
                                     var unitId=docs2[0]._id
                                     var totStuds11=docs2[0].totStuds
-                                    var totStuds10=docs1[0].totStuds
+                                    var totStuds10=totStudents2010[unitId]
                                     //console.log( "UNITID: " +  unitId )
                                     //console.log( "2011: " +  totStuds11 )
                                     //console.log( "2010: " +  totStuds10 )
-                                    var deltaPercent= (totStuds11/totStuds10)*100
+                                    var deltaPercent=(totStuds11/totStuds10)*100 
                                     q12DeltasBySchool[unitId]={
                                         "totStuds2011" : totStuds11,
                                         "totStuds2010" : totStuds10,
-                                        "deltaPercent" : deltaPercent
+                                        "deltaPercent" : Math.round(deltaPercent*100)/100
                                     }
                                     pcnt=rcnt+skipped
                                     if ( pcnt == docs1.length) {
@@ -998,7 +1001,6 @@ exports.question12 = function() {
         )  // agg Lvl 1
     }  // outer func (req,res)
 } // exported func
-
     exports.univTest = function() {
     return function(req, res) {
        coll = collegeDB.collection("univs")
