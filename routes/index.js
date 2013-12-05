@@ -28,19 +28,21 @@ exports.question1 = function() {
     }
     return function(req, res) {
         var opts1 = {limit:1000,sort:{EFYTOTLT:-1}};
-        var flds1 = {UNITID:1,EFYTOTLT:1};
+        var flds1 = {UNITID:1,EFYTOTLT:1,rowYear:1};
         var flds2 = {INSTNM:1};
         var results = [];
-        coll = collegeDB.collection("univs")
-        coll.find( {rowType: "ENR"}, flds1, opts1).toArray(
+        coll = collegeDB.collection("collegeDB")
+        console.log ("Q1: Fetching from ENR")
+        coll.find( {}, flds1, opts1).toArray(
             function (err, docs) {
+                console.log("Got " + docs.length + " rows" )
                 docs.forEach(function(oneDoc){
-                    //console.log(oneDoc.EFYTOTLT);
+                    console.log(oneDoc.EFYTOTLT);
                     coll.find({rowType:"GEN",UNITID:oneDoc.UNITID},flds2).toArray(
                         function(err,doc){
                             if (err) console.log(err);
                             var univName = doc[0].INSTNM;
-                            var oneResult = {UNITID:oneDoc.UNITID, EFYTOTLT:oneDoc.EFYTOTLT, INSTNM:univName};
+                            var oneResult = {UNITID:oneDoc.UNITID, YEAR:rowYear, EFYTOTLT:oneDoc.EFYTOTLT, INSTNM:univName};
                             //console.log(results);
                             results.push(oneResult);
                             if(results.length==20){
@@ -606,7 +608,7 @@ exports.question9 = function(){
                      "unitId" : curUnitId, 
                      "univName" : q9Results[curUnitId]["instName"],
                      "totStudents" : q9Results[curUnitId]["totStudents"],
-                     "totRevenue" : q9Results[curUnitId]["totRevenue"],
+                     "totLiabilities" : q9Results[curUnitId]["totLiabs"],
                      "totAss" : q9Results[curUnitId]["totAssets"],
                      "revPerStudent" : q9Results[curUnitId]["revPerStudent"],
                      "netAssPerStudent" : q9Results[curUnitId]["assetsPerStudent"],
@@ -667,15 +669,17 @@ exports.question9 = function(){
                               //console.log(docs2[0].F1A13);
                               var unitid = docs2[0].UNITID
                               var liabs = docs2[0].F1A13;  // liabilities
-                              var assets = docs2[0].F1A18; // asets
+                              var assets = docs2[0].F1A18; // assets
                               var revs = docs2[0].F1D01;   // revenue
                               var students = doc.totStuds;
 
                               q9Results[unitid]={};
-                              var revPerStud = revs/students;
-                              var liabPerStud = liabs/students;
-                              var assetsPerStud = assets/students;
+                              var revPerStud = Math.round(revs/students*100)/100;
+                              var liabPerStud = Math.round(liabs/students*100)/100;
+                              var assetsPerStud = Math.round(assets/students*100)/100;
 
+                              q9Results[unitid]["totLiabs"]=liabs;
+                              q9Results[unitid]["totAssets"]=assets;
                               q9Results[unitid]["totStudents"]=students;
                               q9Results[unitid]["totRevenue"]=revs;
                               q9Results[unitid]["revPerStudent"]=revPerStud;
@@ -728,27 +732,36 @@ exports.question10 = function() {
 //---------------------------------------------------
 
 
+// Max to Min Change in liabilities
+
 exports.question11 = function() {
     var q11FinalResult=[]
     var q11DeltasBySchool={}
 
     function compare11(a,b) {
-        if (q11DeltasBySchool[a]["deltaLiabs"] > q11DeltasBySchool[b]["deltaLiabs"])
+        var aLiabs = parseFloat(q11DeltasBySchool[a]["deltaLiabs"])
+        var bLiabs = parseFloat(q11DeltasBySchool[b]["deltaLiabs"])
+
+        if (aLiabs > bLiabs )  {
+            //console.log ( "a > b" , aLiabs, bLiabs)
             return -1;
-        if (q11DeltasBySchool[a]["deltaLiabs"] < q11DeltasBySchool[b]["deltaLiabs"])
-            return 1;
+        }
+        if (aLiabs < bLiabs) {
+            //console.log ( "a < b" , aLiabs, bLiabs)
+            return 1 ;
+        }
         return 0;
     }
 
     function showFinalResults(sortedIds, req, res){
-        var finalResult=[]
+        q11FinalResult=[]
         for (i=0; i<20; i++ ) {
             var curUnitId=sortedIds[i]
             oneItem={
                 "unitId" : curUnitId,
                 "deltaLiabs" : q11DeltasBySchool[curUnitId]["deltaLiabs"],
-                "totLiabs2010" : q11DeltasBySchool[curUnitId]["totLiabs10"],
-                "totLiabs2011" : q11DeltasBySchool[curUnitId]["totLiabs11"],
+                "totLiabs10" : q11DeltasBySchool[curUnitId]["totLiabs10"],
+                "totLiabs11" : q11DeltasBySchool[curUnitId]["totLiabs11"],
                 "instName" : q11DeltasBySchool[curUnitId]["instName"]
             }
             q11FinalResult.push(oneItem)
@@ -765,7 +778,7 @@ exports.question11 = function() {
         //console.log("SortedIds=" + sortedUnitIds)
         for(i=0;i<20;i++) {
             curUnitId=sortedUnitIds[i]
-            console.log ( "Looking up [" + curUnitId + "]")
+            console.log ( "q11_Looking up [" + curUnitId + "]")
             genColl.find({UNITID:parseInt(curUnitId)},{UNITID:1,INSTNM:1}).toArray(
                 function (err, doc1) {
                     console.log(doc1)
@@ -787,22 +800,44 @@ exports.question11 = function() {
         }
     }
     //----------------------------------------
+
     return function(req, res) {
         collFin10 = collegeDB.collection("FIN10")   // financials-2010
         collFin11 = collegeDB.collection("FIN11")   // financials-2011
         //------------ Lvl1 Fetch -------
-        console.log ("Q12: Fetching aggregate 2011 Liabilities..")
+        console.log ("Q11: Fetching aggregate 2010 Liabilities..")
         collFin10.aggregate(
             {
                 $group: { _id: "$UNITID",
-                    totStuds: { $sum: "$F1A13"}  }
+                    totLiabs: { $sum: "$F1A13"}  }
             }, function (err, docs1) {
                 console.log("Q11: Fetched " + docs1.length + " records");
                 var skipped=0;
                 var rcnt=0 ;      // count of processed records
                 var pcnt=0 ;   // rcnt + skipped
-                console.log("Q12: Now Fetch matching 2011 liabilities");
+                var liabs2010={}
+
+                function skipIt() {
+                    skipped++
+                    pcnt=rcnt+skipped
+                    if ( pcnt == docs1.length) {
+                        console.log( "Done")
+                        processFinalResults(req,res)
+                    }
+                }
+
+                function takeIt() {
+                    rcnt++
+                    pcnt=rcnt+skipped
+                    if ( pcnt == docs1.length) {
+                        console.log( "Done")
+                        processFinalResults(req,res)
+                    }
+                }
+
+                console.log("Q11: Now Fetch matching corresponding 2011 liabilities");
                 docs1.forEach( function(doc1){
+                        liabs2010[doc1._id]=doc1.totLiabs
                         // db.ENR11.aggregate( [ { $match : { UNITID: 196307} }, { $group : {_id: "$UNITID", "totStuds": { $sum: "$EFYTOTLT"} } } ] )
                         collFin11.aggregate(
                             [
@@ -814,44 +849,40 @@ exports.question11 = function() {
                                 {
                                     $group: {
                                         _id: "$UNITID",
-                                        totStuds: { $sum: "$F1A13"}
+                                        totLiabs: { $sum: "$F1A13"}
                                     }
                                 }
                             ] , function (err, docs2) {
-                                // console.log (docs2)
                                 if  (docs2.length ) {
-                                    rcnt++
                                     var unitId=docs2[0]._id
-                                    var totLiabs11=docs2[0].totLiabs11
-                                    var totLiabs10=docs1[0].totLiabs10
-                                    //console.log( "UNITID: " +  unitId )
-                                    //console.log( "2011: " +  totStuds11 )
-                                    //console.log( "2010: " +  totStuds10 )
-                                    var deltaPercent= (totLiabs11/totLiabs10)*100
-                                    q11DeltasBySchool[unitId]={
-                                        "totStuds2011" : totLiabs11,
-                                        "totStuds2010" : totLiabs10,
-                                        "deltaPercent" : deltaPercent
+                                    var totLiabs11=(docs2[0].totLiabs)
+                                    var totLiabs10=liabs2010[unitId]
+                                    // console.log (totLiabs10, " -->  " ,  totLiabs11)
+                                    if ( isNaN(totLiabs11) || isNaN(totLiabs10) ) {
+                                        skipIt()
+                                    } else if ( totLiabs10 == 0 ) {
+                                        skipIt()
+                                    } else {
+                                        //console.log( "UNITID: " +  unitId )
+                                        //console.log( "2011: " +  totLiabs11 )
+                                        //console.log( "2010: " +  totLiabs10 )
+                                        var deltaPercent= ((totLiabs11 - totLiabs10 )/totLiabs10)*100
+                                        q11DeltasBySchool[unitId]={
+                                            "totLiabs11" : totLiabs11,
+                                            "totLiabs10" : totLiabs10,
+                                            "deltaLiabs" : Math.round( deltaPercent *100) / 100
+                                        }
+                                        takeIt()
                                     }
-                                    pcnt=rcnt+skipped
-                                    if ( pcnt == docs1.length) {
-                                        console.log( "Done")
-                                        processFinalResults(req,res)
-                                    }
-                                } else  {
-                                    skipped++
-                                    pcnt=rcnt+skipped
-                                    if ( pcnt == docs1.length) {
-                                        console.log( "Done")
-                                        processFinalResults(req,res)
-                                    }
+                                } else {
+                                    skipIt()
                                 }
 
                                 if ( (docs1.length - pcnt) < 20 )  {
-                                    console.log ("q12: " + pcnt )
+                                    console.log ("Q11: " + pcnt )
                                 }  else {
                                     if  ( (pcnt % 1000 ) == 0 ) {
-                                        console.log ("q12: " + pcnt )
+                                        console.log ("q11: " + pcnt )
                                     }
                                 }
                             }
@@ -966,10 +997,12 @@ exports.question12 = function() {
                                     //console.log( "UNITID: " +  unitId )
                                     //console.log( "2011: " +  totStuds11 )
                                     //console.log( "2010: " +  totStuds10 )
-                                    var deltaPercent=(totStuds11/totStuds10)*100 
+                                    //var deltaPercent=( (totStuds11 - totStuds10) / totStuds10 )*100
+                                    var deltaPercent=(totStuds11 - totStuds10) / totStuds10 * 100
                                     q12DeltasBySchool[unitId]={
                                         "totStuds2011" : totStuds11,
                                         "totStuds2010" : totStuds10,
+                                        //"deltaPercent" : Math.round(deltaPercent*100)/100
                                         "deltaPercent" : Math.round(deltaPercent*100)/100
                                     }
                                     pcnt=rcnt+skipped
