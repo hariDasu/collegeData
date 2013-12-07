@@ -12,35 +12,41 @@ exports.question1 = function(collegeDB) {
         return 0;
     }
 
-    var results = [];
+    var q1FinalResult=[]
+    var q1EnrollBySchool={}
     //-----------------------------------
-    function showFinal() {
-        results.sort(compare);
+    function showFinalResults(res) {
         // console.log(results);
-        res.render('question1',{"question1":results});
+        q1FinalResult.sort(compareQ1)
+        console.log (q1FinalResult)
+        res.render('question1',{"question1":q1FinalResult});
     }
     //-----------------------------------
-    function joinEnrollWithInstName(enrDocs, rowYear ) {
-        var enrollLookup={}   // key=UNITID  value=maxEnro
+    function joinEnrollWithInstNames(enrDocs, res) {
         var rcnt=0 , skip=0
-        enrDocs.forEach(function(enrDoc){
-            console.log(enrDoc)
-            enrollLookup[enrDoc._id]=[enrDoc.max]    // store the Enrollment for UNITID
-            collGen.find({UNITID:enrDoc._id},flds2).toArray(
+        q1EnrollBySchool={}
+        q1FinalResult=[]
+        enrDocs.slice(0,30).forEach(function(enrDoc){
+            q1EnrollBySchool[enrDoc.UNITID]={ EFYTOTLT: enrDoc.EFYTOTLT, rowYear: enrDoc.rowYear }
+            collGen.find({UNITID:enrDoc.UNITID},{UNITID:1, INSTNM:1}).toArray(
                 function(err,genDoc){
                     if (err) console.log(err);
                     if (genDoc.length )  {
-                        var univName = genDoc[0].INSTNM;
-                        var enrollTotal=enrollLookup[genDoc[0].UNITID][0]
-                        var rowYear=enrollLookup[genDoc[0].UNITID][1]
-                        var oneResult = {UNITID:genDoc[0].UNITID, YEAR:rowYear, EFYTOTLT:enrollTotal, INSTNM:univName};
-                        results.push(oneResult);
+                        curUnitId=genDoc[0].UNITID
+                        oneResult={
+                           UNITID:  curUnitId,
+                           YEAR: q1EnrollBySchool[curUnitId]['rowYear'],
+                           EFYTOTLT: q1EnrollBySchool[curUnitId]['EFYTOTLT'],
+                           INSTNM: genDoc[0].INSTNM
+                        }
+                        q1FinalResult.push(oneResult)
                         rcnt++
                     } else {
                         // console.log (genDoc)
                         skip++ ;
                     }
-                    if (rcnt+skip == enrDocs.length) {
+                    if (rcnt  == 30 ) {
+                        showFinalResults(res)
                     }
                 }
             )
@@ -48,24 +54,21 @@ exports.question1 = function(collegeDB) {
     }
 
     return function(req, res) {
-        var opts1 = {limit:1000,sort:{EFYTOTLT:-1}};
-        var flds1 = {UNITID:1,EFYTOTLT:1,rowYear:1};
-        var flds2 = {UNITID:1,INSTNM:1};
+        var project1 = {UNITID:1,EFYTOTLT:1,rowYear:1 } ;
+        var project2 = {UNITID:1,INSTNM:1};
         /*
         collEnr10 = collegeDB.collection("ENR10")
         collEnr11 = collegeDB.collection("ENR11")
         */
         collEnr = collegeDB.collection("ENR")
         collGen = collegeDB.collection("GEN")
-        year=i+2010
+        enrQuery={LSTUDY:999}
         console.log ("Q1: Fetching from ENR ")
-        collEnr11.aggregate (
-           [
-              { $group:  { _id: "$UNITID", max: { $max: "$EFYTOTLT"} } },
-              // { $project: { max:1, rowYear:1 } }
-           ], function (err, enrDocs) {
-                console.log("Q1: Got " + enrDocs.length + " rows" + "for year=" + year )
-                joinEnrollWithInstNames(enrDocs, year)
+        collEnr.find ( enrQuery, project1) .toArray(
+            function (err, enrDocs) {
+                console.log("Q1: Got " + enrDocs.length + " rows" )
+                enrDocs.sort(compareQ1);
+                joinEnrollWithInstNames(enrDocs, res)
             }
         )
     }

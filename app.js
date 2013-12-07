@@ -14,6 +14,7 @@ var _ = require('underscore');
 var app = express();
 var collegeDB=null ;
 
+
 mongo.MongoClient.connect( 'mongodb://localhost:27017/collegeDB', function (err, db) {
     if (err)  return console.dir(err)
     collegeDB=db
@@ -36,12 +37,12 @@ mongo.MongoClient.connect( 'mongodb://localhost:27017/collegeDB', function (err,
       app.use(express.errorHandler());
     });
 
-    app.get('/group1', routes.group1);
+    // app.get('/group1', routes.group1);
     app.get('/', routes.index);
 
 
-    app.get('/question1',routes.question1(collegeDB));
-    app.get('/question2',routes.question2(collegeDB));
+    app.get('/question1',group1.question1(collegeDB));
+    app.get('/question2',group1.question2(collegeDB));
     /*
     app.get('/question3',routes.question3(collegeDB));
     app.get('/question4',routes.question4(collegeDB));
