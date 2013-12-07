@@ -4,6 +4,7 @@
 
 var _=require("underscore")
 
+//ranked by student enrollment (descending)
 exports.question1 = function(collegeDB) {
     function compareQ1(a,b) {
         if (a.EFYTOTLT > b.EFYTOTLT)
@@ -82,7 +83,86 @@ exports.question1 = function(collegeDB) {
     }
 };
 
+//Ranked by total liabilities (descending)
+exports.question2 = function(collegeDB) {
+    function compareQ2(a,b) {
+        if (a.F1A13 > b.F1A13)
+            return -1;
+        if (a.F1A13 < b.F1A13)
+            return 1;
+        return 0;
+    }
+
+    var q2FinalResult=[]
+    var q2LiabsBySchool={}
+    //-----------------------------------
+    function showFinalResults(res) {
+        // console.log(results);
+        q2FinalResult.sort(compareQ2)
+        console.log (q2FinalResult)
+        res.render('question2',{"question2":q2FinalResult});
+    }
+    //-----------------------------------
+    function joinFinWithInstNames(finDocs, res) {
+        var rcnt=0 , skip=0
+        q2LiabsBySchool={}
+        q2FinalResult=[]
+        finDocs.slice(0,30).forEach(function(finDoc){
+            if (q2LiabsBySchool[finDoc.UNITID] == undefined ) {
+                q2LiabsBySchool[finDoc.UNITID]=[ { UNITID:finDoc.UNITID,F1A13: finDoc.F1A13, YEAR: finDoc.rowYear } ]
+            } else {
+                q2LiabsBySchool[finDoc.UNITID].push({UNITID:finDoc.UNITID, F1A13: finDoc.F1A13, YEAR: finDoc.rowYear })
+            }
+            collGen.find({UNITID:finDoc.UNITID},{UNITID:1, INSTNM:1}).toArray(
+                function(err,genDoc){
+                    if (err) console.log(err);
+                    if (genDoc.length )  {
+                        curUnitId=genDoc[0].UNITID
+                        q2LiabsBySchool[curUnitId].forEach(
+                            function (schoolEntry) {
+                                schoolEntry['INSTNM']=genDoc[0].INSTNM
+                            }
+                        )
+                        rcnt++
+                    } else {
+                        // console.log (genDoc)
+                        skip++ ;
+                    }
+                    if (rcnt  == 30 ) {
+                        for (oneSchool in q2LiabsBySchool) {
+                            q2LiabsBySchool[oneSchool].forEach(function (oneRes) {
+                                q2FinalResult.push(oneRes)
+                            } )
+                        }
+                        showFinalResults(res)
+                    }
+                }
+            )
+        })
+    }
+
+    return function(req, res) {
+        var project1 = {UNITID:1,F1A13:1,rowYear:1} ;
+        var project2 = {UNITID:1,INSTNM:1};
+        /*
+         collEnr10 = collegeDB.collection("ENR10")
+         collEnr11 = collegeDB.collection("ENR11")
+         */
+        collFin = collegeDB.collection("FIN")
+        collGen = collegeDB.collection("GEN")
+        //enrQuery={LSTUDY:999}
+        collFin.find({}, project1) .toArray(
+            function (err, finDocs) {
+                console.log("Q2: Got " + finDocs.length + " rows" )
+                finDocs.sort(compareQ2);
+                joinFinWithInstNames(finDocs, res)
+            }
+        )
+    }
+};
+
 //-------------------------------------------------
+/*
 exports.question2 = function(collegeDB) {
     function compare(a,b) {
         if (a.F1A13 > b.F1A13)
@@ -127,7 +207,7 @@ exports.question2 = function(collegeDB) {
     };
 };
 
-
+*/
 
 exports.question3 = function(collegeDB) {
     function compare(a,b) {
