@@ -6,6 +6,8 @@
 var express = require('express')
   , routes = require('./routes/index')
   , group1 = require('./routes/group1')
+    , group2 = require('./routes/group2')
+    , group3 = require('./routes/group3')
   , http = require('http')
   , path = require('path');
 var mongo = require('mongodb');
@@ -38,23 +40,24 @@ mongo.MongoClient.connect( 'mongodb://localhost:27017/collegeDB', function (err,
     });
 
     // app.get('/group1', routes.group1);
-    app.get('/', routes.index);
+    //app.get('/', routes.index);
 
 
     app.get('/question1',group1.question1(collegeDB));
     app.get('/question2',group1.question2(collegeDB));
-    /*
-    app.get('/question3',routes.question3(collegeDB));
-    app.get('/question4',routes.question4(collegeDB));
-    app.get('/question10',routes.question10(collegeDB));
-    app.get('/question6',routes.question6(collegeDB));
-    app.get('/question7',routes.question7(collegeDB));
-    app.get('/question8',routes.question8(collegeDB));
-    app.get('/question9',routes.question9(collegeDB));
-    app.get('/question12',routes.question12(collegeDB));
-    app.get('/question11',routes.question11(collegeDB));
-    app.get('/univTest', routes.univTest());
-    */
+    app.get('/question3',group1.question3(collegeDB));
+    app.get('/question4',group1.question4(collegeDB));
+
+
+    app.get('/question6',group2.question6(collegeDB));
+    app.get('/question7',group2.question7(collegeDB));
+    app.get('/question8',group2.question8(collegeDB));
+
+    app.get('/question9',group3.question9(collegeDB));
+    app.get('/question10',group3.question10(collegeDB));
+    app.get('/question12',group3.question12(collegeDB));
+    app.get('/question11',group3.question11(collegeDB));
+
     http.createServer(app).listen(app.get('port'), function(){
       console.log("Express server listening on port " + app.get('port'));
     });
