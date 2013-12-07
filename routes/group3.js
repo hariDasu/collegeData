@@ -1,4 +1,4 @@
-exports.question9 = function(){
+exports.question9 = function(collegeDB){
     /*
      var sampleResults = [
      {
@@ -131,7 +131,7 @@ exports.question9 = function(){
 }
 
 //--------------------------------------------------
-exports.question10 = function() {
+exports.question10 = function(collegeDB) {
 
     return function(req, res) {
         var opts1 = {limit:1000,sort:{INSTNM:-1}};
@@ -152,7 +152,7 @@ exports.question10 = function() {
 
 // Max to Min Change in liabilities
 
-exports.question11 = function() {
+exports.question11 = function(collegeDB) {
     var q11FinalResult=[]
     var q11DeltasBySchool={}
 
@@ -314,7 +314,7 @@ exports.question11 = function() {
 
 
 //---------------------------------------------------------
-exports.question12 = function() {
+exports.question12 = function(collegeDB) {
     var q12FinalResult=[]
     var q12DeltasBySchool={}
 
