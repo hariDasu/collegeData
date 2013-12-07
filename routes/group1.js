@@ -121,7 +121,7 @@ exports.question2 = function(collegeDB) {
 
 
 
-exports.question3 = function() {
+exports.question3 = function(collegeDB) {
     function compare(a,b) {
         if (a.F1A18 > b.F1A18)
             return -1;
@@ -164,7 +164,7 @@ exports.question3 = function() {
     };
 };
 
-exports.question4 = function() {
+exports.question4 = function(collegeDB) {
     function compare(a,b) {
         if (a.F1D01 > b.F1D01)
             return -1;

@@ -1,4 +1,4 @@
-exports.question6 = function() {
+exports.question6 = function(collegeDB) {
     var q6Results = {};
     function compare6(a,b) {
         if (q6Results[a]["revPerStudent"] > q6Results[b]["revPerStudent"])
@@ -127,7 +127,7 @@ exports.question6 = function() {
     };
 };
 
-exports.question7 = function() {
+exports.question7 = function(collegeDB) {
     var q7Results = {};
     function compare7(a,b) {
         if (q7Results[a]["netAssPerStudent"] > q7Results[b]["netAssPerStudent"])
@@ -257,7 +257,7 @@ exports.question7 = function() {
     };
 };
 
-exports.question8 = function() {
+exports.question8 = function(collegeDB) {
     var q8Results = {};
     function compare8(a,b) {
         if (q8Results[a]["liabilitiesPerStudent"] > q8Results[b]["liabilitiesPerStudent"])

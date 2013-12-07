@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4ada07-f49a-4fcd-9a0c-d3478c482f05" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/group2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/group3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/group1.js" afterPath="$PROJECT_DIR$/routes/group1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/group2.js" afterPath="$PROJECT_DIR$/routes/group2.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="collegeData.iws" />
@@ -29,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="39" selection-start="227" selection-end="227" vertical-scroll-proportion="0.38793105" vertical-offset="0" max-vertical-offset="1080">
+            <state line="9" column="39" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="734" max-vertical-offset="1080">
               <folding />
             </state>
           </provider>
@@ -41,9 +39,13 @@
       <file leaf-file-name="group1.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/group1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="1" selection-start="4199" selection-end="4199" vertical-scroll-proportion="0.0" vertical-offset="1750" max-vertical-offset="3195">
+            <state line="123" column="37" selection-start="4235" selection-end="4235" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="e#70#2536#0" expanded="false" />
+                <element signature="e#2631#4193#0" expanded="false" />
+                <element signature="e#4238#5756#0" expanded="false" />
+                <element signature="e#5799#7317#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -66,11 +68,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="group3.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="group3.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/group3.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="453" column="18" selection-start="19707" selection-end="19707" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6885">
-              <folding />
+            <state line="316" column="36" selection-start="13325" selection-end="13325" vertical-scroll-proportion="0.6069364" vertical-offset="0" max-vertical-offset="346">
+              <folding>
+                <element signature="e#39#5761#0" expanded="false" />
+                <element signature="e#5857#6320#0" expanded="false" />
+                <element signature="e#6457#13209#0" expanded="false" />
+                <element signature="e#13330#19726#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,11 +85,11 @@
       <file leaf-file-name="group2.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/group2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="387" column="2" selection-start="15903" selection-end="15903" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+            <state line="259" column="38" selection-start="10560" selection-end="10560" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
               <folding>
-                <element signature="e#31#5211#0" expanded="false" />
-                <element signature="e#5245#10501#0" expanded="false" />
-                <element signature="e#10535#15902#0" expanded="false" />
+                <element signature="e#40#5220#0" expanded="false" />
+                <element signature="e#5263#10519#0" expanded="false" />
+                <element signature="e#10562#15929#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -163,10 +170,10 @@
         <option value="$PROJECT_DIR$/views/question11.jade" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/group1.js" />
         <option value="$PROJECT_DIR$/routes/group2.js" />
         <option value="$PROJECT_DIR$/routes/group3.js" />
-        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -479,7 +486,15 @@
       <created>1386026088376</created>
       <updated>1386026088376</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="unneccesary refactoring">
+      <created>1386448596654</created>
+      <updated>1386448596654</updated>
+    </task>
+    <task id="LOCAL-00030" summary="unneccesary refactoring">
+      <created>1386448780715</created>
+      <updated>1386448780715</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -508,21 +523,21 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27963525" sideWeight="0.67171717" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39969134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32828283" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281787" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27963525" sideWeight="0.6706081" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293919" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990307" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -550,7 +565,8 @@
     <MESSAGE value="added dataTables.js" />
     <MESSAGE value="added 11 and 12... undefined values for liabilities" />
     <MESSAGE value="git readme!" />
-    <option name="LAST_COMMIT_MESSAGE" value="git readme!" />
+    <MESSAGE value="unneccesary refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="unneccesary refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -631,26 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/group1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="1" selection-start="4199" selection-end="4199" vertical-scroll-proportion="0.0" vertical-offset="1750" max-vertical-offset="3195">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/group2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="387" column="2" selection-start="15903" selection-end="15903" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
-          <folding>
-            <element signature="e#31#5211#0" expanded="false" />
-            <element signature="e#5245#10501#0" expanded="false" />
-            <element signature="e#10535#15902#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/future.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="476" column="0" selection-start="19123" selection-end="38801" vertical-scroll-proportion="0.0" vertical-offset="1220" max-vertical-offset="1935">
@@ -666,17 +662,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/group3.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="453" column="18" selection-start="19707" selection-end="19707" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6885">
+        <state line="9" column="39" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/routes/group1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="39" selection-start="227" selection-end="227" vertical-scroll-proportion="0.38793105" vertical-offset="0" max-vertical-offset="1080">
-          <folding />
+        <state line="123" column="37" selection-start="4235" selection-end="4235" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#70#2536#0" expanded="false" />
+            <element signature="e#2631#4193#0" expanded="false" />
+            <element signature="e#4238#5756#0" expanded="false" />
+            <element signature="e#5799#7317#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/group2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="259" column="38" selection-start="10560" selection-end="10560" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <folding>
+            <element signature="e#40#5220#0" expanded="false" />
+            <element signature="e#5263#10519#0" expanded="false" />
+            <element signature="e#10562#15929#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/group3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="316" column="36" selection-start="13325" selection-end="13325" vertical-scroll-proportion="0.6069364" vertical-offset="0" max-vertical-offset="346">
+          <folding>
+            <element signature="e#39#5761#0" expanded="false" />
+            <element signature="e#5857#6320#0" expanded="false" />
+            <element signature="e#6457#13209#0" expanded="false" />
+            <element signature="e#13330#19726#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
