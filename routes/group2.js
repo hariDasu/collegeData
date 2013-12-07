@@ -1,3 +1,5 @@
+var _ = require("underscore");
+
 exports.question6 = function(collegeDB) {
     var q6Results = {};
     function compare6(a,b) {

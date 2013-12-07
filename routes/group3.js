@@ -1,3 +1,5 @@
+var _ = require("underscore");
+
 exports.question9 = function(collegeDB){
     /*
      var sampleResults = [
