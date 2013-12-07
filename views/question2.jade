@@ -8,12 +8,14 @@ block content
             thead
                 tr
                     th University ID
+                    th Year
                     th College Name
                     th Total Liabilities
             tbody
             each college, i in question2
                 tr
                     td #{college.UNITID}
+                    td #{college.YEAR}
                     td #{college.INSTNM}
                     td #{college.F1A13}
 
