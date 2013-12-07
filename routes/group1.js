@@ -2,6 +2,7 @@
  *  This is group1 -
  */
 
+var _=require("underscore")
 
 exports.question1 = function(collegeDB) {
     function compareQ1(a,b) {
@@ -27,25 +28,32 @@ exports.question1 = function(collegeDB) {
         q1EnrollBySchool={}
         q1FinalResult=[]
         enrDocs.slice(0,30).forEach(function(enrDoc){
-            q1EnrollBySchool[enrDoc.UNITID]={ EFYTOTLT: enrDoc.EFYTOTLT, rowYear: enrDoc.rowYear }
+            if (q1EnrollBySchool[enrDoc.UNITID] == undefined ) {
+                q1EnrollBySchool[enrDoc.UNITID]=[ { UNITID:enrDoc.UNITID,EFYTOTLT: enrDoc.EFYTOTLT, YEAR: enrDoc.rowYear } ] 
+            } else {
+                q1EnrollBySchool[enrDoc.UNITID].push({UNITID:enrDoc.UNITID, EFYTOTLT: enrDoc.EFYTOTLT, YEAR: enrDoc.rowYear })
+            }
             collGen.find({UNITID:enrDoc.UNITID},{UNITID:1, INSTNM:1}).toArray(
                 function(err,genDoc){
                     if (err) console.log(err);
                     if (genDoc.length )  {
                         curUnitId=genDoc[0].UNITID
-                        oneResult={
-                           UNITID:  curUnitId,
-                           YEAR: q1EnrollBySchool[curUnitId]['rowYear'],
-                           EFYTOTLT: q1EnrollBySchool[curUnitId]['EFYTOTLT'],
-                           INSTNM: genDoc[0].INSTNM
-                        }
-                        q1FinalResult.push(oneResult)
+                        q1EnrollBySchool[curUnitId].forEach(
+                            function (schoolEntry) {
+                                 schoolEntry['INSTNM']=genDoc[0].INSTNM
+                            }
+                        )
                         rcnt++
                     } else {
                         // console.log (genDoc)
                         skip++ ;
                     }
                     if (rcnt  == 30 ) {
+                        for (oneSchool in q1EnrollBySchool) {
+                            q1EnrollBySchool[oneSchool].forEach(function (oneRes) {
+                                q1FinalResult.push(oneRes)
+                            } )
+                        }
                         showFinalResults(res)
                     }
                 }
