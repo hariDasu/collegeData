@@ -1,28 +1,10 @@
-
 /*
- * GET home page.
+ *  This is group1 -
  */
 
-//var mongo = require('mongodb');
-var _ = require('underscore');
-// var monk = require('monk');
-// var db = monk('localhost:27017/collegeDB');
-
-// var collegeDB=null ;
-
-/*
-mongo.MongoClient.connect( 'mongodb://localhost:27017/collegeDB', function (err, db) {
-    if (err)  return console.dir(err)
-    collegeDB=db
-});
-*/
-
-exports.index = function(req, res){
-  res.render('index', { title: 'CollegeDB' });
-};
 
 exports.question1 = function(collegeDB) {
-    function compare(a,b) {
+    function compareQ1(a,b) {
         if (a.EFYTOTLT > b.EFYTOTLT)
             return -1;
         if (a.EFYTOTLT < b.EFYTOTLT)
@@ -69,27 +51,27 @@ exports.question1 = function(collegeDB) {
         var opts1 = {limit:1000,sort:{EFYTOTLT:-1}};
         var flds1 = {UNITID:1,EFYTOTLT:1,rowYear:1};
         var flds2 = {UNITID:1,INSTNM:1};
+        /*
         collEnr10 = collegeDB.collection("ENR10")
         collEnr11 = collegeDB.collection("ENR11")
+        */
+        collEnr = collegeDB.collection("ENR")
         collGen = collegeDB.collection("GEN")
-
-        var  i=0
-        [collEnr10, collEnr11].forEach( function (colEnr) {
-            year=i+2010
-            console.log ("Q1: Fetching from ENR year=", year )
-            collEnr11.aggregate (
-               [
-                  { $group:  { _id: "$UNITID", max: { $max: "$EFYTOTLT"} } },
-                  // { $project: { max:1, rowYear:1 } }
-               ], function (err, enrDocs) {
-                    console.log("Q1: Got " + enrDocs.length + " rows" + "for year=" + year )
-                    joinEnrollWithInstNames(enrDocs, year)
-                }
-            )
-        } )
+        year=i+2010
+        console.log ("Q1: Fetching from ENR ")
+        collEnr11.aggregate (
+           [
+              { $group:  { _id: "$UNITID", max: { $max: "$EFYTOTLT"} } },
+              // { $project: { max:1, rowYear:1 } }
+           ], function (err, enrDocs) {
+                console.log("Q1: Got " + enrDocs.length + " rows" + "for year=" + year )
+                joinEnrollWithInstNames(enrDocs, year)
+            }
+        )
     }
 };
 
+//-------------------------------------------------
 exports.question2 = function(collegeDB) {
     function compare(a,b) {
         if (a.F1A13 > b.F1A13)
