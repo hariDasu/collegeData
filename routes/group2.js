@@ -1,390 +1,185 @@
 var _ = require("underscore");
+var q6StatsBySchoolYear={}    // key=UNITID_rowYear  val={ UNITID:x, statValue:x, instName:x, rowYear:x}
+var q6FinalResults=[]
 
-exports.question6 = function(collegeDB) {
-    var q6Results = {};
-    function compare6(a,b) {
-        if (q6Results[a]["revPerStudent"] > q6Results[b]["revPerStudent"])
-            return -1;
-        if (q6Results[a]["revPerStudent"] < q6Results[b]["revPerStudent"])
-            return 1;
-        return 0;
+statPicker= {
+   "revenue" :  { 
+       "projector" : {UNITID:1, F1D01:1, rowYear:1},
+       "xtractor" : function(doc) { return doc["F1D01"] },
+       "renderer" : "question6"
+   },
+   "assets" :  { 
+       "projector" : {UNITID:1, F1A18:1, rowYear:1},
+       "xtractor": function(doc) { return doc.F1A18 },
+       "renderer" : "question7"
+   },
+   "liabs" :  { 
+       "projector" : {UNITID:1, F1A13:1, rowYear:1},
+       "xtractor": function(doc) { return doc.F1A13 },
+       "renderer" : "question8"
+   }
+}
+
+function compare6(a,b) {
+    if (q6StatsBySchoolYear[a]["STAT_PER_STUD"] > q6StatsBySchoolYear[b]["STAT_PER_STUD"])
+        return -1;
+    if (q6StatsBySchoolYear[a]["STAT_PER_STUD"] < q6StatsBySchoolYear[b]["STAT_PER_STUD"])
+        return 1;
+    return 0;
+}
+
+/*
+    [
+        {
+            UNITID: unitid,
+            YEAR : year,
+            INSTNM: "TBD"
+            STAT:  stat,
+            STUDS: students,
+            STAT_PER_STUD: statPerStud
+        },
+        ....
+    ]
+*/
+function showFinalResults(sortedIds,action,res){
+    var finalResult=[]
+    for (i=0; i<20; i++ ) {
+        var curSchoolYear=sortedIds[i]
+        q6FinalResults.push(q6StatsBySchoolYear[curSchoolYear])
     }
+    console.log(q6FinalResults)
+    jadeKey=statPicker[action]["renderer"]
+    res.render(jadeKey, {"finalResults": q6FinalResults});
+}
 
-    return function(req, res) {
-
-        /*
-         {
-         UNITID : {
-         revPerStudent:
-         totRevenue:
-         totStudents :
-         instName:        // to add in processResults
-         } ,
-         UNITID : {
-         revPerStudent:
-         totRevenue:
-         totStudents :
-         instName:        // to add in processResults
-         } ,
-
-         }
-         */
-        function showFinalResults(sortedIds, req, res){
-            var finalResult=[]
-            for (i=0; i<20; i++ ) {
-                var curUnitId=sortedIds[i]
-                oneItem={
-                    "unitId" : curUnitId,
-                    "revPerStudent" : q6Results[curUnitId]["revPerStudent"],
-                    "totStudents" : q6Results[curUnitId]["totStudents"],
-                    "totRevenue" : q6Results[curUnitId]["totRevenue"],
-                    "instName" : q6Results[curUnitId]["instName"]
-                }
-                finalResult.push(oneItem)
-            }
-            console.log(finalResult)
-            res.render('question6',{"question6":finalResult});
-        }
-
-        function processResults(req,res){
-            unitIds = Object.keys(q6Results);
-            sortedUnitIds = unitIds.sort(compare6)
-            retCnt=0
-            genColl=collegeDB.collection("GEN")
-            //console.log("SortedIds=" + sortedUnitIds)
-            for(i=0;i<20;i++) {
-                curUnitId=sortedUnitIds[i]
-                console.log ( "Looking up [" + curUnitId + "]")
-                genColl.find({UNITID:parseInt(curUnitId)},{UNITID:1,INSTNM:1}).toArray(
-                    function (err, doc1) {
-                        console.log(doc1)
-                        if ( doc1.length ) {
-                            runitId=doc1[0].UNITID
-                            q6Results[runitId]["instName"] = doc1[0].INSTNM
-                            retCnt++
-                            if (retCnt == 20) {
-                                showFinalResults(sortedUnitIds, req,res)
-                            }
-                        } else {
-                            retCnt++
-                            if (retCnt == 20) {
-                                showFinalResults(sortedUnitIds,req,res)
-                            }
-                        }
+// finds UNIV names for top 30 stats only
+// it uses the data provided in q6StatsBySchoolYear 
+function joinStatsWithInstName(res,action, collegeDB) {
+    schoolYearKeys = Object.keys(q6StatsBySchoolYear);
+    sortedSchoolYearKeys = schoolYearKeys.sort(compare6)
+    retCnt=0
+    collGEN=collegeDB.collection("GEN")
+    // console.log("SortedIds=" + sortedSchoolYearKeys)
+    for(i=0;i<20;i++) {
+        curUnitId=sortedSchoolYearKeys[i].split("_")[0]
+        console.log ( "Looking up [" + curUnitId + "]")
+        collGEN.find({UNITID:parseInt(curUnitId)},{UNITID:1,INSTNM:1}).toArray(
+            function (err, genDocs) {
+                console.log(genDocs)
+                if ( genDocs.length ) {
+                    runitId=genDocs[0].UNITID
+                    key1=runitId+"_"+"2010"
+                    key2=runitId+"_"+"2011"
+                    try {
+                        q6StatsBySchoolYear[key1]["INSTNM"]=genDocs[0].INSTNM
+                        q6StatsBySchoolYear[key2]["INSTNM"]=genDocs[0].INSTNM
+                    } catch (err) {
                     }
-                )
+                    retCnt++
+                    if (retCnt == 20) {
+                        showFinalResults(sortedSchoolYearKeys,action, res)
+                    }
+                } else {
+                    retCnt++
+                    if (retCnt == 20) {
+                        showFinalResults(sortedSchoolYearKeys,action,res)
+                    }
+                }
             }
-        }
+        )
+    }
+}
 
-        coll = collegeDB.collection("ENR10")   // enrollments
-        coll2= collegeDB.collection("FIN10")   // financials
-        //console.log(coll);
+
+
+function group1Stat( collegeDB, action) {
+    return function(req, res) {
+        collENR = collegeDB.collection("ENR")   // enrollments
+        collFIN= collegeDB.collection("FIN")   // financials
+        //console.log(collENR);
         // first we check enrollment aggregates per each school (UNITID)
-        console.log ("Fetching aggregate ENRollments ..")
-        coll.aggregate({
-                $group: { _id: "$UNITID",
-                    totStuds: { $sum: "$EFYTOTLT"}  } }, function (err, docs) {
-                console.log("Fetched " + docs.length + " records");
+
+        console.log ("Fetching ENRollments ..")
+        collENR.find ( {LSTUDY:999}, {UNITID:1,EFYTOTLT:1,rowYear:1} ).toArray(
+           function (err, enrDocs) {
+                console.log("Fetched " + enrDocs.length + " records");
                 var skipped=0;
                 var rcnt=0 ;      // count of processed records
-                docs.forEach(function(doc){
+                var projector=statPicker[action]["projector"]
+                var xtractor=statPicker[action]["xtractor"]
+                console.log ("Now fetching Financials ..")
+                enrDocs.forEach( function(enrDoc){
                     //console.log(doc._id);
                     // now we find the Revenue for the school (key=UNITID)
-                    coll2.find({UNITID:doc._id},{UNITID:1, F1D01:1}).toArray(
-                        function(err,docs2){
-                            // console.log(docs2)
-                            if (docs2.length) {
-                                //console.log(docs2[0].F1A13);
-                                var unitid = docs2[0].UNITID
-                                var revs = docs2[0].F1D01;
-                                var students = doc.totStuds;
-                                q6Results[unitid]={};
-                                var revPerStud = revs/students;
-                                q6Results[unitid]["totStudents"]=students;
-                                q6Results[unitid]["totRevenue"]=revs;
-                                q6Results[unitid]["revPerStudent"]=revPerStud;
-                                rcnt = _.size(q6Results) +skipped
-                                if(rcnt==docs.length){
-                                    processResults(req,res);
+                    //collFIN.find({UNITID:enrDoc.UNITID, rowYear:enrDoc.rowYear},{UNITID:1, F1D01:1, rowYear:1}).toArray(
+                    //collFIN.find({UNITID:enrDoc.UNITID, rowYear:enrDoc.rowYear},{UNITID:1, F1A18:1, rowYear:1}).toArray(
+                    //collFIN.find({UNITID:enrDoc.UNITID, rowYear:enrDoc.rowYear},{UNITID:1, F1A13:1, rowYear:1}).toArray(
+                    collFIN.find({UNITID:enrDoc.UNITID,rowYear:enrDoc.rowYear},projector).toArray(
+                        function(err,finDocs){
+                            // console.log(finDocs)
+                            if (finDocs.length) {
+                                var unitid = finDocs[0].UNITID
+                                var year = finDocs[0].rowYear
+                                //var stat = finDocs[0].F1D01;    //  stat is revenue for Q6
+                                //var stat = finDocs[0].F1A18;    //  stat is revenue for Q7
+                                //var stat = finDocs[0].F1A13;    //  stat is revenue for Q8
+                                var stat=xtractor(finDocs[0])
+                                var students = enrDoc.EFYTOTLT;
+                                var statPerStud = Math.round(stat/students*100)/100;   // stat per student
+                                if (stat != "" ) {
+                                    var oneResult={
+                                        UNITID: unitid,
+                                        YEAR : year,
+                                        INSTNM: "TBD",
+                                        STAT:  stat,
+                                        STUDS: students,
+                                        STAT_PER_STUD: statPerStud,
+                                    }
+                                    q6StatsBySchoolYear[unitid+"_" +year]=oneResult
+                                    rcnt=_.size(q6StatsBySchoolYear) + skipped
+                                    if (rcnt == enrDocs.length ) {
+                                       joinStatsWithInstName(res, action, collegeDB)
+                                    }
+                                } else {
+                                    skipped++
+                                    rcnt=_.size(q6StatsBySchoolYear) + skipped
+                                    if (rcnt == enrDocs.length ) {
+                                        joinStatsWithInstName(res, action, collegeDB)
+                                    }
                                 }
                             } else {
-                                skipped++;
-                                rcnt = _.size(q6Results) +skipped
-                                if(rcnt==docs.length){
-                                    processResults(req,res);
+                                skipped++
+                                rcnt=_.size(q6StatsBySchoolYear) + skipped
+                                if (rcnt == enrDocs.length ) {
+                                    joinStatsWithInstName(res, action, collegeDB)
                                 }
                             }
-                            if ( docs.length - rcnt > 20 ) {
+                            if ( enrDocs.length - rcnt > 20 ) {
                                 if ( (rcnt % 1000) == 0 ) {
                                     console.log ("processed " + rcnt)
                                 }
                             } else {
                                 console.log ("processed " + rcnt)
                             }
-                        }
-                    )
-                })
-            }
-        );
+                        }  // func findDocs
+                    ) // toArray
+                } // enrDocs forEach func
+             )  // enrDocs forEach
+           }   // enrDocs find Func
+        )  // enrDocs find toArray
+
     };
+}
+
+exports.question6 = function(collegeDB) {
+    return group1Stat(collegeDB, "revenue") 
 };
 
 exports.question7 = function(collegeDB) {
-    var q7Results = {};
-    function compare7(a,b) {
-        if (q7Results[a]["netAssPerStudent"] > q7Results[b]["netAssPerStudent"])
-            return -1;
-        if (q7Results[a]["netAssPerStudent"] < q7Results[b]["netAssPerStudent"])
-            return 1;
-        return 0;
-    }
-
-    return function(req, res) {
-
-        /*
-         {
-         UNITID : {
-         revPerStudent:
-         totRevenue:
-         totStudents :
-         instName:        // to add in processResults
-         } ,
-         UNITID : {
-         revPerStudent:
-         totRevenue:
-         totStudents :
-         instName:        // to add in processResults
-         } ,
-
-         }
-         */
-        function showFinalResults(sortedIds, req, res){
-            var finalResult=[]
-            for (i=0; i<20; i++ ) {
-                var curUnitId=sortedIds[i]
-                console.log( curUnitId  +  " : " )
-                oneItem={
-                    "unitId" : curUnitId,
-                    "netAssPerStudent" : q7Results[curUnitId]["netAssPerStudent"],
-                    "totStudents" : q7Results[curUnitId]["totStudents"],
-                    "totAss" : q7Results[curUnitId]["totAss"],
-                    "instName" : q7Results[curUnitId]["instName"]
-                }
-                finalResult.push(oneItem)
-            }
-            console.log(finalResult)
-            res.render('question7',{"question7":finalResult});
-        }
-
-        function processResults(req,res){
-            unitIds = Object.keys(q7Results);
-            sortedUnitIds = unitIds.sort(compare7)
-            retCnt=0
-            genColl=collegeDB.collection("GEN")
-            //console.log("SortedIds=" + sortedUnitIds)
-            for(i=0;i<20;i++) {
-                curUnitId=sortedUnitIds[i]
-                console.log ( "Looking up " + curUnitId )
-                genColl.find({"UNITID" : parseInt(curUnitId)},{ "UNITID" :1, "INSTNM":1} ).toArray(
-                    function (err, rdoc) {
-                        console.log(rdoc)
-                        if ( rdoc.length ) {
-                            curUnitId=rdoc[0].UNITID
-                            q7Results[curUnitId]["instName"] = rdoc[0].INSTNM
-                            retCnt++
-                            if (retCnt == 20) {
-                                showFinalResults(sortedUnitIds, req,res)
-                            }
-                        } else {
-                            retCnt++
-                            if (retCnt == 20) {
-                                showFinalResults(sortedUnitIds,req,res)
-                            }
-                        }
-                    }
-                )
-            }
-        }
-
-        coll = collegeDB.collection("ENR10")   // enrollments
-        coll2= collegeDB.collection("FIN10")   // financials
-        //console.log(coll);
-        // first we check enrollment aggregates per each school (UNITID)
-        console.log ("Fetching aggregate ENRollments ..")
-        coll.aggregate({
-                $group: { _id: "$UNITID",
-                    totStuds: { $sum: "$EFYTOTLT"}  } }, function (err, docs) {
-                console.log("Fetched " + docs.length + " records");
-                var skipped=0;
-                var rcnt=0 ;      // count of processed records
-                docs.forEach(function(doc){
-                    //console.log(doc._id);
-                    // now we find the Revenue for the school (key=UNITID)
-                    coll2.find({UNITID:doc._id},{UNITID:1, F1A18:1}).toArray(
-                        function(err,docs2){
-                            // console.log(docs2)
-                            if (docs2.length) {
-                                //console.log(docs2[0].F1A13);
-                                var unitid = docs2[0].UNITID
-                                var netAss = docs2[0].F1A18;
-                                var students = doc.totStuds;
-                                q7Results[unitid]={};
-                                var assPerStud = netAss/students;
-                                q7Results[unitid]["totStudents"]=students;
-                                q7Results[unitid]["totAss"]=netAss;
-                                q7Results[unitid]["netAssPerStudent"]=assPerStud;
-                                rcnt = _.size(q7Results) +skipped
-                                if(rcnt==docs.length){
-                                    processResults(req,res);
-                                }
-                            } else {
-                                skipped++;
-                                rcnt = _.size(q7Results) +skipped
-                                if(rcnt==docs.length){
-                                    processResults(req,res);
-                                }
-                            }
-                            if ( docs.length - rcnt > 20 ) {
-                                if ( (rcnt % 1000) == 0 ) {
-                                    console.log ("processed " + rcnt)
-                                }
-                            } else {
-                                console.log ("processed " + rcnt)
-                            }
-                        }
-                    )
-                })
-            }
-        );
-    };
+    return group1Stat(collegeDB, "assets") 
 };
 
 exports.question8 = function(collegeDB) {
-    var q8Results = {};
-    function compare8(a,b) {
-        if (q8Results[a]["liabilitiesPerStudent"] > q8Results[b]["liabilitiesPerStudent"])
-            return -1;
-        if (q8Results[a]["liabilitiesPerStudent"] < q8Results[b]["liabilitiesPerStudent"])
-            return 1;
-        return 0;
-    }
-
-    return function(req, res) {
-
-        /*
-         {
-         UNITID : {
-         revPerStudent:
-         totRevenue:
-         totStudents :
-         instName:        // to add in processResults
-         } ,
-         UNITID : {
-         revPerStudent:
-         totRevenue:
-         totStudents :
-         instName:        // to add in processResults
-         } ,
-
-         }
-         */
-        function showFinalResults(sortedIds, req, res){
-            var finalResult=[]
-            for (i=0; i<20; i++ ) {
-                var curUnitId=sortedIds[i]
-                console.log( curUnitId  +  " : " )
-                oneItem={
-                    "unitId" : curUnitId,
-                    "liabilitiesPerStudent" : q8Results[curUnitId]["liabilitiesPerStudent"],
-                    "totStudents" : q8Results[curUnitId]["totStudents"],
-                    "totLiabilities" : q8Results[curUnitId]["totLiabilities"],
-                    "instName" : q8Results[curUnitId]["instName"]
-                }
-                finalResult.push(oneItem)
-            }
-            console.log(finalResult)
-            res.render('question8',{"question8":finalResult});
-        }
-
-        function processResults(req,res){
-            unitIds = Object.keys(q8Results);
-            sortedUnitIds = unitIds.sort(compare8)
-            retCnt=0
-            genColl=collegeDB.collection("GEN")
-            //console.log("SortedIds=" + sortedUnitIds)
-            for(i=0;i<20;i++) {
-                curUnitId=sortedUnitIds[i]
-                console.log ( "Looking up " + curUnitId )
-                genColl.find({"UNITID" : parseInt(curUnitId)},{ "UNITID" :1, "INSTNM":1} ).toArray(
-                    function (err, rdoc) {
-                        console.log(rdoc)
-                        if ( rdoc.length ) {
-                            curUnitId=rdoc[0].UNITID
-                            q8Results[curUnitId]["instName"] = rdoc[0].INSTNM
-                            retCnt++
-                            if (retCnt == 20) {
-                                showFinalResults(sortedUnitIds, req,res)
-                            }
-                        } else {
-                            retCnt++
-                            if (retCnt == 20) {
-                                showFinalResults(sortedUnitIds,req,res)
-                            }
-                        }
-                    }
-                )
-            }
-        }
-
-        coll = collegeDB.collection("ENR10")   // enrollments
-        coll2= collegeDB.collection("FIN10")   // financials
-        //console.log(coll);
-        // first we check enrollment aggregates per each school (UNITID)
-        console.log ("Fetching aggregate ENRollments ..")
-        coll.aggregate({
-                $group: { _id: "$UNITID",
-                    totStuds: { $sum: "$EFYTOTLT"}  } }, function (err, docs) {
-                console.log("Fetched " + docs.length + " records");
-                var skipped=0;
-                var rcnt=0 ;      // count of processed records
-                docs.forEach(function(doc){
-                    //console.log(doc._id);
-                    // now we find the Revenue for the school (key=UNITID)
-                    coll2.find({UNITID:doc._id},{UNITID:1, F1A13:1}).toArray(
-                        function(err,docs2){
-                            // console.log(docs2)
-                            if (docs2.length) {
-                                //console.log(docs2[0].F1A13);
-                                var unitid = docs2[0].UNITID
-                                var totalLiabilities = docs2[0].F1A13;
-                                var students = doc.totStuds;
-                                q8Results[unitid]={};
-                                var liabilitiesPerStudent = totalLiabilities/students;
-                                q8Results[unitid]["totStudents"]=students;
-                                q8Results[unitid]["totLiabilities"]=totalLiabilities;
-                                q8Results[unitid]["liabilitiesPerStudent"]=liabilitiesPerStudent;
-                                rcnt = _.size(q8Results) +skipped
-                                if(rcnt==docs.length){
-                                    processResults(req,res);
-                                }
-                            } else {
-                                skipped++;
-                                rcnt = _.size(q8Results) +skipped
-                                if(rcnt==docs.length){
-                                    processResults(req,res);
-                                }
-                            }
-                            if ( docs.length - rcnt > 20 ) {
-                                if ( (rcnt % 1000) == 0 ) {
-                                    console.log ("processed " + rcnt)
-                                }
-                            } else {
-                                console.log ("processed " + rcnt)
-                            }
-                        }
-                    )
-                })
-            }
-        );
-    };
+    return group1Stat(collegeDB, "liabs") 
 };
+

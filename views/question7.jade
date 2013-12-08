@@ -10,16 +10,17 @@ block content
                 tr
                     th University ID
                     th Name of School
+                    th Year
                     th Number of Students
                     th Total Net Assets
                     th Net Assets per Student
             tbody
-            each college, i in question7
+            each college, i in finalResults
                 tr
-                    td #{college.unitId}
-                    td #{college.instName}
-                    td #{college.totStudents}
-                    td $#{college.totAss}
-                    td $#{college.netAssPerStudent}
-
+                    td #{college.UNITID}
+                    td #{college.INSTNM}
+                    td #{college.YEAR}
+                    td #{college.STUDS}
+                    td #{college.STAT}
+                    td #{college.STAT_PER_STUD}
 

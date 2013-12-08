@@ -14,12 +14,11 @@ block content
                     th Total Liabilities
                     th Liabilities per Student
             tbody
-            each college, i in question8
+            each college, i in finalResults
                 tr
-                    td #{college.unitId}
-                    td #{college.instName}
-                    td #{college.totStudents}
-                    td $#{college.totLiabilities}
-                    td $#{college.liabilitiesPerStudent}
-
-
+                    td #{college.UNITID}
+                    td #{college.INSTNM}
+                    td #{college.YEAR}
+                    td #{college.STUDS}
+                    td #{college.STAT}
+                    td #{college.STAT_PER_STUD}
