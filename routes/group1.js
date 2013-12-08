@@ -309,7 +309,7 @@ exports.question4 = function(collegeDB) {
         //enrQuery={LSTUDY:999}
         collFin.find({}, project1) .toArray(
             function (err, finDocs) {
-                console.log("Q3: Got " + finDocs.length + " rows" )
+                console.log("Q4: Got " + finDocs.length + " rows" )
                 finDocs.sort(compareQ3);
                 joinFinWithInstNames(finDocs, res)
             }
@@ -408,6 +408,84 @@ exports.question3 = function(collegeDB) {
     };
 };
 */
+//Ranked by total revenues (descending)
+exports.question5 = function(collegeDB) {
+    function compareQ5(a,b) {
+        if (a.F1D01 > b.F1D01)
+            return -1;
+        if (a.F1D01 < b.F1D01)
+            return 1;
+        return 0;
+    }
+
+    var q5FinalResult=[]
+    var q5RevsBySchool={}
+    //-----------------------------------
+    function showFinalResults(res) {
+        // console.log(results);
+        q5FinalResult.sort(compareQ5)
+        console.log (q5FinalResult)
+        res.render('question5',{"question5":q5FinalResult});
+    }
+    //-----------------------------------
+    function joinFinWithInstNames(finDocs, res) {
+        var rcnt=0 , skip=0
+        q5RevsBySchool={}
+        q5FinalResult=[]
+        finDocs.slice(0,30).forEach(function(finDoc){
+            if (q5RevsBySchool[finDoc.UNITID] == undefined ) {
+                q5RevsBySchool[finDoc.UNITID]=[ { UNITID:finDoc.UNITID,F1D01: finDoc.F1D01, YEAR: finDoc.rowYear } ]
+            } else {
+                q3AssetsBySchool[finDoc.UNITID].push({UNITID:finDoc.UNITID, F1D01: finDoc.F1D01, YEAR: finDoc.rowYear })
+            }
+            collGen.find({UNITID:finDoc.UNITID},{UNITID:1, INSTNM:1}).toArray(
+                function(err,genDoc){
+                    if (err) console.log(err);
+                    if (genDoc.length )  {
+                        curUnitId=genDoc[0].UNITID
+                        q3AssetsBySchool[curUnitId].forEach(
+                            function (schoolEntry) {
+                                schoolEntry['INSTNM']=genDoc[0].INSTNM
+                            }
+                        )
+                        rcnt++
+                    } else {
+                        // console.log (genDoc)
+                        skip++ ;
+                    }
+                    if (rcnt  == 30 ) {
+                        for (oneSchool in q5RevsBySchool) {
+                            q5RevsBySchool[oneSchool].forEach(function (oneRes) {
+                                q5FinalResult.push(oneRes)
+                            } )
+                        }
+                        showFinalResults(res)
+                    }
+                }
+            )
+        })
+    }
+
+    return function(req, res) {
+        var project1 = {UNITID:1,F1D01:1,rowYear:1} ;
+        var project2 = {UNITID:1,INSTNM:1};
+        /*
+         collEnr10 = collegeDB.collection("ENR10")
+         collEnr11 = collegeDB.collection("ENR11")
+         */
+        collFin = collegeDB.collection("FIN")
+        collGen = collegeDB.collection("GEN")
+        //enrQuery={LSTUDY:999}
+        collFin.find({}, project1) .toArray(
+            function (err, finDocs) {
+                console.log("Q5: Got " + finDocs.length + " rows" )
+                finDocs.sort(compareQ5);
+                joinFinWithInstNames(finDocs, res)
+            }
+        )
+    }
+};
+/*
 exports.question5 = function(collegeDB) {
     function compare(a,b) {
         if (a.F1D01 > b.F1D01)
@@ -437,7 +515,7 @@ exports.question5 = function(collegeDB) {
                                 if(results.length==20){
                                     results.sort(compare);
                                     //console.log(results);
-                                    res.render('question4',{"question4":results});
+                                    res.render('question5',{"question5":results});
                                 }
                             }
                         )
@@ -450,3 +528,4 @@ exports.question5 = function(collegeDB) {
 
     };
 };
+*/
