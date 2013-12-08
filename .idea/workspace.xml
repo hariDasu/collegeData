@@ -123,7 +123,7 @@
       <file leaf-file-name="bootstrap.jade" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/bootstrap.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="38" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.6231454" vertical-offset="450" max-vertical-offset="1020">
+            <state line="46" column="38" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.7121662" vertical-offset="450" max-vertical-offset="1020">
               <folding />
             </state>
           </provider>
@@ -503,7 +503,11 @@
       <created>1386461262536</created>
       <updated>1386461262536</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="number 4">
+      <created>1386461313436</created>
+      <updated>1386461313436</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -706,7 +710,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/bootstrap.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="38" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.6231454" vertical-offset="450" max-vertical-offset="1020">
+        <state line="46" column="38" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.7121662" vertical-offset="450" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>
