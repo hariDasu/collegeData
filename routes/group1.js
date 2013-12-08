@@ -161,6 +161,84 @@ exports.question2 = function(collegeDB) {
     }
 };
 
+//Ranked by net assets (descending)
+exports.question3 = function(collegeDB) {
+    function compareQ3(a,b) {
+        if (a.F1A18 > b.F1A18)
+            return -1;
+        if (a.F1A18 < b.F1A18)
+            return 1;
+        return 0;
+    }
+
+    var q3FinalResult=[]
+    var q3AssetsBySchool={}
+    //-----------------------------------
+    function showFinalResults(res) {
+        // console.log(results);
+        q3FinalResult.sort(compareQ3)
+        console.log (q3FinalResult)
+        res.render('question3',{"question3":q3FinalResult});
+    }
+    //-----------------------------------
+    function joinFinWithInstNames(finDocs, res) {
+        var rcnt=0 , skip=0
+        q3AssetsBySchool={}
+        q3FinalResult=[]
+        finDocs.slice(0,30).forEach(function(finDoc){
+            if (q3AssetsBySchool[finDoc.UNITID] == undefined ) {
+                q3AssetsBySchool[finDoc.UNITID]=[ { UNITID:finDoc.UNITID,F1A18: finDoc.F1A18, YEAR: finDoc.rowYear } ]
+            } else {
+                q3AssetsBySchool[finDoc.UNITID].push({UNITID:finDoc.UNITID, F1A18: finDoc.F1A18, YEAR: finDoc.rowYear })
+            }
+            collGen.find({UNITID:finDoc.UNITID},{UNITID:1, INSTNM:1}).toArray(
+                function(err,genDoc){
+                    if (err) console.log(err);
+                    if (genDoc.length )  {
+                        curUnitId=genDoc[0].UNITID
+                        q3AssetsBySchool[curUnitId].forEach(
+                            function (schoolEntry) {
+                                schoolEntry['INSTNM']=genDoc[0].INSTNM
+                            }
+                        )
+                        rcnt++
+                    } else {
+                        // console.log (genDoc)
+                        skip++ ;
+                    }
+                    if (rcnt  == 30 ) {
+                        for (oneSchool in q3AssetsBySchool) {
+                            q3AssetsBySchool[oneSchool].forEach(function (oneRes) {
+                                q3FinalResult.push(oneRes)
+                            } )
+                        }
+                        showFinalResults(res)
+                    }
+                }
+            )
+        })
+    }
+
+    return function(req, res) {
+        var project1 = {UNITID:1,F1A18:1,rowYear:1} ;
+        var project2 = {UNITID:1,INSTNM:1};
+        /*
+         collEnr10 = collegeDB.collection("ENR10")
+         collEnr11 = collegeDB.collection("ENR11")
+         */
+        collFin = collegeDB.collection("FIN")
+        collGen = collegeDB.collection("GEN")
+        //enrQuery={LSTUDY:999}
+        collFin.find({}, project1) .toArray(
+            function (err, finDocs) {
+                console.log("Q3: Got " + finDocs.length + " rows" )
+                finDocs.sort(compareQ3);
+                joinFinWithInstNames(finDocs, res)
+            }
+        )
+    }
+};
+
 //-------------------------------------------------
 /*
 exports.question2 = function(collegeDB) {
@@ -208,7 +286,7 @@ exports.question2 = function(collegeDB) {
 };
 
 */
-
+/*
 exports.question3 = function(collegeDB) {
     function compare(a,b) {
         if (a.F1A18 > b.F1A18)
@@ -251,7 +329,7 @@ exports.question3 = function(collegeDB) {
 
     };
 };
-
+*/
 exports.question4 = function(collegeDB) {
     function compare(a,b) {
         if (a.F1D01 > b.F1D01)
