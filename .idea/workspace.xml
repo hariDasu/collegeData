@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4ada07-f49a-4fcd-9a0c-d3478c482f05" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/question5.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/group1.js" afterPath="$PROJECT_DIR$/routes/group1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/question4.jade" afterPath="$PROJECT_DIR$/views/question4.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/bootstrap.jade" afterPath="$PROJECT_DIR$/views/bootstrap.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="collegeData.iws" />
@@ -82,15 +79,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="future.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/future.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="476" column="0" selection-start="19123" selection-end="38801" vertical-scroll-proportion="0.0" vertical-offset="7140" max-vertical-offset="14265">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="group3.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/group3.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -123,10 +111,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="question5.jade" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="question5.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/question5.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="18" selection-start="385" selection-end="385" vertical-scroll-proportion="0.6" vertical-offset="0" max-vertical-offset="390">
+            <state line="14" column="18" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.jade" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/bootstrap.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="38" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.6231454" vertical-offset="450" max-vertical-offset="1020">
               <folding />
             </state>
           </provider>
@@ -150,7 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/views/bootstrap.jade" />
         <option value="$PROJECT_DIR$/views/datatables.jade" />
         <option value="$PROJECT_DIR$/views/question9.jade" />
         <option value="$PROJECT_DIR$/public/js/initBody.js" />
@@ -166,6 +162,7 @@
         <option value="$PROJECT_DIR$/views/question4.jade" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/question5.jade" />
+        <option value="$PROJECT_DIR$/views/bootstrap.jade" />
       </list>
     </option>
   </component>
@@ -502,7 +499,11 @@
       <created>1386460907933</created>
       <updated>1386460907933</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="number 4">
+      <created>1386461262536</created>
+      <updated>1386461262536</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -576,7 +577,8 @@
     <MESSAGE value="unneccesary refactoring" />
     <MESSAGE value="number 2" />
     <MESSAGE value="number 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="number 3" />
+    <MESSAGE value="number 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="number 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -584,11 +586,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/question12.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="32" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="3" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.0" vertical-offset="269" max-vertical-offset="840">
@@ -702,7 +699,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/question5.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="18" selection-start="385" selection-end="385" vertical-scroll-proportion="0.6" vertical-offset="0" max-vertical-offset="390">
+        <state line="14" column="18" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/bootstrap.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="38" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.6231454" vertical-offset="450" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>
