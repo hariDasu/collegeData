@@ -47,7 +47,7 @@ mongo.MongoClient.connect( 'mongodb://localhost:27017/collegeDB', function (err,
     app.get('/question2',group1.question2(collegeDB));
     app.get('/question3',group1.question3(collegeDB));
     app.get('/question4',group1.question4(collegeDB));
-
+    app.get('/question5',group1.question5(collegeDB));
 
     app.get('/question6',group2.question6(collegeDB));
     app.get('/question7',group2.question7(collegeDB));
