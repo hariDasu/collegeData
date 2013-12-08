@@ -10,22 +10,31 @@ block content
                 tr
                     th University ID
                     th University Name
+                    th Year
                     th Number of Students
+
                     th Total Liabilities
                     th Net Assets
+                    th Revenue
+
                     th Revenue Per Student
                     th Net Assets per Student
                     th Liabilities per Student
-            each college, i in question9
+
+            each college, i in finalResults
                 tr
-                    td #{college.unitId}
-                    td #{college.univName}
-                    td #{college.totStudents}
-                    td $#{college.totLiabilities}
-                    td $#{college.totAss}
-                    td $#{college.revPerStudent}
-                    td $#{college.netAssPerStudent}
-                    td $#{college.liabilitiesPerStudent}
+                    td #{college.UNITID}
+                    td #{college.INSTNM}
+                    td #{college.YEAR}
+                    td #{college.STUDS}
+
+                    td #{college.LIABS}
+                    td #{college.ASSETS}
+                    td #{college.REVENUE}
+
+                    td #{college.LIABS_PER_STUD}
+                    td #{college.ASSETS_PER_STUD}
+                    td #{college.REVENUE_PER_STUD}
 
 
 
