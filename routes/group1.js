@@ -436,7 +436,7 @@ exports.question5 = function(collegeDB) {
             if (q5RevsBySchool[finDoc.UNITID] == undefined ) {
                 q5RevsBySchool[finDoc.UNITID]=[ { UNITID:finDoc.UNITID,F1D01: finDoc.F1D01, YEAR: finDoc.rowYear } ]
             } else {
-                q3AssetsBySchool[finDoc.UNITID].push({UNITID:finDoc.UNITID, F1D01: finDoc.F1D01, YEAR: finDoc.rowYear })
+                q5RevsBySchool[finDoc.UNITID].push({UNITID:finDoc.UNITID, F1D01: finDoc.F1D01, YEAR: finDoc.rowYear })
             }
             collGen.find({UNITID:finDoc.UNITID},{UNITID:1, INSTNM:1}).toArray(
                 function(err,genDoc){
