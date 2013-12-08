@@ -2,7 +2,7 @@
 collegeData
 ===========
 ```
-75.126.159.214:11027/question1
+pytools.webfactional.com:11027/question1
 
 project for IS218- Fall 2013
 
@@ -18,15 +18,14 @@ A practice in learning & using nodeJS with with MongoDB
 + jQuery
 + Twitter Bootstrap 3.0
 + DataTables
++ Forever (running app.js as a daemon)
 + & a whole lotta hashes.
 
 #The approach
 
--The data is loaded into 5 collections, 
-  - ENR10 (enrollment 2010 (effy2010.csv)
-  - ENR11 (effy2011.csv)
-  - FIN10 (FIN2010.csv)
-  - FIN11 (FIN2011.csv)
+-The data is loaded into 3 collections, 
+  - ENR (effy csvs)
+  - FIN (f-- csvs)
   - GEN (hd2011.csv)
 
 NodeJS is being used with JavaScript on the server side to manage
@@ -39,9 +38,12 @@ extract all the data into one large array, and this array was passed to
 DataTables, an elegant and simple way to display the results in a sortable
 fashion. Using DataTables helps to reduce the delay time since only one
 HTTP request is being made to the web server. The re-sorting of the data
-is being done instantly on the client's browser using jQuery. Underscore was
-used merely to retrieve the length of an array in JavaScript without having
-to create a function just to do this:
+is being done instantly on the client's browser using jQuery.The result
+set is being limited to exclude results that don't have data for all the
+columns shown in the DataTable. Forever was used in place of nohup.Underscore 
+provided some nice wrapper functions which made it easier to write code
+rather than creating functions myself, like in this simple example for 
+finding the size of an array:
 
 ```javascript
 rcnt = _.size(q6Results) +skipped;
