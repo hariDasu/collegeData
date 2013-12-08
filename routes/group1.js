@@ -443,7 +443,7 @@ exports.question5 = function(collegeDB) {
                     if (err) console.log(err);
                     if (genDoc.length )  {
                         curUnitId=genDoc[0].UNITID
-                        q3AssetsBySchool[curUnitId].forEach(
+                        q5RevsBySchool[curUnitId].forEach(
                             function (schoolEntry) {
                                 schoolEntry['INSTNM']=genDoc[0].INSTNM
                             }
