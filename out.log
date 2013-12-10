@@ -1,342 +1,18 @@
 Failed to load c++ bson extension, using pure JS version
 Express server listening on port 11027
-[90mGET / [33m404 [90m12ms[0m
-Q11: Fetching aggregate 2010 Liabilities..
-Q11: Fetched 2012 records
-Q11: Now Fetch matching corresponding 2011 liabilities
-q11: 1000
-Q11: 1993
-Q11: 1994
-Q11: 1995
-Q11: 1996
-Q11: 1997
-Q11: 1998
-Q11: 1999
-Q11: 2000
-Q11: 2001
-Q11: 2002
-Q11: 2003
-Q11: 2004
-Q11: 2005
-Q11: 2006
-Q11: 2007
-Q11: 2008
-Q11: 2009
-Q11: 2010
-Q11: 2011
-Done
-q11_Looking up [139250]
-q11_Looking up [138691]
-q11_Looking up [139010]
-q11_Looking up [200341]
-q11_Looking up [230597]
-q11_Looking up [183150]
-q11_Looking up [181765]
-q11_Looking up [447689]
-q11_Looking up [127389]
-q11_Looking up [205841]
-q11_Looking up [105297]
-q11_Looking up [162557]
-q11_Looking up [231536]
-q11_Looking up [141981]
-q11_Looking up [227304]
-q11_Looking up [126942]
-q11_Looking up [180328]
-q11_Looking up [204477]
-q11_Looking up [140322]
-q11_Looking up [183105]
-Q11: 2012
-[ { _id: 'hd2011-UTF8.csv_960',
-    INSTNM: 'Bainbridge College',
-    UNITID: 139010 } ]
-[ { _id: 'hd2011-UTF8.csv_6386',
-    INSTNM: 'Georgia Gwinnett College',
-    UNITID: 447689 } ]
-[ { _id: 'hd2011-UTF8.csv_4173',
-    INSTNM: 'Blue Ridge Community College',
-    UNITID: 231536 } ]
-[ { _id: 'hd2011-UTF8.csv_3181',
-    INSTNM: 'Northeast Ohio Medical University',
-    UNITID: 204477 } ]
-[ { _id: 'hd2011-UTF8.csv_3031',
-    INSTNM: 'Williston State College',
-    UNITID: 200341 } ]
-[ { _id: 'hd2011-UTF8.csv_663',
-    INSTNM: 'Lamar Community College',
-    UNITID: 127389 } ]
-[ { _id: 'hd2011-UTF8.csv_1058',
-    INSTNM: 'University of Hawaii-West Oahu',
-    UNITID: 141981 } ]
-[ { _id: 'hd2011-UTF8.csv_1008',
-    INSTNM: 'Macon State College',
-    UNITID: 140322 } ]
-[ { _id: 'hd2011-UTF8.csv_4136',
-    INSTNM: 'Snow College',
-    UNITID: 230597 } ]
-[ { _id: 'hd2011-UTF8.csv_3236',
-    INSTNM: 'Stark State College',
-    UNITID: 205841 } ]
-[ { _id: 'hd2011-UTF8.csv_4025',
-    INSTNM: 'Odessa College',
-    UNITID: 227304 } ]
-[ { _id: 'hd2011-UTF8.csv_2409',
-    INSTNM: 'White Mountains Community College',
-    UNITID: 183105 } ]
-[ { _id: 'hd2011-UTF8.csv_968',
-    INSTNM: 'College of Coastal Georgia',
-    UNITID: 139250 } ]
-[ { _id: 'hd2011-UTF8.csv_2414',
-    INSTNM: 'Great Bay Community College',
-    UNITID: 183150 } ]
-[ { _id: 'hd2011-UTF8.csv_119',
-    INSTNM: 'Dine College',
-    UNITID: 105297 } ]
-[ { _id: 'hd2011-UTF8.csv_651',
-    INSTNM: 'Community College of Denver',
-    UNITID: 126942 } ]
-[ { _id: 'hd2011-UTF8.csv_946',
-    INSTNM: 'Darton College',
-    UNITID: 138691 } ]
-[ { _id: 'hd2011-UTF8.csv_2366',
-    INSTNM: 'Nebraska College of Technical Agriculture',
-    UNITID: 181765 } ]
-[ { _id: 'hd2011-UTF8.csv_1729',
-    INSTNM: 'Frederick Community College',
-    UNITID: 162557 } ]
-[ { _id: 'hd2011-UTF8.csv_2320',
-    INSTNM: 'Little Big Horn College',
-    UNITID: 180328 } ]
-[ { unitId: '139250',
-    deltaLiabs: 622.23,
-    totLiabs10: 2543104,
-    totLiabs11: 18366961,
-    instName: 'College of Coastal Georgia' },
-  { unitId: '138691',
-    deltaLiabs: 520.66,
-    totLiabs10: 6016094,
-    totLiabs11: 37339709,
-    instName: 'Darton College' },
-  { unitId: '139010',
-    deltaLiabs: 508.33,
-    totLiabs10: 4136319,
-    totLiabs11: 25162453,
-    instName: 'Bainbridge College' },
-  { unitId: '200341',
-    deltaLiabs: 435.62,
-    totLiabs10: 2000636,
-    totLiabs11: 10715719,
-    instName: 'Williston State College' },
-  { unitId: '230597',
-    deltaLiabs: 393.43,
-    totLiabs10: 4935871,
-    totLiabs11: 24354946,
-    instName: 'Snow College' },
-  { unitId: '183150',
-    deltaLiabs: 319.29,
-    totLiabs10: 1367996,
-    totLiabs11: 5735840,
-    instName: 'Great Bay Community College' },
-  { unitId: '181765',
-    deltaLiabs: 313.79,
-    totLiabs10: 471326,
-    totLiabs11: 1950294,
-    instName: 'Nebraska College of Technical Agriculture' },
-  { unitId: '447689',
-    deltaLiabs: 295.32,
-    totLiabs10: 44725614,
-    totLiabs11: 176810896,
-    instName: 'Georgia Gwinnett College' },
-  { unitId: '127389',
-    deltaLiabs: 289.39,
-    totLiabs10: 1078594,
-    totLiabs11: 4199923,
-    instName: 'Lamar Community College' },
-  { unitId: '205841',
-    deltaLiabs: 284.88,
-    totLiabs10: 8701689,
-    totLiabs11: 33490758,
-    instName: 'Stark State College' },
-  { unitId: '105297',
-    deltaLiabs: 277.55,
-    totLiabs10: 3909846,
-    totLiabs11: 14761550,
-    instName: 'Dine College' },
-  { unitId: '162557',
-    deltaLiabs: 258.02,
-    totLiabs10: 4684217,
-    totLiabs11: 16770552,
-    instName: 'Frederick Community College' },
-  { unitId: '231536',
-    deltaLiabs: 255.36,
-    totLiabs10: 3895993,
-    totLiabs11: 13844908,
-    instName: 'Blue Ridge Community College' },
-  { unitId: '141981',
-    deltaLiabs: 250.57,
-    totLiabs10: 22306086,
-    totLiabs11: 78198612,
-    instName: 'University of Hawaii-West Oahu' },
-  { unitId: '227304',
-    deltaLiabs: 230.12,
-    totLiabs10: 29720791,
-    totLiabs11: 98113754,
-    instName: 'Odessa College' },
-  { unitId: '126942',
-    deltaLiabs: 221.83,
-    totLiabs10: 11510853,
-    totLiabs11: 37045641,
-    instName: 'Community College of Denver' },
-  { unitId: '180328',
-    deltaLiabs: 209.01,
-    totLiabs10: 1073483,
-    totLiabs11: 3317137,
-    instName: 'Little Big Horn College' },
-  { unitId: '204477',
-    deltaLiabs: 208.07,
-    totLiabs10: 8380038,
-    totLiabs11: 25816447,
-    instName: 'Northeast Ohio Medical University' },
-  { unitId: '140322',
-    deltaLiabs: 184.65,
-    totLiabs10: 6311464,
-    totLiabs11: 17965872,
-    instName: 'Macon State College' },
-  { unitId: '183105',
-    deltaLiabs: 184.49,
-    totLiabs10: 537513,
-    totLiabs11: 1529195,
-    instName: 'White Mountains Community College' } ]
-[90mGET /question11 [36m304 [90m3456ms[0m
-Q1: Fetching from ENR 
-Q1: Fetching from ENR 
 Q1: Fetching from ENR 
 Q1: Got 14725 rows
-Q1: Got 14725 rows
-Q1: Got 14725 rows
-[ { UNITID: 372213, EFYTOTLT: 503019, YEAR: 2010 },
-  { UNITID: 372213, EFYTOTLT: 496050, YEAR: 2011 },
-  { UNITID: 154022,
-    EFYTOTLT: 157752,
-    YEAR: 2011,
-    INSTNM: 'Ashford University' },
-  { UNITID: 154022,
-    EFYTOTLT: 117643,
-    YEAR: 2010,
-    INSTNM: 'Ashford University' },
-  { UNITID: 260901,
-    EFYTOTLT: 111355,
-    YEAR: 2010,
-    INSTNM: 'Kaplan University-Davenport Campus' },
-  { UNITID: 135717, EFYTOTLT: 99232, YEAR: 2011 },
-  { UNITID: 135717, EFYTOTLT: 95166, YEAR: 2010 },
-  { UNITID: 225423,
-    EFYTOTLT: 92869,
-    YEAR: 2011,
-    INSTNM: 'Houston Community College' },
-  { UNITID: 260901,
-    EFYTOTLT: 91976,
-    YEAR: 2011,
-    INSTNM: 'Kaplan University-Davenport Campus' },
-  { UNITID: 225423,
-    EFYTOTLT: 89207,
-    YEAR: 2010,
-    INSTNM: 'Houston Community College' },
-  { UNITID: 449339,
-    EFYTOTLT: 88029,
-    YEAR: 2011,
-    INSTNM: 'American Public University System' },
-  { UNITID: 227182, EFYTOTLT: 86966, YEAR: 2011 },
-  { UNITID: 227182, EFYTOTLT: 80015, YEAR: 2010 },
-  { UNITID: 104151,
-    EFYTOTLT: 79274,
-    YEAR: 2011,
-    INSTNM: 'Arizona State University' },
-  { UNITID: 222992,
-    EFYTOTLT: 77953,
-    YEAR: 2011,
-    INSTNM: 'Austin Community College District' },
-  { UNITID: 232557,
-    EFYTOTLT: 77778,
-    YEAR: 2011,
-    INSTNM: 'Liberty University' },
-  { UNITID: 104151,
-    EFYTOTLT: 76438,
-    YEAR: 2010,
-    INSTNM: 'Arizona State University' },
-  { UNITID: 232946,
-    EFYTOTLT: 75490,
-    YEAR: 2011,
-    INSTNM: 'Northern Virginia Community College' },
-  { UNITID: 228547,
-    EFYTOTLT: 74833,
-    YEAR: 2011,
-    INSTNM: 'Tarrant County College District' },
-  { UNITID: 232946,
-    EFYTOTLT: 72563,
-    YEAR: 2010,
-    INSTNM: 'Northern Virginia Community College' },
-  { UNITID: 125231, EFYTOTLT: 71763, YEAR: 2011 },
-  { UNITID: 222992,
-    EFYTOTLT: 70326,
-    YEAR: 2010,
-    INSTNM: 'Austin Community College District' },
-  { UNITID: 228547,
-    EFYTOTLT: 70074,
-    YEAR: 2010,
-    INSTNM: 'Tarrant County College District' },
-  { UNITID: 449339,
-    EFYTOTLT: 69384,
-    YEAR: 2010,
-    INSTNM: 'American Public University System' },
-  { UNITID: 132903,
-    EFYTOTLT: 66273,
-    YEAR: 2011,
-    INSTNM: 'University of Central Florida' },
-  { UNITID: 104717, EFYTOTLT: 65509, YEAR: 2011 },
-  { UNITID: 174066,
-    EFYTOTLT: 65213,
-    YEAR: 2010,
-    INSTNM: 'University of Minnesota-Twin Cities' },
-  { UNITID: 232557,
-    EFYTOTLT: 64610,
-    YEAR: 2010,
-    INSTNM: 'Liberty University' },
-  { UNITID: 204796,
-    EFYTOTLT: 64425,
-    YEAR: 2011,
-    INSTNM: 'Ohio State University-Main Campus' },
-  { UNITID: 174066,
-    EFYTOTLT: 64349,
-    YEAR: 2011,
-    INSTNM: 'University of Minnesota-Twin Cities' } ]
-[90mGET /question1 [32m200 [90m586ms - 4.37kb[0m
 [ { UNITID: 372213,
     EFYTOTLT: 503019,
     YEAR: 2010,
     INSTNM: 'University of Phoenix-Online Campus' },
   { UNITID: 372213,
-    EFYTOTLT: 503019,
-    YEAR: 2010,
-    INSTNM: 'University of Phoenix-Online Campus' },
-  { UNITID: 372213,
-    EFYTOTLT: 496050,
-    YEAR: 2011,
-    INSTNM: 'University of Phoenix-Online Campus' },
-  { UNITID: 372213,
     EFYTOTLT: 496050,
     YEAR: 2011,
     INSTNM: 'University of Phoenix-Online Campus' },
   { UNITID: 154022,
     EFYTOTLT: 157752,
     YEAR: 2011,
-    INSTNM: 'Ashford University' },
-  { UNITID: 154022,
-    EFYTOTLT: 157752,
-    YEAR: 2011,
-    INSTNM: 'Ashford University' },
-  { UNITID: 154022,
-    EFYTOTLT: 117643,
-    YEAR: 2010,
     INSTNM: 'Ashford University' },
   { UNITID: 154022,
     EFYTOTLT: 117643,
@@ -346,21 +22,9 @@ Q1: Got 14725 rows
     EFYTOTLT: 111355,
     YEAR: 2010,
     INSTNM: 'Kaplan University-Davenport Campus' },
-  { UNITID: 260901,
-    EFYTOTLT: 111355,
-    YEAR: 2010,
-    INSTNM: 'Kaplan University-Davenport Campus' },
   { UNITID: 135717,
     EFYTOTLT: 99232,
     YEAR: 2011,
-    INSTNM: 'Miami Dade College' },
-  { UNITID: 135717,
-    EFYTOTLT: 99232,
-    YEAR: 2011,
-    INSTNM: 'Miami Dade College' },
-  { UNITID: 135717,
-    EFYTOTLT: 95166,
-    YEAR: 2010,
     INSTNM: 'Miami Dade College' },
   { UNITID: 135717,
     EFYTOTLT: 95166,
@@ -370,14 +34,6 @@ Q1: Got 14725 rows
     EFYTOTLT: 92869,
     YEAR: 2011,
     INSTNM: 'Houston Community College' },
-  { UNITID: 225423,
-    EFYTOTLT: 92869,
-    YEAR: 2011,
-    INSTNM: 'Houston Community College' },
-  { UNITID: 260901,
-    EFYTOTLT: 91976,
-    YEAR: 2011,
-    INSTNM: 'Kaplan University-Davenport Campus' },
   { UNITID: 260901,
     EFYTOTLT: 91976,
     YEAR: 2011,
@@ -386,14 +42,6 @@ Q1: Got 14725 rows
     EFYTOTLT: 89207,
     YEAR: 2010,
     INSTNM: 'Houston Community College' },
-  { UNITID: 225423,
-    EFYTOTLT: 89207,
-    YEAR: 2010,
-    INSTNM: 'Houston Community College' },
-  { UNITID: 449339,
-    EFYTOTLT: 88029,
-    YEAR: 2011,
-    INSTNM: 'American Public University System' },
   { UNITID: 449339,
     EFYTOTLT: 88029,
     YEAR: 2011,
@@ -403,21 +51,9 @@ Q1: Got 14725 rows
     YEAR: 2011,
     INSTNM: 'Lone Star College System' },
   { UNITID: 227182,
-    EFYTOTLT: 86966,
-    YEAR: 2011,
-    INSTNM: 'Lone Star College System' },
-  { UNITID: 227182,
     EFYTOTLT: 80015,
     YEAR: 2010,
     INSTNM: 'Lone Star College System' },
-  { UNITID: 227182,
-    EFYTOTLT: 80015,
-    YEAR: 2010,
-    INSTNM: 'Lone Star College System' },
-  { UNITID: 104151,
-    EFYTOTLT: 79274,
-    YEAR: 2011,
-    INSTNM: 'Arizona State University' },
   { UNITID: 104151,
     EFYTOTLT: 79274,
     YEAR: 2011,
@@ -426,14 +62,6 @@ Q1: Got 14725 rows
     EFYTOTLT: 77953,
     YEAR: 2011,
     INSTNM: 'Austin Community College District' },
-  { UNITID: 222992,
-    EFYTOTLT: 77953,
-    YEAR: 2011,
-    INSTNM: 'Austin Community College District' },
-  { UNITID: 232557,
-    EFYTOTLT: 77778,
-    YEAR: 2011,
-    INSTNM: 'Liberty University' },
   { UNITID: 232557,
     EFYTOTLT: 77778,
     YEAR: 2011,
@@ -442,14 +70,6 @@ Q1: Got 14725 rows
     EFYTOTLT: 76438,
     YEAR: 2010,
     INSTNM: 'Arizona State University' },
-  { UNITID: 104151,
-    EFYTOTLT: 76438,
-    YEAR: 2010,
-    INSTNM: 'Arizona State University' },
-  { UNITID: 232946,
-    EFYTOTLT: 75490,
-    YEAR: 2011,
-    INSTNM: 'Northern Virginia Community College' },
   { UNITID: 232946,
     EFYTOTLT: 75490,
     YEAR: 2011,
@@ -458,14 +78,6 @@ Q1: Got 14725 rows
     EFYTOTLT: 74833,
     YEAR: 2011,
     INSTNM: 'Tarrant County College District' },
-  { UNITID: 228547,
-    EFYTOTLT: 74833,
-    YEAR: 2011,
-    INSTNM: 'Tarrant County College District' },
-  { UNITID: 232946,
-    EFYTOTLT: 72563,
-    YEAR: 2010,
-    INSTNM: 'Northern Virginia Community College' },
   { UNITID: 232946,
     EFYTOTLT: 72563,
     YEAR: 2010,
@@ -474,14 +86,6 @@ Q1: Got 14725 rows
     EFYTOTLT: 71763,
     YEAR: 2011,
     INSTNM: 'Walden University' },
-  { UNITID: 125231,
-    EFYTOTLT: 71763,
-    YEAR: 2011,
-    INSTNM: 'Walden University' },
-  { UNITID: 222992,
-    EFYTOTLT: 70326,
-    YEAR: 2010,
-    INSTNM: 'Austin Community College District' },
   { UNITID: 222992,
     EFYTOTLT: 70326,
     YEAR: 2010,
@@ -490,14 +94,6 @@ Q1: Got 14725 rows
     EFYTOTLT: 70074,
     YEAR: 2010,
     INSTNM: 'Tarrant County College District' },
-  { UNITID: 228547,
-    EFYTOTLT: 70074,
-    YEAR: 2010,
-    INSTNM: 'Tarrant County College District' },
-  { UNITID: 449339,
-    EFYTOTLT: 69384,
-    YEAR: 2010,
-    INSTNM: 'American Public University System' },
   { UNITID: 449339,
     EFYTOTLT: 69384,
     YEAR: 2010,
@@ -506,14 +102,6 @@ Q1: Got 14725 rows
     EFYTOTLT: 66273,
     YEAR: 2011,
     INSTNM: 'University of Central Florida' },
-  { UNITID: 132903,
-    EFYTOTLT: 66273,
-    YEAR: 2011,
-    INSTNM: 'University of Central Florida' },
-  { UNITID: 104717,
-    EFYTOTLT: 65509,
-    YEAR: 2011,
-    INSTNM: 'Grand Canyon University' },
   { UNITID: 104717,
     EFYTOTLT: 65509,
     YEAR: 2011,
@@ -522,14 +110,6 @@ Q1: Got 14725 rows
     EFYTOTLT: 65213,
     YEAR: 2010,
     INSTNM: 'University of Minnesota-Twin Cities' },
-  { UNITID: 174066,
-    EFYTOTLT: 65213,
-    YEAR: 2010,
-    INSTNM: 'University of Minnesota-Twin Cities' },
-  { UNITID: 232557,
-    EFYTOTLT: 64610,
-    YEAR: 2010,
-    INSTNM: 'Liberty University' },
   { UNITID: 232557,
     EFYTOTLT: 64610,
     YEAR: 2010,
@@ -538,384 +118,1523 @@ Q1: Got 14725 rows
     EFYTOTLT: 64425,
     YEAR: 2011,
     INSTNM: 'Ohio State University-Main Campus' },
-  { UNITID: 204796,
-    EFYTOTLT: 64425,
-    YEAR: 2011,
-    INSTNM: 'Ohio State University-Main Campus' },
-  { UNITID: 174066,
-    EFYTOTLT: 64349,
-    YEAR: 2011,
-    INSTNM: 'University of Minnesota-Twin Cities' },
-  { UNITID: 174066,
-    EFYTOTLT: 64349,
-    YEAR: 2011,
-    INSTNM: 'University of Minnesota-Twin Cities' } ]
-[ { UNITID: 372213,
-    EFYTOTLT: 503019,
-    YEAR: 2010,
-    INSTNM: 'University of Phoenix-Online Campus' },
-  { UNITID: 372213,
-    EFYTOTLT: 503019,
-    YEAR: 2010,
-    INSTNM: 'University of Phoenix-Online Campus' },
-  { UNITID: 372213,
-    EFYTOTLT: 503019,
-    YEAR: 2010,
-    INSTNM: 'University of Phoenix-Online Campus' },
-  { UNITID: 372213,
-    EFYTOTLT: 496050,
-    YEAR: 2011,
-    INSTNM: 'University of Phoenix-Online Campus' },
-  { UNITID: 372213,
-    EFYTOTLT: 496050,
-    YEAR: 2011,
-    INSTNM: 'University of Phoenix-Online Campus' },
-  { UNITID: 372213,
-    EFYTOTLT: 496050,
-    YEAR: 2011,
-    INSTNM: 'University of Phoenix-Online Campus' },
-  { UNITID: 154022,
-    EFYTOTLT: 157752,
-    YEAR: 2011,
-    INSTNM: 'Ashford University' },
-  { UNITID: 154022,
-    EFYTOTLT: 157752,
-    YEAR: 2011,
-    INSTNM: 'Ashford University' },
-  { UNITID: 154022,
-    EFYTOTLT: 157752,
-    YEAR: 2011,
-    INSTNM: 'Ashford University' },
-  { UNITID: 154022,
-    EFYTOTLT: 117643,
-    YEAR: 2010,
-    INSTNM: 'Ashford University' },
-  { UNITID: 154022,
-    EFYTOTLT: 117643,
-    YEAR: 2010,
-    INSTNM: 'Ashford University' },
-  { UNITID: 154022,
-    EFYTOTLT: 117643,
-    YEAR: 2010,
-    INSTNM: 'Ashford University' },
-  { UNITID: 260901,
-    EFYTOTLT: 111355,
-    YEAR: 2010,
-    INSTNM: 'Kaplan University-Davenport Campus' },
-  { UNITID: 260901,
-    EFYTOTLT: 111355,
-    YEAR: 2010,
-    INSTNM: 'Kaplan University-Davenport Campus' },
-  { UNITID: 260901,
-    EFYTOTLT: 111355,
-    YEAR: 2010,
-    INSTNM: 'Kaplan University-Davenport Campus' },
-  { UNITID: 135717,
-    EFYTOTLT: 99232,
-    YEAR: 2011,
-    INSTNM: 'Miami Dade College' },
-  { UNITID: 135717,
-    EFYTOTLT: 99232,
-    YEAR: 2011,
-    INSTNM: 'Miami Dade College' },
-  { UNITID: 135717,
-    EFYTOTLT: 99232,
-    YEAR: 2011,
-    INSTNM: 'Miami Dade College' },
-  { UNITID: 135717,
-    EFYTOTLT: 95166,
-    YEAR: 2010,
-    INSTNM: 'Miami Dade College' },
-  { UNITID: 135717,
-    EFYTOTLT: 95166,
-    YEAR: 2010,
-    INSTNM: 'Miami Dade College' },
-  { UNITID: 135717,
-    EFYTOTLT: 95166,
-    YEAR: 2010,
-    INSTNM: 'Miami Dade College' },
-  { UNITID: 225423,
-    EFYTOTLT: 92869,
-    YEAR: 2011,
-    INSTNM: 'Houston Community College' },
-  { UNITID: 225423,
-    EFYTOTLT: 92869,
-    YEAR: 2011,
-    INSTNM: 'Houston Community College' },
-  { UNITID: 225423,
-    EFYTOTLT: 92869,
-    YEAR: 2011,
-    INSTNM: 'Houston Community College' },
-  { UNITID: 260901,
-    EFYTOTLT: 91976,
-    YEAR: 2011,
-    INSTNM: 'Kaplan University-Davenport Campus' },
-  { UNITID: 260901,
-    EFYTOTLT: 91976,
-    YEAR: 2011,
-    INSTNM: 'Kaplan University-Davenport Campus' },
-  { UNITID: 260901,
-    EFYTOTLT: 91976,
-    YEAR: 2011,
-    INSTNM: 'Kaplan University-Davenport Campus' },
-  { UNITID: 225423,
-    EFYTOTLT: 89207,
-    YEAR: 2010,
-    INSTNM: 'Houston Community College' },
-  { UNITID: 225423,
-    EFYTOTLT: 89207,
-    YEAR: 2010,
-    INSTNM: 'Houston Community College' },
-  { UNITID: 225423,
-    EFYTOTLT: 89207,
-    YEAR: 2010,
-    INSTNM: 'Houston Community College' },
-  { UNITID: 449339,
-    EFYTOTLT: 88029,
-    YEAR: 2011,
-    INSTNM: 'American Public University System' },
-  { UNITID: 449339,
-    EFYTOTLT: 88029,
-    YEAR: 2011,
-    INSTNM: 'American Public University System' },
-  { UNITID: 449339,
-    EFYTOTLT: 88029,
-    YEAR: 2011,
-    INSTNM: 'American Public University System' },
-  { UNITID: 227182,
-    EFYTOTLT: 86966,
-    YEAR: 2011,
-    INSTNM: 'Lone Star College System' },
-  { UNITID: 227182,
-    EFYTOTLT: 86966,
-    YEAR: 2011,
-    INSTNM: 'Lone Star College System' },
-  { UNITID: 227182,
-    EFYTOTLT: 86966,
-    YEAR: 2011,
-    INSTNM: 'Lone Star College System' },
-  { UNITID: 227182,
-    EFYTOTLT: 80015,
-    YEAR: 2010,
-    INSTNM: 'Lone Star College System' },
-  { UNITID: 227182,
-    EFYTOTLT: 80015,
-    YEAR: 2010,
-    INSTNM: 'Lone Star College System' },
-  { UNITID: 227182,
-    EFYTOTLT: 80015,
-    YEAR: 2010,
-    INSTNM: 'Lone Star College System' },
-  { UNITID: 104151,
-    EFYTOTLT: 79274,
-    YEAR: 2011,
-    INSTNM: 'Arizona State University' },
-  { UNITID: 104151,
-    EFYTOTLT: 79274,
-    YEAR: 2011,
-    INSTNM: 'Arizona State University' },
-  { UNITID: 104151,
-    EFYTOTLT: 79274,
-    YEAR: 2011,
-    INSTNM: 'Arizona State University' },
-  { UNITID: 222992,
-    EFYTOTLT: 77953,
-    YEAR: 2011,
-    INSTNM: 'Austin Community College District' },
-  { UNITID: 222992,
-    EFYTOTLT: 77953,
-    YEAR: 2011,
-    INSTNM: 'Austin Community College District' },
-  { UNITID: 222992,
-    EFYTOTLT: 77953,
-    YEAR: 2011,
-    INSTNM: 'Austin Community College District' },
-  { UNITID: 232557,
-    EFYTOTLT: 77778,
-    YEAR: 2011,
-    INSTNM: 'Liberty University' },
-  { UNITID: 232557,
-    EFYTOTLT: 77778,
-    YEAR: 2011,
-    INSTNM: 'Liberty University' },
-  { UNITID: 232557,
-    EFYTOTLT: 77778,
-    YEAR: 2011,
-    INSTNM: 'Liberty University' },
-  { UNITID: 104151,
-    EFYTOTLT: 76438,
-    YEAR: 2010,
-    INSTNM: 'Arizona State University' },
-  { UNITID: 104151,
-    EFYTOTLT: 76438,
-    YEAR: 2010,
-    INSTNM: 'Arizona State University' },
-  { UNITID: 104151,
-    EFYTOTLT: 76438,
-    YEAR: 2010,
-    INSTNM: 'Arizona State University' },
-  { UNITID: 232946,
-    EFYTOTLT: 75490,
-    YEAR: 2011,
-    INSTNM: 'Northern Virginia Community College' },
-  { UNITID: 232946,
-    EFYTOTLT: 75490,
-    YEAR: 2011,
-    INSTNM: 'Northern Virginia Community College' },
-  { UNITID: 232946,
-    EFYTOTLT: 75490,
-    YEAR: 2011,
-    INSTNM: 'Northern Virginia Community College' },
-  { UNITID: 228547,
-    EFYTOTLT: 74833,
-    YEAR: 2011,
-    INSTNM: 'Tarrant County College District' },
-  { UNITID: 228547,
-    EFYTOTLT: 74833,
-    YEAR: 2011,
-    INSTNM: 'Tarrant County College District' },
-  { UNITID: 228547,
-    EFYTOTLT: 74833,
-    YEAR: 2011,
-    INSTNM: 'Tarrant County College District' },
-  { UNITID: 232946,
-    EFYTOTLT: 72563,
-    YEAR: 2010,
-    INSTNM: 'Northern Virginia Community College' },
-  { UNITID: 232946,
-    EFYTOTLT: 72563,
-    YEAR: 2010,
-    INSTNM: 'Northern Virginia Community College' },
-  { UNITID: 232946,
-    EFYTOTLT: 72563,
-    YEAR: 2010,
-    INSTNM: 'Northern Virginia Community College' },
-  { UNITID: 125231,
-    EFYTOTLT: 71763,
-    YEAR: 2011,
-    INSTNM: 'Walden University' },
-  { UNITID: 125231,
-    EFYTOTLT: 71763,
-    YEAR: 2011,
-    INSTNM: 'Walden University' },
-  { UNITID: 125231,
-    EFYTOTLT: 71763,
-    YEAR: 2011,
-    INSTNM: 'Walden University' },
-  { UNITID: 222992,
-    EFYTOTLT: 70326,
-    YEAR: 2010,
-    INSTNM: 'Austin Community College District' },
-  { UNITID: 222992,
-    EFYTOTLT: 70326,
-    YEAR: 2010,
-    INSTNM: 'Austin Community College District' },
-  { UNITID: 222992,
-    EFYTOTLT: 70326,
-    YEAR: 2010,
-    INSTNM: 'Austin Community College District' },
-  { UNITID: 228547,
-    EFYTOTLT: 70074,
-    YEAR: 2010,
-    INSTNM: 'Tarrant County College District' },
-  { UNITID: 228547,
-    EFYTOTLT: 70074,
-    YEAR: 2010,
-    INSTNM: 'Tarrant County College District' },
-  { UNITID: 228547,
-    EFYTOTLT: 70074,
-    YEAR: 2010,
-    INSTNM: 'Tarrant County College District' },
-  { UNITID: 449339,
-    EFYTOTLT: 69384,
-    YEAR: 2010,
-    INSTNM: 'American Public University System' },
-  { UNITID: 449339,
-    EFYTOTLT: 69384,
-    YEAR: 2010,
-    INSTNM: 'American Public University System' },
-  { UNITID: 449339,
-    EFYTOTLT: 69384,
-    YEAR: 2010,
-    INSTNM: 'American Public University System' },
-  { UNITID: 132903,
-    EFYTOTLT: 66273,
-    YEAR: 2011,
-    INSTNM: 'University of Central Florida' },
-  { UNITID: 132903,
-    EFYTOTLT: 66273,
-    YEAR: 2011,
-    INSTNM: 'University of Central Florida' },
-  { UNITID: 132903,
-    EFYTOTLT: 66273,
-    YEAR: 2011,
-    INSTNM: 'University of Central Florida' },
-  { UNITID: 104717,
-    EFYTOTLT: 65509,
-    YEAR: 2011,
-    INSTNM: 'Grand Canyon University' },
-  { UNITID: 104717,
-    EFYTOTLT: 65509,
-    YEAR: 2011,
-    INSTNM: 'Grand Canyon University' },
-  { UNITID: 104717,
-    EFYTOTLT: 65509,
-    YEAR: 2011,
-    INSTNM: 'Grand Canyon University' },
-  { UNITID: 174066,
-    EFYTOTLT: 65213,
-    YEAR: 2010,
-    INSTNM: 'University of Minnesota-Twin Cities' },
-  { UNITID: 174066,
-    EFYTOTLT: 65213,
-    YEAR: 2010,
-    INSTNM: 'University of Minnesota-Twin Cities' },
-  { UNITID: 174066,
-    EFYTOTLT: 65213,
-    YEAR: 2010,
-    INSTNM: 'University of Minnesota-Twin Cities' },
-  { UNITID: 232557,
-    EFYTOTLT: 64610,
-    YEAR: 2010,
-    INSTNM: 'Liberty University' },
-  { UNITID: 232557,
-    EFYTOTLT: 64610,
-    YEAR: 2010,
-    INSTNM: 'Liberty University' },
-  { UNITID: 232557,
-    EFYTOTLT: 64610,
-    YEAR: 2010,
-    INSTNM: 'Liberty University' },
-  { UNITID: 204796,
-    EFYTOTLT: 64425,
-    YEAR: 2011,
-    INSTNM: 'Ohio State University-Main Campus' },
-  { UNITID: 204796,
-    EFYTOTLT: 64425,
-    YEAR: 2011,
-    INSTNM: 'Ohio State University-Main Campus' },
-  { UNITID: 204796,
-    EFYTOTLT: 64425,
-    YEAR: 2011,
-    INSTNM: 'Ohio State University-Main Campus' },
-  { UNITID: 174066,
-    EFYTOTLT: 64349,
-    YEAR: 2011,
-    INSTNM: 'University of Minnesota-Twin Cities' },
-  { UNITID: 174066,
-    EFYTOTLT: 64349,
-    YEAR: 2011,
-    INSTNM: 'University of Minnesota-Twin Cities' },
   { UNITID: 174066,
     EFYTOTLT: 64349,
     YEAR: 2011,
     INSTNM: 'University of Minnesota-Twin Cities' } ]
-[90mGET /question1 [32m200 [90m691ms - 7.13kb[0m
-[90mGET /question1 [32m200 [90m690ms - 9.7kb[0m
-[90mGET /js/initBody.js [36m304 [90m13ms[0m
-[90mGET /css/jquery.dataTables.css [36m304 [90m5ms[0m
+[90mGET /question1 [36m304 [90m747ms[0m
+[90mGET /css/style.css [36m304 [90m10ms[0m
+[90mGET /js/jquery.js [36m304 [90m1ms[0m
+[90mGET /css/bootstrap.css [36m304 [90m2ms[0m
+[90mGET /js/jquery.dataTables.js [36m304 [90m1ms[0m
+[90mGET /css/jquery.dataTables.css [36m304 [90m22ms[0m
+[90mGET /js/initBody.js [36m304 [90m72ms[0m
+[90mGET /src/DataTables.js [36m304 [90m116ms[0m
+Fetching ENRollments ..
+Fetched 14725 records
+Now fetching Financials .. type=all
+processed 1000
+processed 2000
+processed 3000
+processed 4000
+processed 5000
+processed 6000
+processed 7000
+processed 8000
+processed 9000
+processed 10000
+processed 11000
+processed 12000
+processed 13000
+processed 14000
+processed 14705
+processed 14706
+processed 14707
+processed 14708
+processed 14709
+processed 14710
+processed 14711
+processed 14712
+processed 14713
+processed 14714
+processed 14715
+processed 14716
+processed 14717
+processed 14718
+processed 14719
+processed 14720
+processed 14721
+processed 14722
+processed 14723
+processed 14724
+processed 14725
+3891
+[90mGET /question9 [32m200 [90m5384ms - 685.54kb[0m
+[90mGET /css/style.css [36m304 [90m1ms[0m
 [90mGET /css/bootstrap.css [36m304 [90m1ms[0m
-[90mGET /js/jquery.js [36m304 [90m0ms[0m
-[90mGET /js/jquery.dataTables.js [36m304 [90m0ms[0m
-[90mGET /css/style.css [36m304 [90m0ms[0m
-[90mGET /src/DataTables.js [36m304 [90m23ms[0m
+[90mGET /css/jquery.dataTables.css [36m304 [90m1ms[0m
+[90mGET /js/jquery.js [36m304 [90m1ms[0m
+[90mGET /js/jquery.dataTables.js [36m304 [90m1ms[0m
+[90mGET /js/initBody.js [36m304 [90m41ms[0m
+[90mGET /src/DataTables.js [36m304 [90m50ms[0m
+[90mGET /images/sort_asc.png [36m304 [90m33ms[0m
+[90mGET /images/sort_both.png [36m304 [90m21ms[0m
+[90mGET /images/back_disabled.png [36m304 [90m1ms[0m
+[90mGET /images/forward_disabled.png [36m304 [90m1ms[0m
+[90mGET /images/forward_enabled.png [36m304 [90m1ms[0m
+Fetching ENRollments ..
+Fetched 14725 records
+Now fetching Financials .. type=revenue
+processed 4000
+processed 4000
+processed 5000
+processed 5000
+processed 6000
+processed 7000
+processed 8000
+processed 9000
+processed 10000
+processed 11000
+processed 12000
+processed 13000
+processed 14000
+processed 14705
+processed 14705
+processed 14706
+processed 14707
+processed 14707
+processed 14708
+processed 14709
+processed 14710
+processed 14711
+processed 14712
+processed 14713
+processed 14714
+processed 14715
+processed 14716
+processed 14717
+processed 14718
+processed 14719
+processed 14720
+processed 14721
+processed 14722
+processed 14723
+processed 14724
+processed 14725
+processed 14726
+processed 14727
+processed 14728
+processed 14729
+processed 14730
+processed 14731
+processed 14732
+processed 14733
+processed 14734
+processed 14735
+processed 14736
+processed 14737
+processed 14738
+processed 14739
+processed 14740
+processed 14741
+processed 14742
+processed 14743
+processed 14744
+processed 14745
+processed 14746
+processed 14747
+processed 14748
+processed 14749
+processed 14750
+processed 14751
+processed 14752
+processed 14753
+processed 14754
+processed 14755
+processed 14756
+processed 14757
+processed 14758
+processed 14759
+processed 14760
+processed 14761
+processed 14762
+processed 14763
+processed 14764
+processed 14765
+processed 14766
+processed 14767
+processed 14768
+processed 14769
+processed 14770
+processed 14771
+processed 14772
+processed 14773
+processed 14774
+processed 14775
+processed 14776
+processed 14777
+processed 14778
+processed 14779
+processed 14780
+processed 14781
+processed 14782
+processed 14783
+processed 14784
+processed 14785
+processed 14786
+processed 14787
+processed 14788
+processed 14789
+processed 14790
+processed 14791
+processed 14792
+processed 14793
+processed 14794
+processed 14795
+processed 14796
+processed 14797
+processed 14798
+processed 14799
+processed 14800
+processed 14801
+processed 14802
+processed 14803
+processed 14804
+processed 14805
+processed 14806
+processed 14807
+processed 14808
+processed 14809
+processed 14810
+processed 14811
+processed 14812
+processed 14813
+processed 14813
+processed 14814
+processed 14815
+processed 14816
+processed 14817
+processed 14818
+processed 14819
+processed 14820
+processed 14821
+processed 14822
+processed 14823
+processed 14824
+processed 14824
+processed 14824
+processed 14825
+processed 14825
+processed 14825
+processed 14825
+processed 14826
+processed 14827
+processed 14827
+processed 14827
+processed 14827
+processed 14827
+processed 14827
+processed 14828
+processed 14829
+processed 14830
+processed 14831
+processed 14831
+processed 14832
+processed 14833
+processed 14834
+processed 14835
+processed 14836
+processed 14836
+processed 14836
+processed 14837
+processed 14838
+processed 14838
+processed 14839
+processed 14839
+processed 14839
+processed 14839
+processed 14839
+processed 14840
+processed 14841
+processed 14841
+processed 14841
+processed 14841
+processed 14841
+processed 14842
+processed 14842
+processed 14843
+processed 14844
+processed 14845
+processed 14846
+processed 14846
+processed 14847
+processed 14848
+processed 14849
+processed 14849
+processed 14849
+processed 14849
+processed 14850
+processed 14851
+processed 14852
+processed 14852
+processed 14853
+processed 14854
+processed 14855
+processed 14855
+processed 14856
+processed 14857
+processed 14858
+processed 14859
+processed 14860
+processed 14861
+processed 14861
+processed 14862
+processed 14863
+processed 14864
+processed 14865
+processed 14866
+processed 14867
+processed 14867
+processed 14868
+processed 14868
+processed 14869
+processed 14870
+processed 14870
+processed 14870
+processed 14871
+processed 14872
+processed 14873
+processed 14874
+processed 14875
+processed 14876
+processed 14877
+processed 14877
+processed 14878
+processed 14879
+processed 14879
+processed 14880
+processed 14881
+processed 14882
+processed 14883
+processed 14883
+processed 14884
+processed 14885
+processed 14885
+processed 14886
+processed 14887
+processed 14888
+processed 14889
+processed 14890
+processed 14891
+processed 14892
+processed 14893
+processed 14894
+processed 14895
+processed 14896
+processed 14896
+processed 14897
+processed 14898
+processed 14899
+processed 14900
+processed 14900
+processed 14901
+processed 14902
+processed 14903
+processed 14904
+processed 14905
+processed 14905
+processed 14906
+processed 14907
+processed 14907
+processed 14908
+processed 14908
+processed 14908
+processed 14909
+processed 14909
+processed 14909
+processed 14910
+processed 14911
+processed 14911
+processed 14912
+processed 14913
+processed 14913
+processed 14913
+processed 14914
+processed 14915
+processed 14916
+processed 14917
+processed 14918
+processed 14919
+processed 14920
+processed 14921
+processed 14921
+processed 14921
+processed 14922
+processed 14923
+processed 14924
+processed 14925
+processed 14926
+processed 14927
+processed 14927
+processed 14927
+processed 14927
+processed 14928
+processed 14929
+processed 14930
+processed 14931
+processed 14932
+processed 14933
+processed 14934
+processed 14935
+processed 14936
+processed 14937
+processed 14938
+processed 14939
+processed 14940
+processed 14941
+processed 14941
+processed 14942
+processed 14942
+processed 14943
+processed 14944
+processed 14944
+processed 14944
+processed 14944
+processed 14945
+processed 14946
+processed 14947
+processed 14948
+processed 14949
+processed 14950
+processed 14950
+processed 14950
+processed 14951
+processed 14952
+processed 14953
+processed 14954
+processed 14954
+processed 14955
+processed 14955
+processed 14955
+processed 14956
+processed 14957
+processed 14957
+processed 14958
+processed 14958
+processed 14959
+processed 14959
+processed 14960
+processed 14961
+processed 14961
+processed 14961
+processed 14961
+processed 14962
+processed 14962
+processed 14962
+processed 14963
+processed 14964
+processed 14965
+processed 14965
+processed 14966
+processed 14967
+processed 14968
+processed 14969
+processed 14970
+processed 14971
+processed 14972
+processed 14973
+processed 14974
+processed 14975
+processed 14976
+processed 14977
+processed 14978
+processed 14978
+processed 14978
+processed 14979
+processed 14980
+processed 14981
+processed 14982
+processed 14983
+processed 14984
+processed 14985
+processed 14986
+processed 14987
+processed 14987
+processed 14988
+processed 14989
+processed 14989
+processed 14990
+processed 14990
+processed 14991
+processed 14991
+processed 14991
+processed 14992
+processed 14992
+processed 14993
+processed 14994
+processed 14995
+processed 14996
+processed 14997
+processed 14998
+processed 14998
+processed 14998
+processed 14998
+processed 14999
+processed 15000
+processed 15000
+processed 15001
+processed 15002
+processed 15003
+processed 15004
+processed 15005
+processed 15005
+processed 15006
+processed 15007
+processed 15008
+processed 15009
+processed 15010
+processed 15011
+processed 15012
+processed 15013
+processed 15014
+processed 15014
+processed 15015
+processed 15015
+processed 15016
+processed 15017
+processed 15018
+processed 15019
+processed 15020
+processed 15021
+processed 15022
+processed 15022
+processed 15023
+processed 15023
+processed 15023
+processed 15023
+processed 15024
+processed 15025
+processed 15025
+processed 15026
+processed 15026
+processed 15026
+processed 15026
+processed 15027
+processed 15027
+processed 15028
+processed 15029
+processed 15030
+processed 15031
+processed 15032
+processed 15033
+processed 15034
+processed 15035
+processed 15036
+processed 15036
+processed 15037
+processed 15038
+processed 15039
+processed 15040
+processed 15041
+processed 15042
+processed 15043
+processed 15044
+processed 15044
+processed 15044
+processed 15045
+processed 15045
+processed 15046
+processed 15046
+processed 15046
+processed 15047
+processed 15048
+processed 15048
+processed 15048
+processed 15049
+processed 15050
+processed 15050
+processed 15051
+processed 15051
+processed 15052
+processed 15052
+processed 15053
+processed 15054
+processed 15055
+processed 15055
+processed 15055
+processed 15056
+processed 15057
+processed 15057
+processed 15058
+processed 15059
+processed 15060
+processed 15061
+processed 15062
+processed 15063
+processed 15064
+processed 15065
+processed 15066
+processed 15067
+processed 15068
+processed 15068
+processed 15069
+processed 15070
+processed 15071
+processed 15072
+processed 15073
+processed 15074
+processed 15075
+processed 15076
+processed 15077
+processed 15077
+processed 15077
+processed 15078
+processed 15078
+processed 15079
+processed 15080
+processed 15081
+processed 15082
+processed 15082
+processed 15083
+processed 15083
+processed 15084
+processed 15085
+processed 15086
+processed 15086
+processed 15086
+processed 15087
+processed 15088
+processed 15088
+processed 15089
+processed 15090
+processed 15091
+processed 15091
+processed 15092
+processed 15092
+processed 15092
+processed 15093
+processed 15093
+processed 15093
+processed 15094
+processed 15095
+processed 15096
+processed 15096
+processed 15097
+processed 15098
+processed 15098
+processed 15098
+processed 15099
+processed 15100
+processed 15101
+processed 15102
+processed 15103
+processed 15104
+processed 15105
+processed 15106
+processed 15106
+processed 15107
+processed 15108
+processed 15108
+processed 15109
+processed 15109
+processed 15110
+processed 15111
+processed 15112
+processed 15112
+processed 15112
+processed 15112
+processed 15112
+processed 15113
+processed 15114
+processed 15115
+processed 15116
+processed 15117
+processed 15118
+processed 15119
+processed 15119
+processed 15120
+processed 15121
+processed 15121
+processed 15121
+processed 15121
+processed 15121
+processed 15122
+processed 15123
+processed 15124
+processed 15124
+processed 15125
+processed 15126
+processed 15127
+processed 15128
+processed 15129
+processed 15130
+processed 15131
+processed 15132
+processed 15132
+processed 15133
+processed 15134
+processed 15135
+processed 15136
+processed 15137
+processed 15138
+processed 15138
+processed 15139
+processed 15140
+processed 15141
+processed 15141
+processed 15141
+processed 15142
+processed 15143
+processed 15144
+processed 15145
+processed 15146
+processed 15147
+processed 15147
+processed 15148
+processed 15149
+processed 15150
+processed 15150
+processed 15150
+processed 15151
+processed 15151
+processed 15152
+processed 15153
+processed 15154
+processed 15155
+processed 15156
+processed 15157
+processed 15158
+processed 15159
+processed 15160
+processed 15161
+processed 15162
+processed 15163
+processed 15164
+processed 15165
+processed 15165
+processed 15166
+processed 15167
+processed 15168
+processed 15169
+processed 15170
+processed 15171
+processed 15172
+processed 15173
+processed 15174
+processed 15175
+processed 15176
+processed 15177
+processed 15178
+processed 15179
+processed 15180
+processed 15181
+processed 15182
+processed 15183
+processed 15183
+processed 15183
+processed 15183
+processed 15183
+processed 15183
+processed 15183
+processed 15184
+processed 15185
+processed 15186
+processed 15187
+processed 15188
+processed 15189
+processed 15190
+processed 15190
+processed 15190
+processed 15190
+processed 15191
+processed 15191
+processed 15191
+processed 15191
+processed 15192
+processed 15192
+processed 15192
+processed 15192
+processed 15193
+processed 15194
+processed 15195
+processed 15195
+processed 15195
+processed 15196
+processed 15196
+processed 15196
+processed 15196
+processed 15196
+processed 15196
+processed 15196
+processed 15197
+processed 15198
+processed 15199
+processed 15200
+processed 15201
+processed 15202
+processed 15203
+processed 15203
+processed 15204
+processed 15205
+processed 15206
+processed 15207
+processed 15208
+processed 15209
+processed 15209
+processed 15210
+processed 15211
+processed 15212
+processed 15213
+processed 15214
+processed 15215
+processed 15216
+processed 15217
+processed 15217
+processed 15218
+processed 15218
+processed 15219
+processed 15220
+processed 15221
+processed 15221
+processed 15222
+processed 15223
+processed 15224
+processed 15225
+processed 15226
+processed 15226
+processed 15227
+processed 15228
+processed 15228
+processed 15229
+processed 15229
+processed 15230
+processed 15231
+processed 15232
+processed 15233
+processed 15234
+processed 15235
+processed 15236
+processed 15237
+processed 15238
+processed 15239
+processed 15240
+processed 15241
+processed 15241
+processed 15242
+processed 15243
+processed 15244
+processed 15245
+processed 15246
+processed 15247
+processed 15248
+processed 15249
+processed 15250
+processed 15250
+processed 15251
+processed 15252
+processed 15253
+processed 15254
+processed 15255
+processed 15256
+processed 15257
+processed 15258
+processed 15259
+processed 15260
+processed 15261
+processed 15262
+processed 15263
+processed 15264
+processed 15265
+processed 15266
+processed 15267
+processed 15268
+processed 15269
+processed 15270
+processed 15271
+processed 15272
+processed 15273
+processed 15274
+processed 15275
+processed 15276
+processed 15277
+processed 15278
+processed 15279
+processed 15280
+processed 15281
+processed 15281
+processed 15282
+processed 15283
+processed 15284
+processed 15285
+processed 15286
+processed 15287
+processed 15288
+processed 15289
+processed 15290
+processed 15291
+processed 15292
+processed 15293
+processed 15294
+processed 15295
+processed 15296
+processed 15297
+processed 15298
+processed 15299
+processed 15300
+processed 15301
+processed 15302
+processed 15302
+processed 15303
+processed 15304
+processed 15305
+processed 15306
+processed 15307
+processed 15308
+processed 15309
+processed 15310
+processed 15311
+processed 15312
+processed 15313
+processed 15314
+processed 15315
+processed 15316
+processed 15317
+processed 15318
+processed 15319
+processed 15320
+processed 15320
+processed 15321
+processed 15322
+processed 15323
+processed 15324
+processed 15325
+processed 15326
+processed 15327
+processed 15328
+processed 15329
+processed 15330
+processed 15331
+processed 15332
+processed 15333
+processed 15334
+processed 15335
+processed 15336
+processed 15337
+processed 15338
+processed 15339
+processed 15339
+processed 15340
+processed 15341
+processed 15342
+processed 15343
+processed 15344
+processed 15345
+processed 15346
+processed 15347
+processed 15348
+processed 15349
+processed 15350
+processed 15351
+processed 15352
+processed 15353
+processed 15354
+processed 15355
+processed 15356
+processed 15357
+processed 15358
+processed 15359
+processed 15360
+processed 15361
+processed 15362
+processed 15363
+processed 15364
+processed 15365
+processed 15366
+processed 15367
+processed 15368
+processed 15369
+processed 15370
+processed 15371
+processed 15372
+processed 15373
+processed 15374
+processed 15375
+processed 15376
+processed 15377
+processed 15378
+processed 15379
+processed 15380
+processed 15381
+processed 15382
+processed 15383
+processed 15384
+processed 15385
+processed 15386
+processed 15387
+processed 15388
+processed 15389
+processed 15390
+processed 15391
+processed 15392
+processed 15393
+processed 15394
+processed 15395
+processed 15396
+processed 15397
+processed 15398
+processed 15399
+processed 15400
+processed 15401
+processed 15402
+processed 15403
+processed 15404
+processed 15404
+processed 15405
+processed 15405
+processed 15406
+processed 15407
+processed 15408
+processed 15409
+processed 15410
+processed 15411
+processed 15412
+processed 15413
+processed 15414
+processed 15415
+processed 15416
+processed 15417
+processed 15418
+processed 15419
+processed 15420
+processed 15421
+processed 15422
+processed 15423
+processed 15424
+processed 15425
+processed 15426
+processed 15427
+processed 15428
+processed 15429
+processed 15430
+processed 15431
+processed 15432
+processed 15433
+processed 15434
+processed 15435
+processed 15436
+processed 15437
+processed 15438
+processed 15439
+processed 15440
+processed 15441
+processed 15442
+processed 15443
+processed 15444
+processed 15445
+processed 15446
+processed 15447
+processed 15448
+processed 15449
+processed 15450
+processed 15451
+processed 15452
+processed 15453
+processed 15454
+processed 15455
+processed 15456
+processed 15457
+processed 15458
+processed 15459
+processed 15460
+processed 15461
+processed 15462
+processed 15463
+processed 15464
+processed 15465
+processed 15466
+processed 15467
+processed 15468
+processed 15469
+processed 15470
+processed 15471
+processed 15472
+processed 15473
+processed 15474
+processed 15474
+processed 15475
+processed 15476
+processed 15477
+processed 15478
+processed 15479
+processed 15480
+processed 15481
+processed 15482
+processed 15483
+processed 15484
+processed 15484
+processed 15485
+processed 15486
+processed 15487
+processed 15488
+processed 15489
+processed 15490
+processed 15491
+processed 15492
+processed 15493
+processed 15494
+processed 15495
+processed 15496
+processed 15497
+processed 15498
+processed 15499
+processed 15500
+processed 15501
+processed 15502
+processed 15503
+processed 15504
+processed 15505
+processed 15506
+processed 15507
+processed 15508
+processed 15509
+processed 15510
+processed 15511
+processed 15512
+processed 15513
+processed 15514
+processed 15515
+processed 15516
+processed 15517
+processed 15518
+processed 15519
+processed 15520
+processed 15521
+processed 15522
+processed 15523
+processed 15524
+[ { UNITID: 375966,
+    YEAR: 2010,
+    INSTNM: 'Eastern Center for Arts and Technology',
+    STAT: 3431896,
+    STUDS: 183,
+    STAT_PER_STUD: 18753.53 },
+  { UNITID: 457943,
+    YEAR: 2010,
+    INSTNM: 'Somerset County Technology Center',
+    STAT: 838369,
+    STUDS: 32,
+    STAT_PER_STUD: 26199.03 },
+  { UNITID: 383084,
+    YEAR: 2010,
+    INSTNM: 'Hacienda La Puente Adult Education',
+    STAT: 34438167,
+    STUDS: 5940,
+    STAT_PER_STUD: 5797.67 },
+  { UNITID: 384342,
+    YEAR: 2010,
+    INSTNM: 'Heartland Community College',
+    STAT: 42163870,
+    STUDS: 10168,
+    STAT_PER_STUD: 4146.72 },
+  { UNITID: 403469,
+    YEAR: 2010,
+    INSTNM: 'Illinois Eastern Community Colleges-Frontier Community Coll',
+    STUDS: 8931,
+    LIABS: '',
+    LIABS_PER_STUD: 0,
+    ASSETS: '',
+    ASSETS_PER_STUD: 0,
+    REVENUE: '',
+    REVENUE_PER_STUD: 0 },
+  { UNITID: 405872,
+    YEAR: 2010,
+    INSTNM: 'Carroll Community College',
+    STAT: 30952941,
+    STUDS: 5442,
+    STAT_PER_STUD: 5687.79 },
+  { UNITID: 406325,
+    YEAR: 2010,
+    INSTNM: 'Schuyler-Steuben-Chemung-Tioga-Allegany BOCES',
+    STUDS: 171,
+    LIABS: '',
+    LIABS_PER_STUD: 0,
+    ASSETS: '',
+    ASSETS_PER_STUD: 0,
+    REVENUE: '',
+    REVENUE_PER_STUD: 0 },
+  { UNITID: 407489,
+    YEAR: 2010,
+    INSTNM: 'Mahoning County Career and Technical Center',
+    STAT: 892939,
+    STUDS: 201,
+    STAT_PER_STUD: 4442.48 },
+  { UNITID: 407577,
+    YEAR: 2010,
+    INSTNM: 'Scioto County Career Technical Center',
+    STAT: 2372970,
+    STUDS: 432,
+    STAT_PER_STUD: 5492.99 },
+  { UNITID: 409537,
+    YEAR: 2010,
+    INSTNM: 'Pike County Joint Vocational School District',
+    STUDS: 125,
+    LIABS: '',
+    LIABS_PER_STUD: 0,
+    ASSETS: '',
+    ASSETS_PER_STUD: 0,
+    REVENUE: '',
+    REVENUE_PER_STUD: 0 },
+  { UNITID: 412535,
+    YEAR: 2010,
+    INSTNM: 'Shawsheen Valley Regional Vocational Technical School',
+    STUDS: 38,
+    LIABS: '',
+    LIABS_PER_STUD: 0,
+    ASSETS: '',
+    ASSETS_PER_STUD: 0,
+    REVENUE: '',
+    REVENUE_PER_STUD: 0 },
+  { UNITID: 417105,
+    YEAR: 2010,
+    INSTNM: 'Baldwin Park Adult & Community Education',
+    STAT: 13316158,
+    STUDS: 1480,
+    STAT_PER_STUD: 8997.4 },
+  { UNITID: 417187,
+    YEAR: 2010,
+    INSTNM: 'Bullard-Havens Technical High School',
+    STUDS: 40,
+    LIABS: '',
+    LIABS_PER_STUD: 0,
+    ASSETS: '',
+    ASSETS_PER_STUD: 0,
+    REVENUE: '',
+    REVENUE_PER_STUD: 0 },
+  { UNITID: 417655,
+    YEAR: 2010,
+    INSTNM: 'Warrensburg Area Career Center',
+    STUDS: 40,
+    LIABS: '',
+    LIABS_PER_STUD: 0,
+    ASSETS: '',
+    ASSETS_PER_STUD: 0,
+    REVENUE: '',
+    REVENUE_PER_STUD: 0 },
+  { UNITID: 417947,
+    YEAR: 2010,
+    INSTNM: 'Syracuse City Schools Practical Nursing Program',
+    STUDS: 40,
+    LIABS: '',
+    LIABS_PER_STUD: 0,
+    ASSETS: '',
+    ASSETS_PER_STUD: 0,
+    REVENUE: '',
+    REVENUE_PER_STUD: 0 },
+  { UNITID: 418029,
+    YEAR: 2010,
+    INSTNM: 'Washington Saratoga Warren Hamilton Essex BOCES-Practical Nursing',
+    STUDS: 144,
+    LIABS: '',
+    LIABS_PER_STUD: 0,
+    ASSETS: '',
+    ASSETS_PER_STUD: 0,
+    REVENUE: '',
+    REVENUE_PER_STUD: 0 },
+  { UNITID: 418223,
+    YEAR: 2010,
+    INSTNM: 'Willoughby-Eastlake School of Practical Nursing',
+    STUDS: 75,
+    LIABS: '',
+    LIABS_PER_STUD: 0,
+    ASSETS: '',
+    ASSETS_PER_STUD: 0,
+    REVENUE: '',
+    REVENUE_PER_STUD: 0 },
+  { UNITID: 418296,
+    YEAR: 2010,
+    INSTNM: 'Indian Capital Technology Center-Muskogee',
+    STAT: 11038579,
+    STUDS: 777,
+    STAT_PER_STUD: 14206.67 },
+  { UNITID: 418357,
+    YEAR: 2010,
+    INSTNM: 'Wes Watkins Technology Center',
+    STAT: 3563859,
+    STUDS: 302,
+    STAT_PER_STUD: 11800.86 },
+  { UNITID: 418454,
+    YEAR: 2010,
+    INSTNM: 'Greater Johnstown Career and Technology Center',
+    STAT: 7398953,
+    STUDS: 522,
+    STAT_PER_STUD: 14174.24 } ]
+[90mGET /question6 [32m200 [90m5484ms - 4.51kb[0m
+[90mGET /css/jquery.dataTables.css [36m304 [90m1ms[0m
+[90mGET /js/jquery.dataTables.js [36m304 [90m18ms[0m
+[90mGET /js/jquery.js [36m304 [90m15ms[0m
+[90mGET /css/bootstrap.css [36m304 [90m1ms[0m
+[90mGET /css/style.css [36m304 [90m2ms[0m
+[90mGET /js/initBody.js [36m304 [90m35ms[0m
+[90mGET /src/DataTables.js [36m304 [90m58ms[0m
+Fetching ENRollments ..
+Fetched 14725 records
+Now fetching Financials .. type=all
+processed 4000
+processed 5000
+processed 6000
+processed 7000
+processed 7000
+processed 8000
+processed 9000
+processed 10000
+processed 10000
+processed 10000
+processed 10000
+processed 11000
+processed 11000
+processed 12000
+processed 12000
+processed 13000
+processed 14000
+processed 14705
+processed 14706
+processed 14707
+processed 14708
+processed 14709
+processed 14710
+processed 14711
+processed 14712
+processed 14713
+processed 14714
+processed 14715
+processed 14716
+processed 14717
+processed 14718
+processed 14719
+processed 14720
+processed 14721
+processed 14722
+processed 14723
+processed 14724
+processed 14725
+Q12: Fetching aggregate 2010 enrollments ..
+3891
+[90mGET /question9 [36m304 [90m6705ms[0m
+Q12: Fetched 7246 records
+Q12: Now Fetch matching 2011 enrollments
+q12: 1000
+q12: 2000
+q12: 3000
+q12: 4000
+q12: 5000
+q12: 6000
+q12: 7000
+q12: 7227
+q12: 7228
+q12: 7229
+q12: 7230
+q12: 7231
+q12: 7232
+q12: 7233
+q12: 7234
+q12: 7235
+q12: 7236
+q12: 7237
+q12: 7238
+q12: 7239
+q12: 7240
+q12: 7241
+q12: 7242
+q12: 7243
+q12: 7244
+q12: 7245
+Done
+Looking up [371690]
+Looking up [459055]
+Looking up [446729]
+Looking up [460118]
+Looking up [459666]
+Looking up [458849]
+Looking up [446428]
+Looking up [460525]
+Looking up [459310]
+Looking up [460181]
+Looking up [458797]
+Looking up [458973]
+Looking up [160320]
+Looking up [459268]
+Looking up [460206]
+Looking up [460136]
+Looking up [459851]
+Looking up [380067]
+Looking up [198747]
+Looking up [457509]
+q12: 7246
+[ { _id: 'hd2011-UTF8.csv_7315',
+    INSTNM: 'Ross Medical Education Center-Niles',
+    UNITID: 460118 } ]
+[ { _id: 'hd2011-UTF8.csv_7245',
+    INSTNM: 'Future-Tech Institute',
+    UNITID: 459310 } ]
+[ { _id: 'hd2011-UTF8.csv_7240',
+    INSTNM: 'South UniversityVirginia Beach',
+    UNITID: 459268 } ]
+[ { _id: 'hd2011-UTF8.csv_2932',
+    INSTNM: 'Laurel University',
+    UNITID: 198747 } ]
+[ { _id: 'hd2011-UTF8.csv_7278',
+    INSTNM: 'ITT Technical InstituteNorth Charleston',
+    UNITID: 459666 } ]
+[ { _id: 'hd2011-UTF8.csv_7320',
+    INSTNM: 'Concorde Career Institute-Dallas',
+    UNITID: 460181 } ]
+[ { _id: 'hd2011-UTF8.csv_7322',
+    INSTNM: 'Concorde Career Institute-San Antonio',
+    UNITID: 460206 } ]
+[ { _id: 'hd2011-UTF8.csv_7082',
+    INSTNM: 'Master Educators Beauty School',
+    UNITID: 457509 } ]
+[ { _id: 'hd2011-UTF8.csv_4872',
+    INSTNM: 'Downey Adult School',
+    UNITID: 371690 } ]
+[ { _id: 'hd2011-UTF8.csv_7205',
+    INSTNM: 'Empire Beauty School-Paramus',
+    UNITID: 458849 } ]
+[ { _id: 'hd2011-UTF8.csv_7200',
+    INSTNM: 'Dade Medical College-Hollywood',
+    UNITID: 458797 } ]
+[ { _id: 'hd2011-UTF8.csv_7317',
+    INSTNM: 'Pima Medical Institute-Houston',
+    UNITID: 460136 } ]
+[ { _id: 'hd2011-UTF8.csv_7221',
+    INSTNM: 'Empire Beauty School-West Palm',
+    UNITID: 459055 } ]
+[ { _id: 'hd2011-UTF8.csv_6296',
+    INSTNM: 'Performance Training Institute',
+    UNITID: 446428 } ]
+[ { _id: 'hd2011-UTF8.csv_7213',
+    INSTNM: 'Strayer University-Texas',
+    UNITID: 458973 } ]
+[ { _id: 'hd2011-UTF8.csv_7291',
+    INSTNM: 'Herzing University-Brookfield',
+    UNITID: 459851 } ]
+[ { _id: 'hd2011-UTF8.csv_6319',
+    INSTNM: 'University of Phoenix-Des Moines Campus',
+    UNITID: 446729 } ]
+[ { _id: 'hd2011-UTF8.csv_7338',
+    INSTNM: 'Milan Institute-Nampa',
+    UNITID: 460525 } ]
+[ { _id: 'hd2011-UTF8.csv_1658',
+    INSTNM: 'Aveda Institute-Covington',
+    UNITID: 160320 } ]
+[ { _id: 'hd2011-UTF8.csv_4997',
+    INSTNM: 'Houston Training School-Jacinto City',
+    UNITID: 380067 } ]
+[ { unitId: '371690',
+    deltaPercent: 4040,
+    totStuds2010: 110,
+    totStuds2011: 4554,
+    instName: 'Downey Adult School' },
+  { unitId: '459055',
+    deltaPercent: 2766.67,
+    totStuds2010: 6,
+    totStuds2011: 172,
+    instName: 'Empire Beauty School-West Palm' },
+  { unitId: '446729',
+    deltaPercent: 1550,
+    totStuds2010: 4,
+    totStuds2011: 66,
+    instName: 'University of Phoenix-Des Moines Campus' },
+  { unitId: '460118',
+    deltaPercent: 1213.64,
+    totStuds2010: 44,
+    totStuds2011: 578,
+    instName: 'Ross Medical Education Center-Niles' },
+  { unitId: '459666',
+    deltaPercent: 1055.88,
+    totStuds2010: 68,
+    totStuds2011: 786,
+    instName: 'ITT Technical InstituteNorth Charleston' },
+  { unitId: '458849',
+    deltaPercent: 1044.44,
+    totStuds2010: 18,
+    totStuds2011: 206,
+    instName: 'Empire Beauty School-Paramus' },
+  { unitId: '446428',
+    deltaPercent: 1025,
+    totStuds2010: 152,
+    totStuds2011: 1710,
+    instName: 'Performance Training Institute' },
+  { unitId: '460525',
+    deltaPercent: 863.16,
+    totStuds2010: 38,
+    totStuds2011: 366,
+    instName: 'Milan Institute-Nampa' },
+  { unitId: '459310',
+    deltaPercent: 850,
+    totStuds2010: 12,
+    totStuds2011: 114,
+    instName: 'Future-Tech Institute' },
+  { unitId: '460181',
+    deltaPercent: 800,
+    totStuds2010: 58,
+    totStuds2011: 522,
+    instName: 'Concorde Career Institute-Dallas' },
+  { unitId: '458797',
+    deltaPercent: 750,
+    totStuds2010: 144,
+    totStuds2011: 1224,
+    instName: 'Dade Medical College-Hollywood' },
+  { unitId: '458973',
+    deltaPercent: 570.54,
+    totStuds2010: 258,
+    totStuds2011: 1730,
+    instName: 'Strayer University-Texas' },
+  { unitId: '160320',
+    deltaPercent: 536.7,
+    totStuds2010: 218,
+    totStuds2011: 1388,
+    instName: 'Aveda Institute-Covington' },
+  { unitId: '459268',
+    deltaPercent: 486.36,
+    totStuds2010: 176,
+    totStuds2011: 1032,
+    instName: 'South UniversityVirginia Beach' },
+  { unitId: '460206',
+    deltaPercent: 481.69,
+    totStuds2010: 142,
+    totStuds2011: 826,
+    instName: 'Concorde Career Institute-San Antonio' },
+  { unitId: '460136',
+    deltaPercent: 465.71,
+    totStuds2010: 70,
+    totStuds2011: 396,
+    instName: 'Pima Medical Institute-Houston' },
+  { unitId: '459851',
+    deltaPercent: 437.93,
+    totStuds2010: 58,
+    totStuds2011: 312,
+    instName: 'Herzing University-Brookfield' },
+  { unitId: '380067',
+    deltaPercent: 436.84,
+    totStuds2010: 76,
+    totStuds2011: 408,
+    instName: 'Houston Training School-Jacinto City' },
+  { unitId: '198747',
+    deltaPercent: 436.54,
+    totStuds2010: 312,
+    totStuds2011: 1674,
+    instName: 'Laurel University' },
+  { unitId: '457509',
+    deltaPercent: 427.27,
+    totStuds2010: 22,
+    totStuds2011: 116,
+    instName: 'Master Educators Beauty School' } ]
+[90mGET /question12 [32m200 [90m1505ms - 3.71kb[0m
+[90mGET /css/jquery.dataTables.css [36m304 [90m743ms[0m
+[90mGET /css/style.css [36m304 [90m741ms[0m
+[90mGET /css/bootstrap.css [36m304 [90m737ms[0m
+[90mGET /js/jquery.js [36m304 [90m746ms[0m
+[90mGET /js/jquery.dataTables.js [36m304 [90m1394ms[0m
+[90mGET /src/DataTables.js [36m304 [90m898ms[0m
+[90mGET /js/initBody.js [36m304 [90m1797ms[0m
