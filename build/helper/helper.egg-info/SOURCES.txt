@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+helper/__init__.py
+helper/config.py
+helper/controller.py
+helper/parser.py
+helper/unix.py
+helper/windows.py
+helper.egg-info/PKG-INFO
+helper.egg-info/SOURCES.txt
+helper.egg-info/dependency_links.txt
+helper.egg-info/requires.txt
+helper.egg-info/top_level.txt
+helper.egg-info/zip-safe

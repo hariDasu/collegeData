@@ -1,0 +1,11 @@
+helper>=2.2.2
+requests>=2.0.0
+
+[mongodb]
+pymongo
+
+[postgresql]
+psycopg2
+
+[pgbouncer]
+psycopg2

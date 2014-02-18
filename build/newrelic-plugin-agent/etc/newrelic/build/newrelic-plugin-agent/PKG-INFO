@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: newrelic_plugin_agent
+Version: 1.2.2
+Summary: Python based agent for collecting metrics for NewRelic
+Home-page: https://github.com/MeetMe/newrelic-plugin-agent
+Author: Gavin M. Roy
+Author-email: gmr@meetme.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 2 :: Only
+Classifier: Topic :: System :: Monitoring

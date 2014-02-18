@@ -1,0 +1,3 @@
+[console_scripts]
+newrelic_plugin_agent = newrelic_plugin_agent.agent:main
+

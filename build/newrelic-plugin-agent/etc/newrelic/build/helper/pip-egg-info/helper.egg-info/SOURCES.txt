@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+helper/__init__.py
+helper/config.py
+helper/controller.py
+helper/parser.py
+helper/unix.py
+helper/windows.py
+pip-egg-info/helper.egg-info/PKG-INFO
+pip-egg-info/helper.egg-info/SOURCES.txt
+pip-egg-info/helper.egg-info/dependency_links.txt
+pip-egg-info/helper.egg-info/requires.txt
+pip-egg-info/helper.egg-info/top_level.txt
+pip-egg-info/helper.egg-info/zip-safe

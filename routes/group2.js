@@ -222,6 +222,7 @@ function group1Stat( collegeDB, statType) {
                                     skipped++
                                     rcnt=_.size(q6StatsBySchoolYear) + skipped
                                     if (rcnt == enrDocs.length ) {
+
                                         joinStatsWithInstName(res, statType, collegeDB)
                                     }
                                 }
