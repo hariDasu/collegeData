@@ -2,7 +2,7 @@
 collegeData
 ===========
 
-(http://collegedata.pytools.webfactional.com/question1 "College Data project on WebFaction")
+[CollegeData](http://collegedata.pytools.webfactional.com/question1 "College Data project on WebFaction")
 ```
 project for IS218- Fall 2013
 
